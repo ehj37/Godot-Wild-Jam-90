@@ -12,4 +12,9 @@ func update(_delta: float) -> void:
 
 
 func enter(_data: Dictionary = {}) -> void:
+	_player.set_collision_mask_value(8, false)
 	_player.velocity = Vector2.ZERO
+
+
+func exit() -> void:
+	_player.set_collision_mask_value(8, true)

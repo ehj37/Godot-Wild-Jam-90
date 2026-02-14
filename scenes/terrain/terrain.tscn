@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://bsqtco2q1qevg"]
+
+[ext_resource type="Texture2D" uid="uid://w66xwmoflfs0" path="res://scenes/terrain/terrain.png" id="1_hn2sr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hn2sr"]
+texture = ExtResource("1_hn2sr")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[sub_resource type="TileSet" id="TileSet_hn2sr"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_hn2sr")
+
+[node name="Terrain" type="TileMapLayer" unique_id=1450694777]
+tile_set = SubResource("TileSet_hn2sr")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=404465859]
+visible = false
+texture_filter = 1
+texture = ExtResource("1_hn2sr")
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": false,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/terrain/terrain.aseprite",
+"source_uid": 5419685268759828345
+}
+metadata/_aseprite_wizard_source_file_hash_ = "191d2bdeedc7363f75f63d0434cc7625"

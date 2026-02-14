@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://haj0s8e6d10f"]
+[gd_scene format=4 uid="uid://haj0s8e6d10f"]
 
 [ext_resource type="Script" uid="uid://dbjw3he336jxs" path="res://scenes/player/player.gd" id="1_8afob"]
 [ext_resource type="Script" uid="uid://bcv50j8esu3kj" path="res://scripts/state_machine.gd" id="2_dovo2"]
@@ -7,22 +7,47 @@
 [ext_resource type="Script" uid="uid://bu1hqgwdestxa" path="res://scenes/player/state/airborne.gd" id="5_75vfm"]
 [ext_resource type="Script" uid="uid://c5d5kkdeiqbdt" path="res://scenes/player/state/pre_plummet.gd" id="6_0owmy"]
 [ext_resource type="Script" uid="uid://586tvrtvyeud" path="res://scenes/player/state/plummet.gd" id="6_75vfm"]
+[ext_resource type="Script" uid="uid://l6mw7uy5ei2d" path="res://scenes/player/state/ladder_up.gd" id="8_5gtgg"]
+[ext_resource type="Script" uid="uid://c2jgqmmpyt4mw" path="res://scenes/player/state/ladder_idle.gd" id="9_h17s1"]
+[ext_resource type="Script" uid="uid://cjo3qt0587un8" path="res://scenes/player/state/ladder_down.gd" id="10_h17s1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7p2l"]
 radius = 5.0
 height = 22.0
 
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_0owmy"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAABmAAAAUklGRl4AAABXRUJQVlA4TFIAAAAvP8APECcgECBM2fB/Y0MgQLjzf+KAkIAQTfbe/AcA+MuYoKiRJGU2uwJOCgpA/74YPxH9nwB811IrlHpSqaRqpR4qZ19JO8d7g3oEqqMwuhsP")
+size_override = Vector2(64, 64)
+
+[sub_resource type="Animation" id="Animation_qek5x"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5gtgg"]
+_data = {
+&"default": SubResource("Animation_qek5x")
+}
+
 [node name="Player" type="CharacterBody2D" unique_id=926355718]
+collision_layer = 64
+collision_mask = 129
 script = ExtResource("1_8afob")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2139175605]
 position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_x7p2l")
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1515509310]
-offset_left = -5.0
-offset_top = -20.0
-offset_right = 5.0
 
 [node name="StateMachine" type="Node" parent="." unique_id=1689298401 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_dovo2")
@@ -48,3 +73,63 @@ metadata/_custom_type_script = "uid://co3jswbhja34f"
 [node name="Plummet" type="Node" parent="StateMachine" unique_id=991528911]
 script = ExtResource("6_75vfm")
 metadata/_custom_type_script = "uid://co3jswbhja34f"
+
+[node name="LadderUp" type="Node" parent="StateMachine" unique_id=1513143572]
+script = ExtResource("8_5gtgg")
+metadata/_custom_type_script = "uid://co3jswbhja34f"
+
+[node name="LadderIdle" type="Node" parent="StateMachine" unique_id=663044051]
+script = ExtResource("9_h17s1")
+metadata/_custom_type_script = "uid://co3jswbhja34f"
+
+[node name="LadderDown" type="Node" parent="StateMachine" unique_id=1287605255]
+script = ExtResource("10_h17s1")
+metadata/_custom_type_script = "uid://co3jswbhja34f"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1515509310]
+modulate = Color(1, 1, 1, 0.5)
+offset_left = -5.0
+offset_top = -20.0
+offset_right = 5.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1838894270]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_0owmy")
+offset = Vector2(0, -16)
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "AnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/player/player.aseprite",
+"source_uid": 6418518113907183416
+}
+metadata/_aseprite_wizard_source_file_hash_ = "933ebbd0466f9827519b5e852eef2aa8"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=714728241]
+libraries/ = SubResource("AnimationLibrary_5gtgg")
+
+[node name="LadderRayCastDown" type="RayCast2D" parent="." unique_id=237830720]
+position = Vector2(0, -10)
+target_position = Vector2(0, 10)
+collision_mask = 32
+hit_from_inside = true
+
+[node name="LadderRayCastUp" type="RayCast2D" parent="." unique_id=1715075512]
+position = Vector2(0, -10)
+target_position = Vector2(0, -10)
+collision_mask = 32
+hit_from_inside = true

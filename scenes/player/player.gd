@@ -13,6 +13,8 @@ const MOVE_RIGHT: String = "move_right"
 var _pressed_movement_inputs: Array[String] = []
 
 @onready var color_rect: ColorRect = $ColorRect
+@onready var ladder_ray_cast_down: RayCast2D = $LadderRayCastDown
+@onready var ladder_ray_cast_up: RayCast2D = $LadderRayCastUp
 
 
 func get_input_direction() -> Vector2:
