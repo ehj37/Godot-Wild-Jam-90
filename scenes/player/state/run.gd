@@ -3,7 +3,6 @@ extends PlayerState
 const RUN_COLOR: Color = Color.GREEN
 const NON_PIVOT_MOVE_ACCELERATION: float = 650.0
 const PIVOT_MOVE_ACCELERATION: float = 1200.0
-const MAX_MOVE_SPEED: float = 80.0
 
 
 func physics_update(delta: float) -> void:
@@ -29,7 +28,7 @@ func physics_update(delta: float) -> void:
 			move_acceleration = PIVOT_MOVE_ACCELERATION
 
 		_player.velocity.x = move_toward(
-			_player.velocity.x, input_direction.x * MAX_MOVE_SPEED, delta * move_acceleration
+			_player.velocity.x, input_direction.x * Player.MAX_MOVE_SPEED, delta * move_acceleration
 		)
 
 	if Input.is_action_just_pressed("jump"):

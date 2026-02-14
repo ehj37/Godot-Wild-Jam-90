@@ -5,7 +5,7 @@ extends CharacterBody2D
 const GRAVITY: float = 900.0
 const MOVE_ACCELERATION: float = 500.0
 const MOVE_DECELERATION: float = 700.0
-const MAX_MOVE_SPEED: float = 100.0
+const MAX_MOVE_SPEED: float = 80.0
 const INITIAL_JUMP_SPEED: float = -225.0
 const MOVE_LEFT: String = "move_left"
 const MOVE_RIGHT: String = "move_right"

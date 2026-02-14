@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bsqtco2q1qevg" path="res://scenes/terrain/terrain.tscn" id="2_0wfyh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0wfyh"]
-size = Vector2(31, 8)
+size = Vector2(32, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sugp2"]
 size = Vector2(20, 88)
@@ -23,11 +23,11 @@ collision_layer = 128
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1532753888]
-position = Vector2(10.5, 0)
+position = Vector2(11, 0)
 shape = SubResource("RectangleShape2D_0wfyh")
 
 [node name="LadderTest" type="StaticBody2D" parent="." unique_id=1213299332]
-position = Vector2(202, 75)
+position = Vector2(224, 75)
 collision_layer = 32
 collision_mask = 0
 

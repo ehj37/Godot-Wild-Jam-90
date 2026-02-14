@@ -2,6 +2,7 @@ extends PlayerState
 
 const AIRBORNE_COLOR: Color = Color.BLUE
 const GRAVITY: float = 900.0
+const AIRBORNE_MOVE_ACCELERATION: float = 150.0
 const INITIAL_JUMP_SPEED: float = -225.0
 const MIN_DIRECTIONAL_JUMP_SPEED_X: float = 0.75 * Player.MAX_MOVE_SPEED
 
@@ -21,7 +22,17 @@ func physics_update(delta: float) -> void:
 		if Input.is_action_just_pressed("jump"):
 			_state_machine.transition_to("PrePlummet")
 
+		# Only change x component of velocity if there's player input.
+		var input_direction: Vector2 = _player.get_input_direction()
+		if !input_direction.is_zero_approx():
+			_velocity_x = move_toward(
+				_velocity_x,
+				input_direction.x * Player.MAX_MOVE_SPEED,
+				delta * AIRBORNE_MOVE_ACCELERATION
+			)
+
 		_player.velocity.x = _velocity_x
+
 		_player.velocity.y += Player.GRAVITY * delta
 		return
 
