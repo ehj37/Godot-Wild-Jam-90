@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://vom35pfu5i07"]
+
+[ext_resource type="Script" uid="uid://dbjb1w67780yn" path="res://scenes/screen/screen.gd" id="1_534c4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_534c4"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mip77"]
+size = Vector2(480, 270)
+
+[node name="Screen" type="Area2D" unique_id=974160926]
+collision_layer = 0
+collision_mask = 64
+monitorable = false
+script = ExtResource("1_534c4")
+metadata/_edit_lock_ = true
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=663890259]
+offset_right = 480.0
+offset_bottom = 270.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_534c4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=315953173]
+visible = false
+position = Vector2(240, 135)
+shape = SubResource("RectangleShape2D_mip77")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -15,6 +15,12 @@ run/main_scene="uid://df62e3ium5hcw"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+SignalBus="*uid://c3jgq0q4mxp00"
+TimeScaleManager="*uid://dnkw1n08hd21l"
+ScreenManager="*uid://cqqcry8vtupf8"
+
 [debug]
 
 gdscript/warnings/untyped_declaration=2
@@ -64,6 +70,7 @@ climb_down={
 
 [layer_names]
 
+2d_physics/layer_1="Terrain"
 2d_physics/layer_6="Ladder"
 2d_physics/layer_7="Player"
 2d_physics/layer_8="Breakable"

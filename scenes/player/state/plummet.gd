@@ -1,7 +1,7 @@
 extends PlayerState
 
 const MIDAIR_PAUSE_TIME: float = 0.3
-const PLUMMET_SPEED: float = 800.0
+const PLUMMET_SPEED: float = 600.0
 
 
 func update(_delta: float) -> void:
