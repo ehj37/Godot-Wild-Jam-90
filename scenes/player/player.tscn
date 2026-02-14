@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://haj0s8e6d10f"]
+
+[ext_resource type="Script" uid="uid://dbjw3he336jxs" path="res://scenes/player/player.gd" id="1_8afob"]
+[ext_resource type="Script" uid="uid://bcv50j8esu3kj" path="res://scripts/state_machine.gd" id="2_dovo2"]
+[ext_resource type="Script" uid="uid://bbbw3ri7irgtd" path="res://scenes/player/state/idle.gd" id="3_gmlin"]
+[ext_resource type="Script" uid="uid://bfn2l68dk36bd" path="res://scenes/player/state/run.gd" id="4_lvxji"]
+[ext_resource type="Script" uid="uid://bu1hqgwdestxa" path="res://scenes/player/state/airborne.gd" id="5_75vfm"]
+[ext_resource type="Script" uid="uid://c5d5kkdeiqbdt" path="res://scenes/player/state/pre_plummet.gd" id="6_0owmy"]
+[ext_resource type="Script" uid="uid://586tvrtvyeud" path="res://scenes/player/state/plummet.gd" id="6_75vfm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7p2l"]
+radius = 5.0
+height = 22.0
+
+[node name="Player" type="CharacterBody2D" unique_id=926355718]
+script = ExtResource("1_8afob")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2139175605]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_x7p2l")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1515509310]
+offset_left = -5.0
+offset_top = -20.0
+offset_right = 5.0
+
+[node name="StateMachine" type="Node" parent="." unique_id=1689298401 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_dovo2")
+initial_state = NodePath("Idle")
+metadata/_custom_type_script = "uid://bcv50j8esu3kj"
+
+[node name="Idle" type="Node" parent="StateMachine" unique_id=652761522]
+script = ExtResource("3_gmlin")
+metadata/_custom_type_script = "uid://co3jswbhja34f"
+
+[node name="Run" type="Node" parent="StateMachine" unique_id=1576777896]
+script = ExtResource("4_lvxji")
+metadata/_custom_type_script = "uid://co3jswbhja34f"
+
+[node name="Airborne" type="Node" parent="StateMachine" unique_id=2022321991]
+script = ExtResource("5_75vfm")
+metadata/_custom_type_script = "uid://co3jswbhja34f"
+
+[node name="PrePlummet" type="Node" parent="StateMachine" unique_id=814125590]
+script = ExtResource("6_0owmy")
+metadata/_custom_type_script = "uid://co3jswbhja34f"
+
+[node name="Plummet" type="Node" parent="StateMachine" unique_id=991528911]
+script = ExtResource("6_75vfm")
+metadata/_custom_type_script = "uid://co3jswbhja34f"
