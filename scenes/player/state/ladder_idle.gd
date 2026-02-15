@@ -24,3 +24,4 @@ func update(_delta: float) -> void:
 
 func enter(_data: Dictionary = {}) -> void:
 	_player.velocity = Vector2.ZERO
+	_player.animation_player.pause()

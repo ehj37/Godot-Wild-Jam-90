@@ -15,11 +15,11 @@
 radius = 5.0
 height = 22.0
 
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_0owmy"]
-_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAABmAAAAUklGRl4AAABXRUJQVlA4TFIAAAAvP8APECcgECBM2fB/Y0MgQLjzf+KAkIAQTfbe/AcA+MuYoKiRJGU2uwJOCgpA/74YPxH9nwB811IrlHpSqaRqpR4qZ19JO8d7g3oEqqMwuhsP")
-size_override = Vector2(64, 64)
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_h17s1"]
+_data = PackedByteArray("AAADAAUAAAABAAAAwAAAAMAAAABeAQAAUklGRlYBAABXRUJQVlA4TEoBAAAvv8AvECcgECBM2fB/Y0MgQLjzf+KAkIAQTfbe/AcA+MuYALuR7brNIcgCqB5cAIGjAgjr9l+U81xfSv5KHNF/B24jKZKXD9MHn9B/o8tsq4vAWnLXjOBhyu26RdyxxruSd3FP7hoRFf8usKCOnVNul21Dxy7clWzYlXe9NONDvX6X/pAuFbHBMeUrKri7c6ld20dUyceWT+iyguWXt/9ObjbelS2CdyXPPSMa78qdOx4Lc4u4J38uu1vB3blzD7syI6Km7vqDGR+7hedm/AC74Nzbx9xVG/lcnqOLrLa9KVH51MW7sYq6043XQCuT7cL/97AL6xKmQrtdueW7ROHl9LSG5Zc3/2bjXdkieFf2MaLxruxjBO9K1acPutuPlmvYlXeVVP7oXpkezNh2vid0XZlxDpV3XRmtry//tC4V3nVthBWpn8DfokU=")
+size_override = Vector2(192, 192)
 
-[sub_resource type="Animation" id="Animation_qek5x"]
+[sub_resource type="Animation" id="Animation_gx1jg"]
 length = 0.1
 loop_mode = 1
 tracks/0/type = "value"
@@ -32,12 +32,97 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [0]
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_je7p5"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [7]
+}
+
+[sub_resource type="Animation" id="Animation_fm80t"]
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_ugbui"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_myrg7"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [3]
+}
+
+[sub_resource type="Animation" id="Animation_fcs02"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5gtgg"]
 _data = {
-&"default": SubResource("Animation_qek5x")
+&"idle_right": SubResource("Animation_gx1jg"),
+&"ladder_down": SubResource("Animation_je7p5"),
+&"ladder_up": SubResource("Animation_fm80t"),
+&"plummet": SubResource("Animation_ugbui"),
+&"pre_plummet": SubResource("Animation_myrg7"),
+&"run_right": SubResource("Animation_fcs02")
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=926355718]
@@ -94,8 +179,10 @@ offset_bottom = -24.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1838894270]
 texture_filter = 1
-texture = SubResource("PortableCompressedTexture2D_0owmy")
+texture = SubResource("PortableCompressedTexture2D_h17s1")
 offset = Vector2(0, -16)
+hframes = 3
+vframes = 3
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }
@@ -117,7 +204,7 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://scenes/player/player.aseprite",
 "source_uid": 6418518113907183416
 }
-metadata/_aseprite_wizard_source_file_hash_ = "933ebbd0466f9827519b5e852eef2aa8"
+metadata/_aseprite_wizard_source_file_hash_ = "200f05c5901e5eff01d72fa1c1aed6b7"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=714728241]
 libraries/ = SubResource("AnimationLibrary_5gtgg")

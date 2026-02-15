@@ -18,6 +18,7 @@ func update(_delta: float) -> void:
 func enter(_data: Dictionary = {}) -> void:
 	_player.velocity.x = 0.0
 	_snap_to_ladder_center()
+	_player.animation_player.play("ladder_down")
 
 
 func _snap_to_ladder_center() -> void:

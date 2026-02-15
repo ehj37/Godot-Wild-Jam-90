@@ -17,9 +17,19 @@ func physics_update(delta: float) -> void:
 		_state_machine.transition_to("Airborne")
 		return
 
-	var input_direction: Vector2 = _player.get_input_direction()
+	if Input.is_action_just_pressed("jump"):
+		_state_machine.transition_to("Airborne", {"jump": true})
+		return
 
+	var input_direction: Vector2 = _player.get_input_direction()
 	if !input_direction.is_zero_approx():
+		if input_direction.x > 0:
+			_player.orientation = Player.Orientation.RIGHT
+			_player.sprite.flip_h = false
+		else:
+			_player.orientation = Player.Orientation.LEFT
+			_player.sprite.flip_h = true
+
 		var move_acceleration: float
 		if sign(_player.velocity.x) == sign(input_direction.x):
 			move_acceleration = NON_PIVOT_MOVE_ACCELERATION
@@ -30,9 +40,9 @@ func physics_update(delta: float) -> void:
 			_player.velocity.x, input_direction.x * Player.MAX_MOVE_SPEED, delta * move_acceleration
 		)
 
-	if Input.is_action_just_pressed("jump"):
-		_state_machine.transition_to("Airborne", {"jump": true})
-		return
-
 	if input_direction.is_zero_approx():
 		_state_machine.transition_to("Idle")
+
+
+func enter(_data: Dictionary = {}) -> void:
+	_player.animation_player.play("run_right")

@@ -25,3 +25,12 @@ func physics_update(delta: float) -> void:
 		return
 
 	_player.velocity.x = move_toward(_player.velocity.x, 0, delta * Player.MOVE_DECELERATION)
+
+
+func enter(_data: Dictionary = {}) -> void:
+	_player.animation_player.play("idle_right")
+	match _player.orientation:
+		Player.Orientation.RIGHT:
+			_player.sprite.flip_h = false
+		Player.Orientation.LEFT:
+			_player.sprite.flip_h = true

@@ -2,6 +2,8 @@ class_name Player
 
 extends CharacterBody2D
 
+enum Orientation { RIGHT, LEFT }
+
 const GRAVITY: float = 900.0
 const MOVE_ACCELERATION: float = 500.0
 const MOVE_DECELERATION: float = 700.0
@@ -10,8 +12,11 @@ const INITIAL_JUMP_SPEED: float = -225.0
 const MOVE_LEFT: String = "move_left"
 const MOVE_RIGHT: String = "move_right"
 
+var orientation: Player.Orientation = Orientation.RIGHT
 var _pressed_movement_inputs: Array[String] = []
 
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var sprite: Sprite2D = $Sprite2D
 @onready var ladder_ray_cast_down: RayCast2D = $LadderRayCastDown
 @onready var ladder_ray_cast_up: RayCast2D = $LadderRayCastUp
 @onready var state_machine_debug_label: Label = $StateMachineDebugLabel
