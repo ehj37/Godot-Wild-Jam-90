@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://b0deraodmxcp2" path="res://scripts/bullet_time_animation_player.gd" id="2_au5d4"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_au5d4"]
-_data = PackedByteArray("AAADAAUAAAABAAAAMAAAACAAAACGAAAAUklGRn4AAABXRUJQVlA4THEAAAAvL8AHEBcgEEjaH3qN+RcSJPwfbHX+A/4EjGLbanMpK9ZRgZqUjzQkpPmkg4CI/its27bJ3kl7BkPRAhJgV7ABe9RI1ISokdsR8vjv2+Jlp1xSGlR547Ioij2olLO3A8lfyO1S+D3778tQdsollUFTEAA=")
+_data = PackedByteArray("AAADAAUAAAABAAAAMAAAACAAAADOAAAAUklGRsYAAABXRUJQVlA4TLkAAAAvL8AHEC8gECCY9H9iY/7VBEDCcNM/K7glyLYp2tRO/gD8LwE2SgXXkSQ7zWEScErA/QMr/mUuALnLP5dnjn0lAojov8IASBPWCegX8o8yNSwB4BLccgL9GZoAvSIS3NoJqQ67LBC5ZQSqdpijjp8dj2hEPYKuQxPH43GBS3Douhk8+AV9hf+IjmdB/HdfCnxufrSBl61JPH+2usMtxtuJv4M8P3necjj5lDS/PPgFfYX/qDiee8q3AAA=")
 size_override = Vector2(48, 32)
 
 [sub_resource type="Animation" id="Animation_pwyla"]
@@ -60,7 +60,7 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://scenes/cannon/bullet/bullet.aseprite",
 "source_uid": 3195072994376321636
 }
-metadata/_aseprite_wizard_source_file_hash_ = "ee793240f8aa8055168ab7762c2ead02"
+metadata/_aseprite_wizard_source_file_hash_ = "6b3173a6bd7a7482dbc6706a3e93b489"
 
 [node name="BulletTimeAnimationPlayer" type="AnimationPlayer" parent="." unique_id=961967365]
 libraries/ = SubResource("AnimationLibrary_s2wpr")

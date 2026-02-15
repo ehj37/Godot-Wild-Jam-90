@@ -8,7 +8,7 @@ func update(_delta: float) -> void:
 	if !_player.is_on_floor():
 		_player.velocity.y = PLUMMET_SPEED
 	else:
-		_state_machine.transition_to("Idle")
+		_state_machine.transition_to("PostPlummet")
 
 
 func enter(_data: Dictionary = {}) -> void:

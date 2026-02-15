@@ -2,7 +2,7 @@ class_name Bullet
 
 extends CharacterBody2D
 
-const BULLET_SPEED: float = 200.0
+const BULLET_SPEED: float = 225.0
 
 var _current_speed: float
 
@@ -34,6 +34,9 @@ func _on_bullet_time_exited() -> void:
 	_current_speed = BULLET_SPEED
 
 
-func _on_obstacle_detector_area_body_entered(_body: Node2D) -> void:
-	# TODO: Inflict damage, force respawn if hitting the player (only in bullet time?)
+func _on_obstacle_detector_area_body_entered(body: Node2D) -> void:
+	if body is Player:
+		var player: Player = body
+		player.take_damage()
+
 	queue_free()

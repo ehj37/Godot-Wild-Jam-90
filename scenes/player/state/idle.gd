@@ -8,7 +8,7 @@ func physics_update(delta: float) -> void:
 		_state_machine.transition_to("LadderUp")
 		return
 
-	if Input.is_action_just_pressed("climb_down") && _player.ladder_ray_cast_down.is_colliding():
+	if Input.is_action_pressed("climb_down") && _player.ladder_ray_cast_down.is_colliding():
 		_state_machine.transition_to("LadderDown")
 		return
 
@@ -29,8 +29,3 @@ func physics_update(delta: float) -> void:
 
 func enter(_data: Dictionary = {}) -> void:
 	_player.animation_player.play("idle_right")
-	match _player.orientation:
-		Player.Orientation.RIGHT:
-			_player.sprite.flip_h = false
-		Player.Orientation.LEFT:
-			_player.sprite.flip_h = true

@@ -9,7 +9,7 @@ func physics_update(delta: float) -> void:
 		_state_machine.transition_to("LadderUp")
 		return
 
-	if Input.is_action_just_pressed("climb_down") && _player.ladder_ray_cast_down.is_colliding():
+	if Input.is_action_pressed("climb_down") && _player.ladder_ray_cast_down.is_colliding():
 		_state_machine.transition_to("LadderDown")
 		return
 
@@ -25,10 +25,8 @@ func physics_update(delta: float) -> void:
 	if !input_direction.is_zero_approx():
 		if input_direction.x > 0:
 			_player.orientation = Player.Orientation.RIGHT
-			_player.sprite.flip_h = false
 		else:
 			_player.orientation = Player.Orientation.LEFT
-			_player.sprite.flip_h = true
 
 		var move_acceleration: float
 		if sign(_player.velocity.x) == sign(input_direction.x):

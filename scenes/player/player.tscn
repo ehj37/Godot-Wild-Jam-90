@@ -8,15 +8,13 @@
 [ext_resource type="Script" uid="uid://c5d5kkdeiqbdt" path="res://scenes/player/state/pre_plummet.gd" id="6_0owmy"]
 [ext_resource type="Script" uid="uid://586tvrtvyeud" path="res://scenes/player/state/plummet.gd" id="6_75vfm"]
 [ext_resource type="Script" uid="uid://l6mw7uy5ei2d" path="res://scenes/player/state/ladder_up.gd" id="8_5gtgg"]
+[ext_resource type="Script" uid="uid://duq1n4vdwhr3f" path="res://scenes/player/state/post_plummet.gd" id="8_fm80t"]
 [ext_resource type="Script" uid="uid://c2jgqmmpyt4mw" path="res://scenes/player/state/ladder_idle.gd" id="9_h17s1"]
 [ext_resource type="Script" uid="uid://cjo3qt0587un8" path="res://scenes/player/state/ladder_down.gd" id="10_h17s1"]
+[ext_resource type="Script" uid="uid://dgyo1ei1daqft" path="res://scenes/player/state/mantle.gd" id="11_je7p5"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7p2l"]
-radius = 5.0
-height = 22.0
-
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_h17s1"]
-_data = PackedByteArray("AAADAAUAAAABAAAAwAAAAMAAAABeAQAAUklGRlYBAABXRUJQVlA4TEoBAAAvv8AvECcgECBM2fB/Y0MgQLjzf+KAkIAQTfbe/AcA+MuYALuR7brNIcgCqB5cAIGjAgjr9l+U81xfSv5KHNF/B24jKZKXD9MHn9B/o8tsq4vAWnLXjOBhyu26RdyxxruSd3FP7hoRFf8usKCOnVNul21Dxy7clWzYlXe9NONDvX6X/pAuFbHBMeUrKri7c6ld20dUyceWT+iyguWXt/9ObjbelS2CdyXPPSMa78qdOx4Lc4u4J38uu1vB3blzD7syI6Km7vqDGR+7hedm/AC74Nzbx9xVG/lcnqOLrLa9KVH51MW7sYq6043XQCuT7cL/97AL6xKmQrtdueW7ROHl9LSG5Zc3/2bjXdkieFf2MaLxruxjBO9K1acPutuPlmvYlXeVVP7oXpkezNh2vid0XZlxDpV3XRmtry//tC4V3nVthBWpn8DfokU=")
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_fm80t"]
+_data = PackedByteArray("AAADAAUAAAABAAAAwAAAAMAAAABuAQAAUklGRmYBAABXRUJQVlA4TFkBAAAvv8AvECcgECBM2fB/Y0MgQLjzf+KAkIAQTfbe/AcA+MuYADuS5LrNooAAwFIKCgCuRQAocfNPys/lnaEvWxH9d+S2jSQxgzrNonT3fAL/jc5q2Um2Fty1JD8MsV136WFrflfwoUdw15Cq/VzY5DqnD7FdJGk6J+yuYIOsftdTM97V/dv6WzpQ4C1uQ7yCYnd3X2jX8R5VMgM+cCeD9PPy3+aslp2UfO8lNXvvYHfp4e8df/h7xxpSzX3wnAzeu5k6SRbD8b53xeE9dhdgh/MiySPytpV3sIYkYx+7cEuauUHi7chsnJMVqfndg+7ew75vFyCK+ceBu/cbq92N4K5SYLPnOUg/L/6tlr1LSt61pJa7S5Jyd63JVhx98XSP6XYNsnreuyz9km56eMnedjdhDe297S58sP2uaj124cYHW+/Kcd+q2108PfwtHSi777pgih3Vf4G/NQMA")
 size_override = Vector2(192, 192)
 
 [sub_resource type="Animation" id="Animation_gx1jg"]
@@ -48,7 +46,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [7]
+"values": [8]
 }
 
 [sub_resource type="Animation" id="Animation_fm80t"]
@@ -64,7 +62,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [5, 6]
+"values": [6, 7]
 }
 
 [sub_resource type="Animation" id="Animation_ugbui"]
@@ -81,6 +79,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [4]
+}
+
+[sub_resource type="Animation" id="Animation_kvlxm"]
+length = 0.1
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [5]
 }
 
 [sub_resource type="Animation" id="Animation_myrg7"]
@@ -121,18 +135,19 @@ _data = {
 &"ladder_down": SubResource("Animation_je7p5"),
 &"ladder_up": SubResource("Animation_fm80t"),
 &"plummet": SubResource("Animation_ugbui"),
+&"post_plummet": SubResource("Animation_kvlxm"),
 &"pre_plummet": SubResource("Animation_myrg7"),
 &"run_right": SubResource("Animation_fcs02")
 }
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7p2l"]
+radius = 5.0
+height = 22.0
 
 [node name="Player" type="CharacterBody2D" unique_id=926355718]
 collision_layer = 64
 collision_mask = 129
 script = ExtResource("1_8afob")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2139175605]
-position = Vector2(0, -11)
-shape = SubResource("CapsuleShape2D_x7p2l")
 
 [node name="StateMachine" type="Node" parent="." unique_id=1689298401 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_dovo2")
@@ -159,6 +174,10 @@ metadata/_custom_type_script = "uid://co3jswbhja34f"
 script = ExtResource("6_75vfm")
 metadata/_custom_type_script = "uid://co3jswbhja34f"
 
+[node name="PostPlummet" type="Node" parent="StateMachine" unique_id=707052914]
+script = ExtResource("8_fm80t")
+metadata/_custom_type_script = "uid://co3jswbhja34f"
+
 [node name="LadderUp" type="Node" parent="StateMachine" unique_id=1513143572]
 script = ExtResource("8_5gtgg")
 metadata/_custom_type_script = "uid://co3jswbhja34f"
@@ -171,6 +190,10 @@ metadata/_custom_type_script = "uid://co3jswbhja34f"
 script = ExtResource("10_h17s1")
 metadata/_custom_type_script = "uid://co3jswbhja34f"
 
+[node name="Mantle" type="Node" parent="StateMachine" unique_id=1442578184]
+script = ExtResource("11_je7p5")
+metadata/_custom_type_script = "uid://co3jswbhja34f"
+
 [node name="StateMachineDebugLabel" type="Label" parent="." unique_id=1989459683]
 offset_left = -48.0
 offset_top = -47.0
@@ -179,7 +202,7 @@ offset_bottom = -24.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1838894270]
 texture_filter = 1
-texture = SubResource("PortableCompressedTexture2D_h17s1")
+texture = SubResource("PortableCompressedTexture2D_fm80t")
 offset = Vector2(0, -16)
 hframes = 3
 vframes = 3
@@ -204,10 +227,14 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://scenes/player/player.aseprite",
 "source_uid": 6418518113907183416
 }
-metadata/_aseprite_wizard_source_file_hash_ = "200f05c5901e5eff01d72fa1c1aed6b7"
+metadata/_aseprite_wizard_source_file_hash_ = "61bcd0a31b460e409fcc1c9c3dc2d5a4"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=714728241]
 libraries/ = SubResource("AnimationLibrary_5gtgg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2139175605]
+position = Vector2(0, -11)
+shape = SubResource("CapsuleShape2D_x7p2l")
 
 [node name="LadderRayCastDown" type="RayCast2D" parent="." unique_id=237830720]
 position = Vector2(0, -10)
@@ -220,5 +247,17 @@ position = Vector2(0, -10)
 target_position = Vector2(0, -10)
 collision_mask = 32
 hit_from_inside = true
+
+[node name="MantleRayCastSideTop" type="RayCast2D" parent="." unique_id=1532119676]
+position = Vector2(0, -14)
+target_position = Vector2(10, 0)
+
+[node name="MantleRayCastSideBottom" type="RayCast2D" parent="." unique_id=1659044785]
+position = Vector2(0, -10)
+target_position = Vector2(10, 0)
+
+[node name="MantleRayCastDown" type="RayCast2D" parent="." unique_id=630781514]
+position = Vector2(10, -14)
+target_position = Vector2(0, 4)
 
 [connection signal="state_entered" from="StateMachine" to="." method="_on_state_machine_state_entered"]

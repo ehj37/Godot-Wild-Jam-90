@@ -12,14 +12,46 @@ const INITIAL_JUMP_SPEED: float = -225.0
 const MOVE_LEFT: String = "move_left"
 const MOVE_RIGHT: String = "move_right"
 
-var orientation: Player.Orientation = Orientation.RIGHT
+var orientation: Player.Orientation = Orientation.RIGHT:
+	set(value):
+		match value:
+			Player.Orientation.RIGHT:
+				sprite.flip_h = false
+				mantle_ray_cast_side_top.target_position.x = abs(
+					mantle_ray_cast_side_top.target_position.x
+				)
+				mantle_ray_cast_side_bottom.target_position.x = abs(
+					mantle_ray_cast_side_top.target_position.x
+				)
+				mantle_ray_cast_down.position.x = abs(mantle_ray_cast_down.position.x)
+			Player.Orientation.LEFT:
+				sprite.flip_h = true
+				mantle_ray_cast_side_top.target_position.x = -abs(
+					mantle_ray_cast_side_top.target_position.x
+				)
+				mantle_ray_cast_side_bottom.target_position.x = -abs(
+					mantle_ray_cast_side_top.target_position.x
+				)
+				mantle_ray_cast_down.position.x = -abs(mantle_ray_cast_down.position.x)
+
+		orientation = value
+
 var _pressed_movement_inputs: Array[String] = []
 
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var state_machine_debug_label: Label = $StateMachineDebugLabel
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+# Ray casts
 @onready var ladder_ray_cast_down: RayCast2D = $LadderRayCastDown
 @onready var ladder_ray_cast_up: RayCast2D = $LadderRayCastUp
-@onready var state_machine_debug_label: Label = $StateMachineDebugLabel
+@onready var mantle_ray_cast_side_top: RayCast2D = $MantleRayCastSideTop
+@onready var mantle_ray_cast_side_bottom: RayCast2D = $MantleRayCastSideBottom
+@onready var mantle_ray_cast_down: RayCast2D = $MantleRayCastDown
+
+
+func take_damage() -> void:
+	pass
 
 
 func get_input_direction() -> Vector2:
