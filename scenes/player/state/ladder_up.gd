@@ -22,6 +22,6 @@ func enter(_data: Dictionary = {}) -> void:
 
 
 func _snap_to_ladder_center() -> void:
-	var target_x_pos: float = TileMapUtils.get_ladder_target_x(_player.ladder_ray_cast_down)
+	var target_x_pos: float = TileMapUtils.get_ladder_target_x(_player.ladder_ray_cast_up)
 	if _player.global_position.x != target_x_pos:
 		_player.global_position.x = target_x_pos

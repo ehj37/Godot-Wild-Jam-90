@@ -8,7 +8,7 @@ func _ready() -> void:
 
 
 func _snap_camera_to(screen: Screen) -> void:
-	var target_global_position: Vector2 = screen.global_position + Vector2(240, 135)
+	var target_global_position: Vector2 = screen.global_position + Vector2(240, 136)
 
 	if ScreenManager.is_initial_screen:
 		global_position = target_global_position

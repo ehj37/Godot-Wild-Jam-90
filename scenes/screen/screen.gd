@@ -6,12 +6,12 @@ extends Node2D
 
 @export var screen_above: Screen:
 	set(value):
-		value.global_position = Vector2(global_position.x, global_position.y - 270)
+		value.global_position = Vector2(global_position.x, global_position.y - 272)
 		screen_above = value
 
 @export var screen_below: Screen:
 	set(value):
-		value.global_position = Vector2(global_position.x, global_position.y + 270)
+		value.global_position = Vector2(global_position.x, global_position.y + 272)
 		screen_below = value
 
 @onready var panel_container: PanelContainer = $PanelContainer

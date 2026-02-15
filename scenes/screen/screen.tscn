@@ -10,7 +10,7 @@ border_width_right = 1
 border_width_bottom = 1
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mip77"]
-size = Vector2(480, 270)
+size = Vector2(480, 272)
 
 [node name="Screen" type="Area2D" unique_id=974160926]
 collision_layer = 0
@@ -21,12 +21,12 @@ metadata/_edit_lock_ = true
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=663890259]
 offset_right = 480.0
-offset_bottom = 270.0
+offset_bottom = 272.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_534c4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=315953173]
 visible = false
-position = Vector2(240, 135)
+position = Vector2(240, 136)
 shape = SubResource("RectangleShape2D_mip77")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
