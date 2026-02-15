@@ -4,11 +4,11 @@ const SCREEN_TRANSITION_DURATION: float = 0.5
 
 
 func _ready() -> void:
-	SignalBus.screen_entered.connect(_on_screen_entered)
+	SignalBus.snap_camera_to.connect(_snap_camera_to)
 
 
-func _on_screen_entered(entered_screen: Screen) -> void:
-	var target_global_position: Vector2 = entered_screen.global_position + Vector2(240, 135)
+func _snap_camera_to(screen: Screen) -> void:
+	var target_global_position: Vector2 = screen.global_position + Vector2(240, 135)
 
 	if ScreenManager.is_initial_screen:
 		global_position = target_global_position

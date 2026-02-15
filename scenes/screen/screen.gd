@@ -26,3 +26,7 @@ func _ready() -> void:
 
 func _on_body_entered(_body: Player) -> void:
 	SignalBus.screen_entered.emit(self)
+
+
+func _on_body_exited(_body: Player) -> void:
+	SignalBus.screen_exited.emit(self)

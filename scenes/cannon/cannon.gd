@@ -14,4 +14,4 @@ func _process(_delta: float) -> void:
 func _on_bullet_spawn_timer_timeout() -> void:
 	var bullet: Bullet = bullet_packed_scene.instantiate()
 	bullet.global_position = global_position
-	ScreenManager.current_screen.add_child(bullet)
+	LevelManager.current_level.add_child(bullet)
