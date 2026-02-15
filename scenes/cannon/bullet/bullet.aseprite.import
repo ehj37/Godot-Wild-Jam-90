@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://blryndshdcuwi"
+path="res://.godot/imported/bullet.aseprite-50551fc2803a01ae95cbe71113554325.res"
+
+[deps]
+
+source_file="res://scenes/cannon/bullet/bullet.aseprite"
+dest_files=["res://.godot/imported/bullet.aseprite-50551fc2803a01ae95cbe71113554325.res"]
+
+[params]
+

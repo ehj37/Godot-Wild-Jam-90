@@ -1,0 +1,77 @@
+[gd_scene format=4 uid="uid://ci8sbhao1xn77"]
+
+[ext_resource type="Script" uid="uid://b8tcmylonkgr1" path="res://scenes/cannon/bullet/bullet.gd" id="1_yqryf"]
+[ext_resource type="Script" uid="uid://b0deraodmxcp2" path="res://scripts/bullet_time_animation_player.gd" id="2_au5d4"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_au5d4"]
+_data = PackedByteArray("AAADAAUAAAABAAAAMAAAACAAAACGAAAAUklGRn4AAABXRUJQVlA4THEAAAAvL8AHEBcgEEjaH3qN+RcSJPwfbHX+A/4EjGLbanMpK9ZRgZqUjzQkpPmkg4CI/its27bJ3kl7BkPRAhJgV7ABe9RI1ISokdsR8vjv2+Jlp1xSGlR547Ioij2olLO3A8lfyO1S+D3778tQdsollUFTEAA=")
+size_override = Vector2(48, 32)
+
+[sub_resource type="Animation" id="Animation_pwyla"]
+length = 0.25
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s2wpr"]
+_data = {
+&"fly": SubResource("Animation_pwyla")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_au5d4"]
+radius = 3.0
+
+[node name="Bullet" type="CharacterBody2D" unique_id=919239186]
+script = ExtResource("1_yqryf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=731303782]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_au5d4")
+hframes = 3
+vframes = 2
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "BulletTimeAnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/cannon/bullet/bullet.aseprite",
+"source_uid": 3195072994376321636
+}
+metadata/_aseprite_wizard_source_file_hash_ = "ee793240f8aa8055168ab7762c2ead02"
+
+[node name="BulletTimeAnimationPlayer" type="AnimationPlayer" parent="." unique_id=961967365]
+libraries/ = SubResource("AnimationLibrary_s2wpr")
+script = ExtResource("2_au5d4")
+metadata/_custom_type_script = "uid://b0deraodmxcp2"
+
+[node name="ObstacleDetectorArea" type="Area2D" parent="." unique_id=1420898348]
+collision_layer = 0
+collision_mask = 65
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleDetectorArea" unique_id=1567344346]
+shape = SubResource("CircleShape2D_au5d4")
+
+[connection signal="body_entered" from="ObstacleDetectorArea" to="." method="_on_obstacle_detector_area_body_entered"]

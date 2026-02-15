@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://brgwj8thj21yb"]
+
+[ext_resource type="Script" uid="uid://d3k4pfe44jwie" path="res://scenes/cannon/cannon.gd" id="1_4r05k"]
+[ext_resource type="Script" uid="uid://dbx8g1pa3ktfw" path="res://scripts/bullet_time_timer.gd" id="2_xgg2g"]
+
+[node name="Cannon" type="StaticBody2D" unique_id=1230095467]
+script = ExtResource("1_4r05k")
+
+[node name="BulletSpawnTimer" type="Timer" parent="." unique_id=1284499902]
+wait_time = 0.5
+autostart = true
+script = ExtResource("2_xgg2g")
+metadata/_custom_type_script = "uid://dbx8g1pa3ktfw"
+
+[node name="TimerLabel" type="Label" parent="." unique_id=510686913]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[connection signal="timeout" from="BulletSpawnTimer" to="." method="_on_bullet_spawn_timer_timeout"]

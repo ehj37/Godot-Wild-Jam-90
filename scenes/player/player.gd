@@ -32,6 +32,12 @@ func get_input_direction() -> Vector2:
 
 
 func _physics_process(_delta: float) -> void:
+	if Input.is_action_just_pressed("bullet_time"):
+		if BulletTimeManager.in_bullet_time:
+			SignalBus.bullet_time_exited.emit()
+		else:
+			SignalBus.bullet_time_entered.emit()
+
 	_update_pressed_movement_inputs()
 	move_and_slide()
 
