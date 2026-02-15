@@ -2,6 +2,8 @@ class_name StateMachine
 
 extends Node
 
+signal state_entered(state_name: String)
+
 @export var initial_state: State
 
 var current_state: State
@@ -18,6 +20,7 @@ func transition_to(state_name: String, data: Dictionary = {}) -> void:
 
 	var new_state: State = _states[new_state_i]
 	current_state = new_state
+	state_entered.emit(new_state.name)
 	new_state.enter(data)
 
 
@@ -31,6 +34,7 @@ func _ready() -> void:
 		child._state_machine = self
 
 	current_state = initial_state
+	state_entered.emit(initial_state.name)
 	initial_state.enter()
 
 

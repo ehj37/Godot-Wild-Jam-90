@@ -86,11 +86,11 @@ metadata/_custom_type_script = "uid://co3jswbhja34f"
 script = ExtResource("10_h17s1")
 metadata/_custom_type_script = "uid://co3jswbhja34f"
 
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1515509310]
-modulate = Color(1, 1, 1, 0.5)
-offset_left = -5.0
-offset_top = -20.0
-offset_right = 5.0
+[node name="StateMachineDebugLabel" type="Label" parent="." unique_id=1989459683]
+offset_left = -48.0
+offset_top = -47.0
+offset_right = 51.0
+offset_bottom = -24.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1838894270]
 texture_filter = 1
@@ -133,3 +133,5 @@ position = Vector2(0, -10)
 target_position = Vector2(0, -10)
 collision_mask = 32
 hit_from_inside = true
+
+[connection signal="state_entered" from="StateMachine" to="." method="_on_state_machine_state_entered"]

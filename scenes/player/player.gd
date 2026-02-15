@@ -12,9 +12,9 @@ const MOVE_RIGHT: String = "move_right"
 
 var _pressed_movement_inputs: Array[String] = []
 
-@onready var color_rect: ColorRect = $ColorRect
 @onready var ladder_ray_cast_down: RayCast2D = $LadderRayCastDown
 @onready var ladder_ray_cast_up: RayCast2D = $LadderRayCastUp
+@onready var state_machine_debug_label: Label = $StateMachineDebugLabel
 
 
 func get_input_direction() -> Vector2:
@@ -43,3 +43,7 @@ func _update_pressed_movement_inputs() -> void:
 				_pressed_movement_inputs.append(movement_input)
 		else:
 			_pressed_movement_inputs.erase(movement_input)
+
+
+func _on_state_machine_state_entered(state_name: String) -> void:
+	state_machine_debug_label.text = state_name

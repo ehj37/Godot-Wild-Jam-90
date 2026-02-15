@@ -1,6 +1,5 @@
 extends PlayerState
 
-const RUN_COLOR: Color = Color.GREEN
 const NON_PIVOT_MOVE_ACCELERATION: float = 650.0
 const PIVOT_MOVE_ACCELERATION: float = 1200.0
 
@@ -37,7 +36,3 @@ func physics_update(delta: float) -> void:
 
 	if input_direction.is_zero_approx():
 		_state_machine.transition_to("Idle")
-
-
-func enter(_data: Dictionary = {}) -> void:
-	_player.color_rect.color = RUN_COLOR

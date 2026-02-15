@@ -21,12 +21,6 @@ func enter(_data: Dictionary = {}) -> void:
 
 
 func _snap_to_ladder_center() -> void:
-	# TODO: Might need to change from StaticBody2D if and when I switch to tile map ladders
-	var collider: StaticBody2D = _player.ladder_ray_cast_up.get_collider()
-	var collider_collision_shape: CollisionShape2D = collider.get_child(
-		_player.ladder_ray_cast_up.get_collider_shape()
-	)
-	var target_x_pos: float = collider_collision_shape.global_position.x
-
+	var target_x_pos: float = TileMapUtils.get_ladder_target_x(_player.ladder_ray_cast_down)
 	if _player.global_position.x != target_x_pos:
 		_player.global_position.x = target_x_pos

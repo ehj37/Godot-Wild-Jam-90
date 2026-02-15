@@ -25,7 +25,3 @@ func physics_update(delta: float) -> void:
 		return
 
 	_player.velocity.x = move_toward(_player.velocity.x, 0, delta * Player.MOVE_DECELERATION)
-
-
-func enter(_data: Dictionary = {}) -> void:
-	_player.color_rect.color = IDLE_COLOR

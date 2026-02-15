@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://fjmenbnanih6"]
+
+[ext_resource type="Texture2D" uid="uid://ck8qk1unve2uu" path="res://scenes/ladder/ladder.png" id="1_1hr68"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1hr68"]
+texture = ExtResource("1_1hr68")
+0:2/0 = 0
+0:2/0/z_index = -1
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1, 8, 1, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/z_index = -1
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1, 8, 1, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/z_index = -1
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 1, 8, 1, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/z_index = -1
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_ker02"]
+physics_layer_0/collision_layer = 32
+physics_layer_0/collision_mask = 0
+sources/0 = SubResource("TileSetAtlasSource_1hr68")
+
+[node name="Ladder" type="TileMapLayer" unique_id=2082239727]
+tile_set = SubResource("TileSet_ker02")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1171464878]
+visible = false
+texture_filter = 1
+texture = ExtResource("1_1hr68")
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": false,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/ladder/ladder.aseprite",
+"source_uid": 6034352504715314143
+}
+metadata/_aseprite_wizard_source_file_hash_ = "e88c9c325768694849db23680ea4ef29"

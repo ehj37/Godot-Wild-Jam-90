@@ -1,6 +1,5 @@
 extends PlayerState
 
-const AIRBORNE_COLOR: Color = Color.BLUE
 const GRAVITY: float = 900.0
 const MAX_FALL_SPEED: float = 500.0
 const AIRBORNE_MOVE_ACCELERATION: float = 150.0
@@ -44,7 +43,6 @@ func physics_update(delta: float) -> void:
 
 
 func enter(data: Dictionary = {}) -> void:
-	_player.color_rect.color = AIRBORNE_COLOR
 	if data.get("jump", false):
 		var input_direction: Vector2 = _player.get_input_direction()
 		if !input_direction.is_zero_approx():
