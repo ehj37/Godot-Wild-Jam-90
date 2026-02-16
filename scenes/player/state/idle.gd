@@ -17,6 +17,7 @@ func physics_update(delta: float) -> void:
 		return
 
 	if !_player.is_on_floor():
+		_player.num_jumps = 1
 		_state_machine.transition_to("Airborne")
 		return
 

@@ -1,6 +1,6 @@
 extends Camera2D
 
-const SCREEN_TRANSITION_DURATION: float = 0.5
+const SCREEN_TRANSITION_DURATION: float = 0.75
 
 
 func _ready() -> void:
@@ -17,8 +17,12 @@ func _snap_camera_to(screen: Screen) -> void:
 	TimeScaleManager.freeze_time()
 
 	var global_position_tween: Tween = get_tree().create_tween().set_ignore_time_scale(true)
-	global_position_tween.tween_property(
-		self, "global_position", target_global_position, SCREEN_TRANSITION_DURATION
+	(
+		global_position_tween
+		. tween_property(
+			self, "global_position", target_global_position, SCREEN_TRANSITION_DURATION
+		)
+		. set_trans(Tween.TRANS_CUBIC)
 	)
 	await global_position_tween.finished
 

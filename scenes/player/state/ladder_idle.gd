@@ -15,6 +15,7 @@ func update(_delta: float) -> void:
 			_state_machine.transition_to("Airborne", {"jump": true})
 			return
 
+		_player.num_jumps = 1
 		_state_machine.transition_to("Airborne")
 		return
 

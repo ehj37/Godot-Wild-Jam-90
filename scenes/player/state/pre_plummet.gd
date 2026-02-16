@@ -1,6 +1,6 @@
 extends PlayerState
 
-const MIDAIR_PAUSE_TIME: float = 0.15
+const MIDAIR_PAUSE_TIME: float = 0.25
 
 
 func update(_delta: float) -> void:

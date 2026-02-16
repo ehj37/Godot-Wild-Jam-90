@@ -11,8 +11,7 @@ func update(_delta: float) -> void:
 			_state_machine.transition_to("Airborne", {"jump": true})
 			return
 	else:
-		if Input.is_action_just_pressed("jump") && _player.can_double_jump:
-			_player.can_double_jump = false
+		if Input.is_action_just_pressed("jump") && _player.num_jumps > 0:
 			_state_machine.transition_to("Airborne", {"jump": true})
 			return
 
@@ -26,6 +25,9 @@ func update(_delta: float) -> void:
 
 
 func enter(_data: Dictionary = {}) -> void:
+	if _player.is_on_floor():
+		_player.recharge_dash_and_jump()
+
 	get_tree().create_timer(POST_DASH_PAUSE_DURATION).timeout.connect(
 		_on_post_dash_pause_timer_timeout
 	)

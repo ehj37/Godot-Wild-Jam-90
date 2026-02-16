@@ -4,11 +4,12 @@ const DASH_SPEED: float = 500.0
 const DASH_DURATION: float = 0.1
 
 var _dash_direction: Vector2
+var _started_on_floor: bool
 
 
 func update(_delta: float) -> void:
-	if _player.is_on_floor():
-		_player.recharge_dash_and_jump()
+	if _started_on_floor && !_player.is_on_floor():
+		_player.num_jumps = 1
 
 	if Input.is_action_pressed("climb_up") && _player.ladder_ray_cast_up.is_colliding():
 		_state_machine.transition_to("LadderUp")
@@ -28,6 +29,9 @@ func update(_delta: float) -> void:
 func enter(_data: Dictionary = {}) -> void:
 	_player.can_dash = false
 	_player.animation_player.play("dash_right")
+
+	if _player.is_on_floor():
+		_started_on_floor = true
 
 	var input_direction: Vector2 = _player.get_input_direction()
 	if !input_direction.is_zero_approx():

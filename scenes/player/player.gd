@@ -9,11 +9,12 @@ const MOVE_ACCELERATION: float = 500.0
 const MOVE_DECELERATION: float = 700.0
 const MAX_MOVE_SPEED: float = 90.0
 const INITIAL_JUMP_SPEED: float = -225.0
+const MAX_NUM_JUMPS: int = 2
 const MOVE_LEFT: String = "move_left"
 const MOVE_RIGHT: String = "move_right"
-const BULLET_ABSORBING_STATES: Array[String] = ["Dash", "PostDash", "Plummet"]
+const BULLET_ABSORBING_STATES: Array[String] = ["Dash", "PostDash", "PrePlummet", "Plummet"]
 
-var can_double_jump: bool = true
+var num_jumps: int = 2
 var can_dash: bool = true
 var orientation: Player.Orientation = Orientation.RIGHT:
 	set(value):
@@ -72,8 +73,8 @@ func on_bullet_connect(bullet_type: Bullet.Type) -> void:
 			can_dash = true
 		Bullet.Type.STRENGTH:
 			pass  # TODO
-		Bullet.Type.EXTRA_JUMP:
-			can_double_jump = true
+		Bullet.Type.RECHARGE_JUMP:
+			num_jumps = MAX_NUM_JUMPS
 
 	bullet_absorb_aureole.flash(bullet_type)
 
@@ -94,7 +95,7 @@ func get_input_direction() -> Vector2:
 
 func recharge_dash_and_jump() -> void:
 	can_dash = true
-	can_double_jump = true
+	num_jumps = MAX_NUM_JUMPS
 
 
 func _physics_process(_delta: float) -> void:

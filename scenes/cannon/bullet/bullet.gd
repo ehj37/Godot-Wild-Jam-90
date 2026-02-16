@@ -2,7 +2,7 @@ class_name Bullet
 
 extends CharacterBody2D
 
-enum Type { EXTRA_DASH, STRENGTH, EXTRA_JUMP, DAMAGE }
+enum Type { EXTRA_DASH, STRENGTH, RECHARGE_JUMP, DAMAGE }
 enum SpawnDirection { UP, RIGHT, DOWN, LEFT }
 
 const BULLET_SPEED: float = 225.0
@@ -10,13 +10,13 @@ const TRAIL_AND_AUREOLE_ALPHA: float = 0.5
 const TRAIL_FADE_IN_TIME: float = 0.1
 const EXTRA_DASH_COLOR: Color = Color.FUCHSIA
 const STRENGTH_COLOR: Color = Color.ORANGE
-const EXTRA_JUMP_COLOR: Color = Color.AQUAMARINE
+const RECHARGE_JUMP_COLOR: Color = Color.AQUAMARINE
 const DAMAGE_COLOR: Color = Color.RED
 
 const TYPE_TO_COLOR: Dictionary = {
 	Type.EXTRA_DASH: EXTRA_DASH_COLOR,
 	Type.STRENGTH: STRENGTH_COLOR,
-	Type.EXTRA_JUMP: EXTRA_JUMP_COLOR,
+	Type.RECHARGE_JUMP: RECHARGE_JUMP_COLOR,
 	Type.DAMAGE: DAMAGE_COLOR
 }
 
@@ -53,8 +53,6 @@ func _ready() -> void:
 		SpawnDirection.LEFT:
 			_direction = Vector2.LEFT
 
-	sprite_aureole.modulate.a = TRAIL_AND_AUREOLE_ALPHA
-
 	_type_color = TYPE_TO_COLOR.get(type)
 	sprite_aureole.modulate = Color(_type_color, TRAIL_AND_AUREOLE_ALPHA)
 	sprite_bullet.modulate = _type_color
@@ -62,7 +60,9 @@ func _ready() -> void:
 	sprite_trail.rotate(_direction.angle())
 	sprite_trail.modulate.a = 0.0
 	var trail_alpha_tween: Tween = get_tree().create_tween()
-	trail_alpha_tween.tween_property(sprite_trail, "modulate:a", 1.0, TRAIL_FADE_IN_TIME)
+	trail_alpha_tween.tween_property(
+		sprite_trail, "modulate:a", TRAIL_AND_AUREOLE_ALPHA, TRAIL_FADE_IN_TIME
+	)
 
 	SignalBus.bullet_time_entered.connect(_on_bullet_time_entered)
 	SignalBus.bullet_time_exited.connect(_on_bullet_time_exited)

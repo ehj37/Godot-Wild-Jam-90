@@ -2,6 +2,9 @@ extends PlayerState
 
 const GRAVITY: float = 900.0
 const MAX_FALL_SPEED: float = 500.0
+# The downward speed necessary for the player to switch from the jump animation
+# to the fall animation
+const FALL_ANIMATION_SPEED_THRESHOLD: float = 75.0
 const AIRBORNE_MOVE_ACCELERATION: float = 850.0
 const INITIAL_JUMP_SPEED: float = -225.0
 const MIN_DIRECTIONAL_JUMP_SPEED_X: float = 0.75 * Player.MAX_MOVE_SPEED
@@ -18,14 +21,17 @@ func physics_update(delta: float) -> void:
 		)
 
 	_player.velocity.y = move_toward(_player.velocity.y, MAX_FALL_SPEED, Player.GRAVITY * delta)
+	if _player.velocity.y <= FALL_ANIMATION_SPEED_THRESHOLD:
+		_player.animation_player.play("jump_right")
+	else:
+		_player.animation_player.play("fall_right")
 
 	if input_direction.x > 0:
 		_player.orientation = Player.Orientation.RIGHT
 	elif input_direction.x < 0:
 		_player.orientation = Player.Orientation.LEFT
 
-	if Input.is_action_just_pressed("jump") && _player.can_double_jump:
-		_player.can_double_jump = false
+	if Input.is_action_just_pressed("jump") && _player.num_jumps > 0:
 		_apply_jump()
 
 	if _player.is_on_floor():
@@ -72,6 +78,8 @@ func enter(data: Dictionary = {}) -> void:
 
 
 func _apply_jump() -> void:
+	_player.num_jumps -= 1
+
 	var input_direction: Vector2 = _player.get_input_direction()
 	if !input_direction.is_zero_approx():
 		_player.velocity.x = sign(input_direction.x) * MIN_DIRECTIONAL_JUMP_SPEED_X

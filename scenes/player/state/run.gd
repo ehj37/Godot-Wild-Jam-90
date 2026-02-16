@@ -27,6 +27,7 @@ func physics_update(delta: float) -> void:
 			_in_coyote_time = true
 
 		if coyote_timer.is_stopped():
+			_player.num_jumps = 1
 			_state_machine.transition_to("Airborne")
 			return
 	else:
