@@ -2,45 +2,41 @@ extends PlayerState
 
 const GRAVITY: float = 900.0
 const MAX_FALL_SPEED: float = 500.0
-const AIRBORNE_MOVE_ACCELERATION: float = 150.0
+const AIRBORNE_MOVE_ACCELERATION: float = 850.0
 const INITIAL_JUMP_SPEED: float = -225.0
 const MIN_DIRECTIONAL_JUMP_SPEED_X: float = 0.75 * Player.MAX_MOVE_SPEED
-
-var _velocity_x: float
 
 
 func physics_update(delta: float) -> void:
 	var input_direction: Vector2 = _player.get_input_direction()
 	# Only change x component of velocity if there's player input.
 	if !input_direction.is_zero_approx():
-		_velocity_x = move_toward(
-			_velocity_x,
+		_player.velocity.x = move_toward(
+			_player.velocity.x,
 			input_direction.x * Player.MAX_MOVE_SPEED,
 			delta * AIRBORNE_MOVE_ACCELERATION
 		)
 
-	_player.velocity.x = _velocity_x
 	_player.velocity.y = move_toward(_player.velocity.y, MAX_FALL_SPEED, Player.GRAVITY * delta)
 
-	# Update orientation
-	if _player.velocity.x > 0:
+	if input_direction.x > 0:
 		_player.orientation = Player.Orientation.RIGHT
-	elif _player.velocity.x < 0:
+	elif input_direction.x < 0:
 		_player.orientation = Player.Orientation.LEFT
-	else:
-		# Fall back to input direction if velocity x is zero.
-		# Player may be up against a wall and pressing a direction, in which
-		# case velocity x is zero, but orientation x is nonzero.
-		if input_direction.x > 0:
-			_player.orientation = Player.Orientation.RIGHT
-		elif input_direction.x < 0:
-			_player.orientation = Player.Orientation.RIGHT
+
+	if Input.is_action_just_pressed("jump") && _player.can_double_jump:
+		_player.can_double_jump = false
+		_apply_jump()
 
 	if _player.is_on_floor():
 		if _player.get_input_direction().is_zero_approx():
 			_state_machine.transition_to("Idle")
 		else:
 			_state_machine.transition_to("Run")
+		return
+
+	if Input.is_action_just_pressed("dash") && _player.can_dash:
+		_state_machine.transition_to("Dash")
 		return
 
 	if Input.is_action_pressed("climb_up") && _player.ladder_ray_cast_up.is_colliding():
@@ -72,22 +68,13 @@ func physics_update(delta: float) -> void:
 
 func enter(data: Dictionary = {}) -> void:
 	if data.get("jump", false):
-		var input_direction: Vector2 = _player.get_input_direction()
-		if !input_direction.is_zero_approx():
-			var jump_velocity_x_magnitude: float
-			# Preserve speed if not a pivot jump, give half of max speed for a
-			# pivot jump.
-			if sign(input_direction.x) == sign(_player.velocity.x):
-				jump_velocity_x_magnitude = max(
-					abs(_player.velocity.x), MIN_DIRECTIONAL_JUMP_SPEED_X
-				)
-			else:
-				jump_velocity_x_magnitude = MIN_DIRECTIONAL_JUMP_SPEED_X
+		_apply_jump()
 
-			_velocity_x = sign(input_direction.x) * jump_velocity_x_magnitude
-		else:
-			_velocity_x = _player.velocity.x
 
-		_player.velocity = Vector2(_velocity_x, INITIAL_JUMP_SPEED)
+func _apply_jump() -> void:
+	var input_direction: Vector2 = _player.get_input_direction()
+	if !input_direction.is_zero_approx():
+		_player.velocity.x = sign(input_direction.x) * MIN_DIRECTIONAL_JUMP_SPEED_X
 	else:
-		_velocity_x = _player.velocity.x
+		_player.velocity.x = 0
+	_player.velocity.y = INITIAL_JUMP_SPEED

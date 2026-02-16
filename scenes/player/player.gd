@@ -2,16 +2,20 @@ class_name Player
 
 extends CharacterBody2D
 
+signal bullet_connected
+
 enum Orientation { RIGHT, LEFT }
 
 const GRAVITY: float = 900.0
 const MOVE_ACCELERATION: float = 500.0
 const MOVE_DECELERATION: float = 700.0
-const MAX_MOVE_SPEED: float = 100.0
+const MAX_MOVE_SPEED: float = 90.0
 const INITIAL_JUMP_SPEED: float = -225.0
 const MOVE_LEFT: String = "move_left"
 const MOVE_RIGHT: String = "move_right"
 
+var can_double_jump: bool = true
+var can_dash: bool = true
 var orientation: Player.Orientation = Orientation.RIGHT:
 	set(value):
 		match value:
@@ -38,6 +42,7 @@ var orientation: Player.Orientation = Orientation.RIGHT:
 
 var _pressed_movement_inputs: Array[String] = []
 
+@onready var state_machine: StateMachine = $StateMachine
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var state_machine_debug_label: Label = $StateMachineDebugLabel
@@ -50,8 +55,17 @@ var _pressed_movement_inputs: Array[String] = []
 @onready var mantle_ray_cast_down: RayCast2D = $MantleRayCastDown
 
 
-func take_damage() -> void:
-	pass
+func on_bullet_connect(bullet_type: Bullet.Type) -> void:
+	# TODO: Transition to death if hit by a bullet when the state isn't dash or
+	# post dash.
+
+	bullet_connected.emit()
+
+	match bullet_type:
+		Bullet.Type.EXTRA_DASH:
+			can_dash = true
+		Bullet.Type.STRENGTH:
+			pass  # TODO
 
 
 func get_input_direction() -> Vector2:
@@ -66,6 +80,11 @@ func get_input_direction() -> Vector2:
 			return Vector2.LEFT
 
 	return Vector2.ZERO
+
+
+func recharge_dash_and_jump() -> void:
+	can_dash = true
+	can_double_jump = true
 
 
 func _physics_process(_delta: float) -> void:

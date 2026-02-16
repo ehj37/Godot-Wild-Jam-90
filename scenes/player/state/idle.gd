@@ -4,6 +4,10 @@ const IDLE_COLOR: Color = Color.RED
 
 
 func physics_update(delta: float) -> void:
+	if Input.is_action_just_pressed("dash") && _player.can_dash:
+		_state_machine.transition_to("Dash")
+		return
+
 	if Input.is_action_pressed("climb_up") && _player.ladder_ray_cast_up.is_colliding():
 		_state_machine.transition_to("LadderUp")
 		return
@@ -29,3 +33,4 @@ func physics_update(delta: float) -> void:
 
 func enter(_data: Dictionary = {}) -> void:
 	_player.animation_player.play("idle_right")
+	_player.recharge_dash_and_jump()

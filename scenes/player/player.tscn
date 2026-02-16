@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://bu1hqgwdestxa" path="res://scenes/player/state/airborne.gd" id="5_75vfm"]
 [ext_resource type="Script" uid="uid://c5d5kkdeiqbdt" path="res://scenes/player/state/pre_plummet.gd" id="6_0owmy"]
 [ext_resource type="Script" uid="uid://586tvrtvyeud" path="res://scenes/player/state/plummet.gd" id="6_75vfm"]
+[ext_resource type="Script" uid="uid://cby143l0cqbsk" path="res://scenes/player/state/dash.gd" id="6_ugbui"]
+[ext_resource type="Script" uid="uid://dqv5mblsvafiw" path="res://scenes/player/state/post_dash.gd" id="7_fcs02"]
 [ext_resource type="Script" uid="uid://l6mw7uy5ei2d" path="res://scenes/player/state/ladder_up.gd" id="8_5gtgg"]
 [ext_resource type="Script" uid="uid://duq1n4vdwhr3f" path="res://scenes/player/state/post_plummet.gd" id="8_fm80t"]
 [ext_resource type="Script" uid="uid://c2jgqmmpyt4mw" path="res://scenes/player/state/ladder_idle.gd" id="9_h17s1"]
@@ -167,6 +169,14 @@ one_shot = true
 
 [node name="Airborne" type="Node" parent="StateMachine" unique_id=2022321991]
 script = ExtResource("5_75vfm")
+metadata/_custom_type_script = "uid://co3jswbhja34f"
+
+[node name="Dash" type="Node" parent="StateMachine" unique_id=1714762164]
+script = ExtResource("6_ugbui")
+metadata/_custom_type_script = "uid://co3jswbhja34f"
+
+[node name="PostDash" type="Node" parent="StateMachine" unique_id=1733779874]
+script = ExtResource("7_fcs02")
 metadata/_custom_type_script = "uid://co3jswbhja34f"
 
 [node name="PrePlummet" type="Node" parent="StateMachine" unique_id=814125590]

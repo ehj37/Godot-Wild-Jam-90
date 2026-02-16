@@ -7,7 +7,7 @@
 script = ExtResource("1_4r05k")
 
 [node name="BulletSpawnTimer" type="Timer" parent="." unique_id=1284499902]
-wait_time = 0.5
+wait_time = 0.3
 autostart = true
 script = ExtResource("2_xgg2g")
 metadata/_custom_type_script = "uid://dbx8g1pa3ktfw"

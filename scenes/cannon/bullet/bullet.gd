@@ -2,8 +2,11 @@ class_name Bullet
 
 extends CharacterBody2D
 
+enum Type { EXTRA_DASH, STRENGTH }
+
 const BULLET_SPEED: float = 225.0
 
+var type: Type = Type.EXTRA_DASH
 var _current_speed: float
 
 @onready var animation_player: BulletTimeAnimationPlayer = $BulletTimeAnimationPlayer
@@ -37,6 +40,6 @@ func _on_bullet_time_exited() -> void:
 func _on_obstacle_detector_area_body_entered(body: Node2D) -> void:
 	if body is Player:
 		var player: Player = body
-		player.take_damage()
+		player.on_bullet_connect(type)
 
 	queue_free()

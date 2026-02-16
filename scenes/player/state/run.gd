@@ -1,7 +1,7 @@
 extends PlayerState
 
 const NON_PIVOT_MOVE_ACCELERATION: float = 650.0
-const PIVOT_MOVE_ACCELERATION: float = 1200.0
+const PIVOT_MOVE_ACCELERATION: float = 1800.0
 
 var _in_coyote_time: bool = false
 
@@ -9,6 +9,10 @@ var _in_coyote_time: bool = false
 
 
 func physics_update(delta: float) -> void:
+	if Input.is_action_just_pressed("dash") && _player.can_dash:
+		_state_machine.transition_to("Dash")
+		return
+
 	if Input.is_action_pressed("climb_up") && _player.ladder_ray_cast_up.is_colliding():
 		_state_machine.transition_to("LadderUp")
 		return
@@ -58,3 +62,4 @@ func physics_update(delta: float) -> void:
 func enter(_data: Dictionary = {}) -> void:
 	_player.animation_player.play("run_right")
 	_in_coyote_time = false
+	_player.recharge_dash_and_jump()

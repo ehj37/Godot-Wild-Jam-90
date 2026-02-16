@@ -18,6 +18,10 @@ func update(_delta: float) -> void:
 		_state_machine.transition_to("Airborne")
 		return
 
+	if Input.is_action_just_pressed("dash") && _player.can_dash:
+		_state_machine.transition_to("Dash")
+		return
+
 	if _player.is_on_floor() && !_player.get_input_direction().is_zero_approx():
 		_state_machine.transition_to("Run")
 
