@@ -8,7 +8,7 @@ func update(_delta: float) -> void:
 		_player.velocity.y = LADDER_DOWN_SPEED
 		return
 
-	if Input.is_action_pressed("climb_up") && _player.ladder_ray_cast_up.is_colliding():
+	if _can_transition_to_ladder_up():
 		_state_machine.transition_to("LadderUp")
 		return
 

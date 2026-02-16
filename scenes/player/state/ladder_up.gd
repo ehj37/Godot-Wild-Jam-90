@@ -4,11 +4,15 @@ const LADDER_UP_SPEED: float = 50.0
 
 
 func update(_delta: float) -> void:
+	if Input.is_action_just_pressed("jump"):
+		_ladder_jump_transition()
+		return
+
 	if Input.is_action_pressed("climb_up") && _player.ladder_ray_cast_up.is_colliding():
 		_player.velocity.y = -LADDER_UP_SPEED
 		return
 
-	if Input.is_action_pressed("climb_down") && _player.ladder_ray_cast_down.is_colliding():
+	if _can_transition_to_ladder_down():
 		_state_machine.transition_to("LadderDown")
 		return
 

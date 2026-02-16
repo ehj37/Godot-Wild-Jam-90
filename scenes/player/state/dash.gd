@@ -11,11 +11,11 @@ func update(_delta: float) -> void:
 	if _started_on_floor && !_player.is_on_floor():
 		_player.num_jumps = 1
 
-	if Input.is_action_pressed("climb_up") && _player.ladder_ray_cast_up.is_colliding():
+	if _can_transition_to_ladder_up():
 		_state_machine.transition_to("LadderUp")
 		return
 
-	if Input.is_action_pressed("climb_down") && _player.ladder_ray_cast_down.is_colliding():
+	if _can_transition_to_ladder_down():
 		_state_machine.transition_to("LadderDown")
 		return
 
@@ -30,8 +30,7 @@ func enter(_data: Dictionary = {}) -> void:
 	_player.can_dash = false
 	_player.animation_player.play("dash_right")
 
-	if _player.is_on_floor():
-		_started_on_floor = true
+	_started_on_floor = _player.is_on_floor()
 
 	var input_direction: Vector2 = _player.get_input_direction()
 	if !input_direction.is_zero_approx():

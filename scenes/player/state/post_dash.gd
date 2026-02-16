@@ -6,6 +6,14 @@ const POST_DASH_PAUSE_DURATION: float = 0.2
 func update(_delta: float) -> void:
 	_player.velocity = Vector2.ZERO
 
+	if _can_transition_to_ladder_up():
+		_state_machine.transition_to("LadderUp")
+		return
+
+	if _can_transition_to_ladder_down():
+		_state_machine.transition_to("LadderDown")
+		return
+
 	if _player.is_on_floor():
 		if Input.is_action_just_pressed("jump"):
 			_state_machine.transition_to("Airborne", {"jump": true})
