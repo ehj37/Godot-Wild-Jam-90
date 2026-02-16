@@ -27,6 +27,7 @@ func update(_delta: float) -> void:
 
 func enter(_data: Dictionary = {}) -> void:
 	_player.can_dash = false
+	_player.animation_player.play("dash_right")
 
 	var input_direction: Vector2 = _player.get_input_direction()
 	if !input_direction.is_zero_approx():

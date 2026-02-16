@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://snmm11pkd4oj"
+path="res://.godot/imported/cannon.aseprite-18ef4bc145abd39858b0f0528c02272b.res"
+
+[deps]
+
+source_file="res://scenes/cannon/cannon.aseprite"
+dest_files=["res://.godot/imported/cannon.aseprite-18ef4bc145abd39858b0f0528c02272b.res"]
+
+[params]
+

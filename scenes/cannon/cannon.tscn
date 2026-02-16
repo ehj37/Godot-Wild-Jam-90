@@ -1,10 +1,97 @@
-[gd_scene format=3 uid="uid://brgwj8thj21yb"]
+[gd_scene format=4 uid="uid://brgwj8thj21yb"]
 
 [ext_resource type="Script" uid="uid://d3k4pfe44jwie" path="res://scenes/cannon/cannon.gd" id="1_4r05k"]
 [ext_resource type="Script" uid="uid://dbx8g1pa3ktfw" path="res://scripts/bullet_time_timer.gd" id="2_xgg2g"]
 
-[node name="Cannon" type="StaticBody2D" unique_id=1230095467]
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_xgg2g"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAACUAAAAUklGRowAAABXRUJQVlA4TIAAAAAvP8APEBcgEEhxChMuEEhxCgsuEEhxEDM+/wH/Ctg2kqTodN59IJgPW2c9RfFJsMUY6Lb7ZkT/Fblt2zCn1fkM9Vej1cQaUgWk76nTvNBYvs+RPV0cypqpeOVOnZ+12LBRF0dGMk7XXLiMEx7Bjfgf+J/4H/mfQRUQa0ir1U8NBQ==")
+size_override = Vector2(64, 64)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_p7cvk"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAAB0AAAAUklGRmwAAABXRUJQVlA4TF8AAAAvP8APEBcgEEhC3V9iDYFAkun+FAsEkmz3J3j+A/4VqIkkKVp+wpNwUpBwklDPsuFlEf1X2LZtk72T9gxkAU8R9fVd3+DAJqobc0eIbT2GcaD/8FHCB/F/4P+k/3MSEAA=")
+size_override = Vector2(64, 64)
+
+[node name="Cannon" type="Node2D" unique_id=1331754863]
+texture_filter = 1
 script = ExtResource("1_4r05k")
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/cannon/cannon.aseprite",
+"source_uid": 1290987536194481521
+}
+metadata/_aseprite_wizard_source_file_hash_ = "342d7268a5e3c9adc1d94ea27a1d74f5"
+
+[node name="SpritePlate" type="Sprite2D" parent="." unique_id=1461763245]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_xgg2g")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["Plate"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/cannon/cannon.aseprite",
+"source_uid": 1290987536194481521
+}
+metadata/_aseprite_wizard_source_file_hash_ = "342d7268a5e3c9adc1d94ea27a1d74f5"
+
+[node name="SpriteLights" type="Sprite2D" parent="." unique_id=277126473]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_p7cvk")
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": ["Lights"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/cannon/cannon.aseprite",
+"source_uid": 1290987536194481521
+}
+metadata/_aseprite_wizard_source_file_hash_ = "342d7268a5e3c9adc1d94ea27a1d74f5"
 
 [node name="BulletSpawnTimer" type="Timer" parent="." unique_id=1284499902]
 wait_time = 0.3

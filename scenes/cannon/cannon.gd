@@ -1,7 +1,17 @@
 class_name Cannon
 
-extends StaticBody2D
+extends Node2D
 
+enum SpawnDirection { UP, RIGHT, DOWN, LEFT }
+
+const LIGHT_UP_COLOR: Color = Color.YELLOW
+
+@export var bullet_type_pattern: Array[Bullet.Type]
+@export var spawn_direction: SpawnDirection = SpawnDirection.RIGHT
+
+var _bullet_queue: Array[Bullet.Type]
+
+@onready var sprite_lights: Sprite2D = $SpriteLights
 @onready var bullet_packed_scene: PackedScene = preload("./bullet/bullet.tscn")
 @onready var timer: BulletTimeTimer = $BulletSpawnTimer
 @onready var timer_label: Label = $TimerLabel
@@ -11,7 +21,27 @@ func _process(_delta: float) -> void:
 	timer_label.text = str(timer.time_left)
 
 
+func _ready() -> void:
+	assert(
+		bullet_type_pattern.size() > 0,
+		"Cannon at " + str(global_position) + " does not specify bullet type pattern."
+	)
+
+
 func _on_bullet_spawn_timer_timeout() -> void:
+	if _bullet_queue.size() == 0:
+		_bullet_queue = bullet_type_pattern.duplicate()
+
 	var bullet: Bullet = bullet_packed_scene.instantiate()
+	bullet.type = _bullet_queue.pop_front()
+	match spawn_direction:
+		SpawnDirection.UP:
+			bullet.spawn_direction = Bullet.SpawnDirection.UP
+		SpawnDirection.RIGHT:
+			bullet.spawn_direction = Bullet.SpawnDirection.RIGHT
+		SpawnDirection.DOWN:
+			bullet.spawn_direction = Bullet.SpawnDirection.DOWN
+		SpawnDirection.LEFT:
+			bullet.spawn_direction = Bullet.SpawnDirection.LEFT
 	bullet.global_position = global_position
 	LevelManager.current_level.add_child(bullet)

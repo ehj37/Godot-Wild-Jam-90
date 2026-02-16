@@ -73,6 +73,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAA
 
 [node name="Cannon" parent="Screen3" unique_id=1230095467 instance=ExtResource("8_15mv3")]
 position = Vector2(187, 224)
+bullet_type_pattern = Array[int]([0, 2, 3])
 
 [node name="Marker2D" type="Marker2D" parent="Screen3" unique_id=812081805]
 position = Vector2(292, 263)

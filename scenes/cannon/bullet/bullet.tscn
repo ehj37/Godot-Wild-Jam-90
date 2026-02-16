@@ -2,10 +2,46 @@
 
 [ext_resource type="Script" uid="uid://b8tcmylonkgr1" path="res://scenes/cannon/bullet/bullet.gd" id="1_yqryf"]
 [ext_resource type="Script" uid="uid://b0deraodmxcp2" path="res://scripts/bullet_time_animation_player.gd" id="2_au5d4"]
+[ext_resource type="Script" uid="uid://dbx8g1pa3ktfw" path="res://scripts/bullet_time_timer.gd" id="3_pwyla"]
 
-[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_au5d4"]
-_data = PackedByteArray("AAADAAUAAAABAAAAMAAAACAAAADOAAAAUklGRsYAAABXRUJQVlA4TLkAAAAvL8AHEC8gECCY9H9iY/7VBEDCcNM/K7glyLYp2tRO/gD8LwE2SgXXkSQ7zWEScErA/QMr/mUuALnLP5dnjn0lAojov8IASBPWCegX8o8yNSwB4BLccgL9GZoAvSIS3NoJqQ67LBC5ZQSqdpijjp8dj2hEPYKuQxPH43GBS3Douhk8+AV9hf+IjmdB/HdfCnxufrSBl61JPH+2usMtxtuJv4M8P3necjj5lDS/PPgFfYX/qDiee8q3AAA=")
-size_override = Vector2(48, 32)
+[sub_resource type="Animation" id="Animation_s2wpr"]
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpriteBullet:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteAureole:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 2, 3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpriteTrail:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [5, 5, 5]
+}
 
 [sub_resource type="Animation" id="Animation_pwyla"]
 length = 0.25
@@ -13,10 +49,34 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("SpriteBullet:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = false
 tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteAureole:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 0, 0, 0, 0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpriteTrail:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
 "times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1),
 "update": 1,
@@ -25,42 +85,27 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s2wpr"]
 _data = {
+&"die": SubResource("Animation_s2wpr"),
 &"fly": SubResource("Animation_pwyla")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_au5d4"]
 radius = 3.0
 
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_pwyla"]
+_data = PackedByteArray("AAADAAUAAAABAAAAYAAAAEAAAAByAAAAUklGRmoAAABXRUJQVlA4TF4AAAAvX8APEA8w//M///Mf8GAbSZKTRkahMv1PlUC0OjwKM6L/atu2YaTJTjnEt1hiRYcWc0EqyAVrRS7v/VYxYhQTh3jl5RGA0l9xKpgLIBWkB7kklcCITkwc4pWXR58k")
+size_override = Vector2(96, 64)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_s2wpr"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAAC2AAAAUklGRq4AAABXRUJQVlA4TKIAAAAvP8APEB8w//M//wrZRoDxMR3TH8AJ4XDU2rar/F4pI0x8E3wJtOsHKQzJVYEkBJD8dsKmM43ovyK3bRvllCpdfkbwy+oYKZdYOVXKdamcG+W2VtyVrlPjHonpuliMeyWm65Zi3BuGGx7BgzgHzumBHP90tSGxSYnDijAjYxaCMUvJkLB0Y2DCsbtvpkWGGxzhgzgHzglzfDbnTUq0YfBFFQA=")
+size_override = Vector2(64, 64)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_wuuge"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAACQAAAAUklGRogAAABXRUJQVlA4THwAAAAvP8APEBcw//M//wKBJNitlg14GGxj27Zx3vMX3RKMUBX3dSY0qjAihR7OjRBG9F+R27aNfEqHneQZ+BKtWQVMPXOMzDYz18Kcu0YX+knA6N/KgcR+7GRAzX7sVAPGfsZlKSCSqzhP6Rmzur7FaHQReKKN9B70ngJ7fB8B")
+size_override = Vector2(64, 64)
+
 [node name="Bullet" type="CharacterBody2D" unique_id=919239186]
 script = ExtResource("1_yqryf")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=731303782]
-texture_filter = 1
-texture = SubResource("PortableCompressedTexture2D_au5d4")
-hframes = 3
-vframes = 2
-metadata/_aseprite_wizard_interface_config_ = {
-"pending_changes": {}
-}
-metadata/_aseprite_wizard_config_ = {
-"convert_fps_field": 60.0,
-"convert_ms_field": 16.0,
-"convert_to_fps": false,
-"embed_tex": true,
-"i_mode": 0,
-"keep_anim_length": false,
-"layers": [],
-"o_ex_p": "",
-"o_folder": "",
-"o_name": "",
-"only_visible": false,
-"player": "BulletTimeAnimationPlayer",
-"scale": "1.0",
-"slice": "",
-"source": "res://scenes/cannon/bullet/bullet.aseprite",
-"source_uid": 3195072994376321636
-}
-metadata/_aseprite_wizard_source_file_hash_ = "6b3173a6bd7a7482dbc6706a3e93b489"
 
 [node name="BulletTimeAnimationPlayer" type="AnimationPlayer" parent="." unique_id=961967365]
 libraries/ = SubResource("AnimationLibrary_s2wpr")
@@ -74,4 +119,99 @@ collision_mask = 65
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ObstacleDetectorArea" unique_id=1567344346]
 shape = SubResource("CircleShape2D_au5d4")
 
+[node name="SpriteTrail" type="Sprite2D" parent="." unique_id=1684178065]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_pwyla")
+hframes = 3
+vframes = 2
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"output_section": false,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": ["Trail"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "BulletTimeAnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/cannon/bullet/bullet.aseprite",
+"source_uid": 3195072994376321636
+}
+metadata/_aseprite_wizard_source_file_hash_ = "7f331368816f8f7a587dc03bde12a225"
+
+[node name="SpriteAureole" type="Sprite2D" parent="." unique_id=427459166]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_s2wpr")
+hframes = 2
+vframes = 2
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": ["Aureole"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "BulletTimeAnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/cannon/bullet/bullet.aseprite",
+"source_uid": 3195072994376321636
+}
+metadata/_aseprite_wizard_source_file_hash_ = "7f331368816f8f7a587dc03bde12a225"
+
+[node name="SpriteBullet" type="Sprite2D" parent="." unique_id=1947926286]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_wuuge")
+hframes = 2
+vframes = 2
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 0,
+"keep_anim_length": false,
+"layers": ["Bullet"],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "BulletTimeAnimationPlayer",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/cannon/bullet/bullet.aseprite",
+"source_uid": 3195072994376321636
+}
+metadata/_aseprite_wizard_source_file_hash_ = "7f331368816f8f7a587dc03bde12a225"
+
+[node name="BulletFlashTimer" type="Timer" parent="." unique_id=232562841]
+wait_time = 0.125
+autostart = true
+script = ExtResource("3_pwyla")
+metadata/_custom_type_script = "uid://dbx8g1pa3ktfw"
+
 [connection signal="body_entered" from="ObstacleDetectorArea" to="." method="_on_obstacle_detector_area_body_entered"]
+[connection signal="timeout" from="BulletFlashTimer" to="." method="_on_bullet_flash_timer_timeout"]

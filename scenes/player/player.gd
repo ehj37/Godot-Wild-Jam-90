@@ -63,7 +63,7 @@ func on_bullet_connect(bullet_type: Bullet.Type) -> void:
 	if current_state_name == "Hurt":
 		return
 
-	if !BULLET_ABSORBING_STATES.has(current_state_name):
+	if !BULLET_ABSORBING_STATES.has(current_state_name) || bullet_type == Bullet.Type.DAMAGE:
 		state_machine.transition_to("Hurt")
 		return
 
@@ -72,6 +72,8 @@ func on_bullet_connect(bullet_type: Bullet.Type) -> void:
 			can_dash = true
 		Bullet.Type.STRENGTH:
 			pass  # TODO
+		Bullet.Type.EXTRA_JUMP:
+			can_double_jump = true
 
 	bullet_absorb_aureole.flash(bullet_type)
 
