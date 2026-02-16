@@ -2,17 +2,16 @@ class_name Player
 
 extends CharacterBody2D
 
-signal bullet_connected
-
 enum Orientation { RIGHT, LEFT }
 
-const GRAVITY: float = 900.0
+const GRAVITY: float = 800.0
 const MOVE_ACCELERATION: float = 500.0
 const MOVE_DECELERATION: float = 700.0
 const MAX_MOVE_SPEED: float = 90.0
 const INITIAL_JUMP_SPEED: float = -225.0
 const MOVE_LEFT: String = "move_left"
 const MOVE_RIGHT: String = "move_right"
+const BULLET_ABSORBING_STATES: Array[String] = ["Dash", "PostDash", "Plummet"]
 
 var can_double_jump: bool = true
 var can_dash: bool = true
@@ -44,6 +43,7 @@ var _pressed_movement_inputs: Array[String] = []
 
 @onready var state_machine: StateMachine = $StateMachine
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var bullet_absorb_aureole: BulletAbsorbAureole = $BulletAbsorbAureole
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var state_machine_debug_label: Label = $StateMachineDebugLabel
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -59,13 +59,21 @@ func on_bullet_connect(bullet_type: Bullet.Type) -> void:
 	# TODO: Transition to death if hit by a bullet when the state isn't dash or
 	# post dash.
 
-	bullet_connected.emit()
+	var current_state_name: String = state_machine.current_state.name
+	if current_state_name == "Hurt":
+		return
+
+	if !BULLET_ABSORBING_STATES.has(current_state_name):
+		state_machine.transition_to("Hurt")
+		return
 
 	match bullet_type:
 		Bullet.Type.EXTRA_DASH:
 			can_dash = true
 		Bullet.Type.STRENGTH:
 			pass  # TODO
+
+	bullet_absorb_aureole.flash(bullet_type)
 
 
 func get_input_direction() -> Vector2:

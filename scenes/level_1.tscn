@@ -13,12 +13,13 @@
 script = ExtResource("1_15mv3")
 
 [node name="Player" parent="." unique_id=926355718 instance=ExtResource("2_e3sih")]
-position = Vector2(244, 251)
+position = Vector2(295, 779)
 
 [node name="Camera" parent="." unique_id=1830973701 instance=ExtResource("3_2y5yt")]
 position = Vector2(240, 136)
 
-[node name="Screen" parent="." unique_id=933863963 node_paths=PackedStringArray("screen_below") instance=ExtResource("4_2os1m")]
+[node name="Screen" parent="." unique_id=933863963 node_paths=PackedStringArray("spawn_point", "screen_below") instance=ExtResource("4_2os1m")]
+spawn_point = NodePath("Marker2D")
 screen_below = NodePath("../Screen2")
 
 [node name="Terrain" parent="Screen" unique_id=1450694777 instance=ExtResource("5_go7sj")]
@@ -31,8 +32,12 @@ tile_map_data = PackedByteArray("AAACAP//AAAAAAIAAAACAP7/AAAAAAIAAAACAP3/AAAAAAI
 [node name="BreakablePlatform" parent="Screen" unique_id=621922022 instance=ExtResource("7_pa8r4")]
 position = Vector2(240, 268)
 
-[node name="Screen2" parent="." unique_id=719241498 node_paths=PackedStringArray("screen_above", "screen_below") instance=ExtResource("4_2os1m")]
+[node name="Marker2D" type="Marker2D" parent="Screen" unique_id=1769437200]
+position = Vector2(240, 254)
+
+[node name="Screen2" parent="." unique_id=719241498 node_paths=PackedStringArray("spawn_point", "screen_above", "screen_below") instance=ExtResource("4_2os1m")]
 position = Vector2(0, 272)
+spawn_point = NodePath("Marker2D")
 screen_above = NodePath("../Screen")
 screen_below = NodePath("../Screen3")
 
@@ -55,8 +60,12 @@ position = Vector2(456, 268)
 [node name="BreakablePlatform4" parent="Screen2" unique_id=1839275746 instance=ExtResource("7_pa8r4")]
 position = Vector2(456, 220)
 
-[node name="Screen3" parent="." unique_id=974160926 node_paths=PackedStringArray("screen_above") instance=ExtResource("4_2os1m")]
+[node name="Marker2D" type="Marker2D" parent="Screen2" unique_id=1939889465]
+position = Vector2(240, 82)
+
+[node name="Screen3" parent="." unique_id=974160926 node_paths=PackedStringArray("spawn_point", "screen_above") instance=ExtResource("4_2os1m")]
 position = Vector2(0, 544)
+spawn_point = NodePath("Marker2D")
 screen_above = NodePath("../Screen2")
 
 [node name="Terrain" parent="Screen3" unique_id=55707980 instance=ExtResource("5_go7sj")]
@@ -64,3 +73,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAIAAAAAAAA
 
 [node name="Cannon" parent="Screen3" unique_id=1230095467 instance=ExtResource("8_15mv3")]
 position = Vector2(187, 224)
+
+[node name="Marker2D" type="Marker2D" parent="Screen3" unique_id=812081805]
+position = Vector2(292, 263)

@@ -4,6 +4,8 @@ class_name Screen
 
 extends Node2D
 
+@export var spawn_point: Marker2D
+
 @export var screen_above: Screen:
 	set(value):
 		value.global_position = Vector2(global_position.x, global_position.y - 272)
@@ -20,7 +22,11 @@ extends Node2D
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		set_meta("_edit_lock_", true)
+		if spawn_point == null:
+			spawn_point = Marker2D.new()
+			add_child(spawn_point)
 	else:
+		assert(spawn_point != null, "Must define spawn point for " + str(self.name))
 		panel_container.visible = false
 
 

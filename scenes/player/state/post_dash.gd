@@ -6,10 +6,19 @@ const POST_DASH_PAUSE_DURATION: float = 0.2
 func update(_delta: float) -> void:
 	_player.velocity = Vector2.ZERO
 
-	if Input.is_action_just_pressed("jump") && _player.can_double_jump:
-		_player.velocity.x = 0  # Why not, sure.
-		_player.can_double_jump = false
-		_state_machine.transition_to("Airborne", {"jump": true})  # Yech
+	if _player.is_on_floor():
+		if Input.is_action_just_pressed("jump"):
+			_state_machine.transition_to("Airborne", {"jump": true})
+			return
+	else:
+		if Input.is_action_just_pressed("jump") && _player.can_double_jump:
+			_player.can_double_jump = false
+			_state_machine.transition_to("Airborne", {"jump": true})
+			return
+
+		if Input.is_action_just_pressed("plummet"):
+			_state_machine.transition_to("PrePlummet")
+			return
 
 	if Input.is_action_just_pressed("dash"):
 		if _player.can_dash:

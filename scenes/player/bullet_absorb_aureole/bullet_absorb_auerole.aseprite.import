@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cusejnu2mftcr"
+path="res://.godot/imported/bullet_absorb_auerole.aseprite-f7d63549aa918e56e6d7bbbe465a0c46.res"
+
+[deps]
+
+source_file="res://scenes/player/bullet_absorb_aureole/bullet_absorb_auerole.aseprite"
+dest_files=["res://.godot/imported/bullet_absorb_auerole.aseprite-f7d63549aa918e56e6d7bbbe465a0c46.res"]
+
+[params]
+

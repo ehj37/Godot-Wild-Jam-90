@@ -1,0 +1,75 @@
+[gd_scene format=4 uid="uid://dyduby16rla6h"]
+
+[ext_resource type="Script" uid="uid://u50br7cyedi7" path="res://scenes/player/bullet_absorb_aureole/bullet_absorb_aureole.gd" id="1_7teav"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_7teav"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAACIAAAAUklGRoAAAABXRUJQVlA4THMAAAAvP8APEA8w//M///Mf8HAb21bcaFdICZRCaVAapVACoVbf4L1xZscR/Z+A4R8so6uza7vrwR3RPcl9sgNTYJQKszTYpUOQA6I8kOQDWQC++0CWB5IcEKVDkAa7VJilwCgDDPaT3ZPcEV0Pru2uzq6M7scDAA==")
+size_override = Vector2(64, 64)
+
+[sub_resource type="Animation" id="Animation_e5a0f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7teav"]
+resource_name = "flash"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.050046977, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0, 1, 1), Color(1, 0, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e5a0f"]
+_data = {
+&"RESET": SubResource("Animation_e5a0f"),
+&"flash": SubResource("Animation_7teav")
+}
+
+[node name="BulletAbsorbAureole" type="Sprite2D" unique_id=399943584]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_7teav")
+script = ExtResource("1_7teav")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/player/bullet_absorb_aureole/bullet_absorb_auerole.aseprite",
+"source_uid": 6214036694778786921
+}
+metadata/_aseprite_wizard_source_file_hash_ = "79554bbbaff6476b375ce54117d02edf"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=292649816]
+libraries/ = SubResource("AnimationLibrary_e5a0f")
