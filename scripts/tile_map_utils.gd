@@ -5,7 +5,6 @@ extends Node
 
 static func get_ladder_target_x(ray_cast: RayCast2D) -> float:
 	var colliding_tile_map_layer: TileMapLayer = ray_cast.get_collider()
-	print(ray_cast)
 	var collision_point: Vector2 = ray_cast.get_collision_point()
 	var collision_point_in_tile_map_local: Vector2 = colliding_tile_map_layer.to_local(
 		collision_point

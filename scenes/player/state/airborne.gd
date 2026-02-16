@@ -51,7 +51,7 @@ func physics_update(delta: float) -> void:
 		_state_machine.transition_to("LadderDown")
 		return
 
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("plummet"):
 		_state_machine.transition_to("PrePlummet")
 
 	var bottom_ray_cast_colliding: bool = _player.mantle_ray_cast_side_bottom.is_colliding()

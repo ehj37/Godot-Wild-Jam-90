@@ -3,6 +3,10 @@ extends PlayerState
 const NON_PIVOT_MOVE_ACCELERATION: float = 650.0
 const PIVOT_MOVE_ACCELERATION: float = 1200.0
 
+var _in_coyote_time: bool = false
+
+@onready var coyote_timer: Timer = $CoyoteTimer
+
 
 func physics_update(delta: float) -> void:
 	if Input.is_action_pressed("climb_up") && _player.ladder_ray_cast_up.is_colliding():
@@ -14,8 +18,17 @@ func physics_update(delta: float) -> void:
 		return
 
 	if !_player.is_on_floor():
-		_state_machine.transition_to("Airborne")
-		return
+		if !_in_coyote_time:
+			coyote_timer.start()
+			_in_coyote_time = true
+
+		if coyote_timer.is_stopped():
+			_state_machine.transition_to("Airborne")
+			return
+	else:
+		if _in_coyote_time:
+			coyote_timer.stop()
+			_in_coyote_time = false
 
 	if Input.is_action_just_pressed("jump"):
 		_state_machine.transition_to("Airborne", {"jump": true})
@@ -44,3 +57,4 @@ func physics_update(delta: float) -> void:
 
 func enter(_data: Dictionary = {}) -> void:
 	_player.animation_player.play("run_right")
+	_in_coyote_time = false

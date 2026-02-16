@@ -140,9 +140,8 @@ _data = {
 &"run_right": SubResource("Animation_fcs02")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_x7p2l"]
-radius = 5.0
-height = 22.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fm80t"]
+size = Vector2(6, 20)
 
 [node name="Player" type="CharacterBody2D" unique_id=926355718]
 collision_layer = 64
@@ -161,6 +160,10 @@ metadata/_custom_type_script = "uid://co3jswbhja34f"
 [node name="Run" type="Node" parent="StateMachine" unique_id=1576777896]
 script = ExtResource("4_lvxji")
 metadata/_custom_type_script = "uid://co3jswbhja34f"
+
+[node name="CoyoteTimer" type="Timer" parent="StateMachine/Run" unique_id=1013230698]
+wait_time = 0.06
+one_shot = true
 
 [node name="Airborne" type="Node" parent="StateMachine" unique_id=2022321991]
 script = ExtResource("5_75vfm")
@@ -206,6 +209,7 @@ texture = SubResource("PortableCompressedTexture2D_fm80t")
 offset = Vector2(0, -16)
 hframes = 3
 vframes = 3
+frame = 1
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {}
 }
@@ -233,8 +237,8 @@ metadata/_aseprite_wizard_source_file_hash_ = "61bcd0a31b460e409fcc1c9c3dc2d5a4"
 libraries/ = SubResource("AnimationLibrary_5gtgg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2139175605]
-position = Vector2(0, -11)
-shape = SubResource("CapsuleShape2D_x7p2l")
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_fm80t")
 
 [node name="LadderRayCastDown" type="RayCast2D" parent="." unique_id=237830720]
 position = Vector2(0, -10)
@@ -261,3 +265,4 @@ position = Vector2(10, -14)
 target_position = Vector2(0, 4)
 
 [connection signal="state_entered" from="StateMachine" to="." method="_on_state_machine_state_entered"]
+[connection signal="timeout" from="StateMachine/Run/CoyoteTimer" to="StateMachine/Run" method="_on_coyote_timer_timeout"]
