@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://da0jhpm4vnj2l"
+path="res://.godot/imported/pillar.aseprite-4ad79509aeb95b2bba7e195cfb82ebc9.res"
+
+[deps]
+
+source_file="res://scenes/backgrounds/background_castle/pillar/pillar.aseprite"
+dest_files=["res://.godot/imported/pillar.aseprite-4ad79509aeb95b2bba7e195cfb82ebc9.res"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://iidwxj1buxq5"
+path="res://.godot/imported/god_ray.aseprite-dac52d31546b8afc3c9e53607c40f5f1.res"
+
+[deps]
+
+source_file="res://scenes/backgrounds/background_castle/god_ray/god_ray.aseprite"
+dest_files=["res://.godot/imported/god_ray.aseprite-dac52d31546b8afc3c9e53607c40f5f1.res"]
+
+[params]
+

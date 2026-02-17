@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bxwnugftmysk7"
+path="res://.godot/imported/background_castle.aseprite-9cb7fa73e4d03bef62cd64f457afb233.res"
+
+[deps]
+
+source_file="res://scenes/backgrounds/background_castle/background_castle.aseprite"
+dest_files=["res://.godot/imported/background_castle.aseprite-9cb7fa73e4d03bef62cd64f457afb233.res"]
+
+[params]
+

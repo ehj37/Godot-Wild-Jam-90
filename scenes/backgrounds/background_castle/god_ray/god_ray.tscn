@@ -1,0 +1,32 @@
+[gd_scene format=4 uid="uid://em5ls01lrick"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_f2ol8"]
+_data = PackedByteArray("AAADAAUAAAABAAAAgAAAAIAAAABYAQAAUklGRlABAABXRUJQVlA4TEMBAAAvf8AfEDkCSVu87Y/of3wXEf0PQIokyZEUZIY/oIWzO9X18dNCSJDQ/D/XJhBIEp5mYQNp20TE/Rt9GY7ctpGkrmbPEoxynD887kMsFmIv3199wTyxKBaLotizxIvMOzaKReTLLIrhzLexF3Is9mTHzmIRL4qBH+zYCzl29e1E1tudmPWDnci6d2LWcEUbnpCxGRqbsLE7OLaiDXcibeknJRaxsalkxVa02IIXOxJjB2ZspMYGbuxGjm1wwx1t6bdmLNJj2tsdLLbBxc7A2AkZm6GxCRu7g2Mr2nAn0pZ+UmIRG5tKVmxFiy14sSMxdmDGRmps4MZu5NgGN9zRln5UYpEe0/6DdrDYBhc7A2MnZGyGxiZs7A6OrWjDnUhb+kGJXR0V27l6gYrxQuCFwAuBF8IMPRP28ELghcALgRfCf+pXAAA=")
+size_override = Vector2(128, 128)
+
+[node name="GodRay" type="Sprite2D" unique_id=1142831726]
+z_index = -4094
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_f2ol8")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/backgrounds/background_castle/god_ray/god_ray.aseprite",
+"source_uid": 6055234907914167625
+}
+metadata/_aseprite_wizard_source_file_hash_ = "d0709bf9b08ee027c35c4859c8f58653"

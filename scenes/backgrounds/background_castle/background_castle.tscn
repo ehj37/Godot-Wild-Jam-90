@@ -1,0 +1,59 @@
+[gd_scene format=4 uid="uid://b7kakumuj10d8"]
+
+[ext_resource type="PackedScene" uid="uid://em5ls01lrick" path="res://scenes/backgrounds/background_castle/god_ray/god_ray.tscn" id="1_laumy"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_cck86"]
+_data = PackedByteArray("AAADAAUAAAABAAAA4AEAABABAADaAQAAUklGRtIBAABXRUJQVlA4TMYBAAAv38FDEC+gJgAShv5hCAZ67ShKAiBA+L+FXzRrRDUBkDD0D0QoTtxe8x8AkFwbkv1fWgCxtt22TVbg8QZ0FrBpDZCInkDZfxgVlC8QSEdE/x2ojeRIVZcaylDTl7/Q2qPNX9pcD9e7J+ZLm4t3SP+xv1PYpRx84wpdCsxv2rMB+9+YzuQ+dscylLvWg++crhXmd62A/e+MyH1Ywz5eDn7yfWB+8uc6r798H9awhRBXaMFpUp4N2p/rTGjaHQuRi1eBDMYw6nmfuEILUNrXLfKG67xwr1tELhD9ncbk/2P9lXx/WuyV+J/s74DaX2/y14+/EdT+5nil+Px3c4D36U3+PPkbQe2vxasAh/Qf+/cDK4T9HeT702KVsL8R5f40OaKev0Ltr3W5HR7ElmGynNMRRC5exTvInw6vI4hcfPozhhXC3kQK4d2xDOUq4WEF+H9tDetH9fEH+T6wGDbnROTMXLzqcHswiI3FsDknImfm4lUcw589rACtFLT/6FgF2k7/0bGGk/4IOO3af6py3V/bwL60OYcHG5iruf9PsPQfCxBL/7EAsfQfCxBL/7EAsfQfs4al/1j6j6X/2GPl1mlXcqRcuJoB")
+size_override = Vector2(480, 272)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_laumy"]
+_data = PackedByteArray("AAADAAUAAAABAAAAgAAAAIAAAABYAQAAUklGRlABAABXRUJQVlA4TEMBAAAvf8AfEDkCSVu87Y/of3wXEf0PQIokyZEUZIY/oIWzO9X18dNCSJDQ/D/XJhBIEp5mYQNp20TE/Rt9GY7ctpGkrmbPEoxynD887kMsFmIv3199wTyxKBaLotizxIvMOzaKReTLLIrhzLexF3Is9mTHzmIRL4qBH+zYCzl29e1E1tudmPWDnci6d2LWcEUbnpCxGRqbsLE7OLaiDXcibeknJRaxsalkxVa02IIXOxJjB2ZspMYGbuxGjm1wwx1t6bdmLNJj2tsdLLbBxc7A2AkZm6GxCRu7g2Mr2nAn0pZ+UmIRG5tKVmxFiy14sSMxdmDGRmps4MZu5NgGN9zRln5UYpEe0/6DdrDYBhc7A2MnZGyGxiZs7A6OrWjDnUhb+kGJXR0V27l6gYrxQuCFwAuBF8IMPRP28ELghcALgRfCf+pXAAA=")
+size_override = Vector2(128, 128)
+
+[node name="BackgroundCastle" type="Sprite2D" unique_id=1596196569]
+z_index = -4095
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_cck86")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/backgrounds/background_castle/background_castle.aseprite",
+"source_uid": 4047005758485619420
+}
+metadata/_aseprite_wizard_source_file_hash_ = "0117e8f03389c7b81decace8fd2de0c2"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=150583506]
+clip_children = 1
+clip_contents = true
+offset_left = -208.0
+offset_top = -88.0
+offset_right = -85.0
+offset_bottom = 10.0
+
+[node name="GodRay" parent="ColorRect" unique_id=1155798481 instance=ExtResource("1_laumy")]
+z_as_relative = false
+position = Vector2(53, 48)
+
+[node name="GodRay" parent="." unique_id=1142831726 instance=ExtResource("1_laumy")]
+z_as_relative = false
+position = Vector2(-48, -40)
+texture = SubResource("PortableCompressedTexture2D_laumy")
+
+[node name="GodRay2" parent="." unique_id=721552992 instance=ExtResource("1_laumy")]
+z_as_relative = false
+position = Vector2(-96, -40)
