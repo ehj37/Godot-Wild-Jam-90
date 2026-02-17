@@ -1,9 +1,7 @@
 extends Node
 
-var is_initial_screen: bool = true
-
 var current_screen: Screen
-var _screens: Array[Screen] = []
+var _overlapping_screens: Array[Screen] = []
 
 
 func _ready() -> void:
@@ -12,19 +10,20 @@ func _ready() -> void:
 
 
 func _on_screen_entered(entered_screen: Screen) -> void:
-	if !_screens.is_empty() && is_initial_screen:
-		is_initial_screen = false
-
-	_screens.append(entered_screen)
+	_overlapping_screens.append(entered_screen)
 	current_screen = entered_screen
 	SignalBus.snap_camera_to.emit(entered_screen)
 
 
 func _on_screen_exited(exited_screen: Screen) -> void:
-	_screens.erase(exited_screen)
-	var new_current_screen: Screen = _screens.back()
+	_overlapping_screens.erase(exited_screen)
+
+	if _overlapping_screens.is_empty():
+		return
+
+	var new_current_screen: Screen = _overlapping_screens.back()
 
 	if current_screen == exited_screen:
 		SignalBus.snap_camera_to.emit(new_current_screen)
 
-	current_screen = _screens.back()
+	current_screen = _overlapping_screens.back()

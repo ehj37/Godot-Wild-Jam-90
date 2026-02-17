@@ -1,0 +1,26 @@
+[gd_scene format=4 uid="uid://ptww1rbgnew1"]
+
+[ext_resource type="Script" uid="uid://b1jqt4fmu6s6u" path="res://scripts/level.gd" id="1_3bmlt"]
+[ext_resource type="PackedScene" uid="uid://ch05hmffks1r0" path="res://scenes/camera/camera.tscn" id="2_eqxsl"]
+[ext_resource type="PackedScene" uid="uid://haj0s8e6d10f" path="res://scenes/player/player.tscn" id="3_b4j7a"]
+[ext_resource type="PackedScene" uid="uid://vom35pfu5i07" path="res://scenes/screen/screen.tscn" id="4_wo48x"]
+[ext_resource type="PackedScene" uid="uid://bsqtco2q1qevg" path="res://scenes/terrain/terrain.tscn" id="5_b4j7a"]
+
+[node name="Level2" type="Node2D" unique_id=1621913520]
+script = ExtResource("1_3bmlt")
+metadata/_custom_type_script = "uid://b1jqt4fmu6s6u"
+
+[node name="Camera" parent="." unique_id=1830973701 node_paths=PackedStringArray("initial_screen") instance=ExtResource("2_eqxsl")]
+position = Vector2(240, 136)
+initial_screen = NodePath("../Screen")
+
+[node name="Player" parent="." unique_id=926355718 instance=ExtResource("3_b4j7a")]
+position = Vector2(238, -98)
+
+[node name="Screen" parent="." unique_id=974160926 node_paths=PackedStringArray("spawn_point") instance=ExtResource("4_wo48x")]
+spawn_point = NodePath("Marker2D")
+
+[node name="Terrain" parent="Screen" unique_id=1450694777 instance=ExtResource("5_b4j7a")]
+tile_map_data = PackedByteArray("AAATABUAAAAAAAAAAAAUABUAAAAAAAAAAAAVABUAAAAAAAAAAAAWABUAAAAAAAAAAAAXABUAAAAAAAAAAAAYABUAAAAAAAAAAAAZABUAAAAAAAAAAAAaABUAAAAAAAAAAAAbABUAAAAAAAAAAAAcABUAAAAAAAAAAAAdABUAAAAAAAAAAAAeABUAAAAAAAAAAAAfABUAAAAAAAAAAAAgABUAAAAAAAAAAAAhABUAAAAAAAAAAAAiABUAAAAAAAAAAAAjABUAAAAAAAAAAAAkABUAAAAAAAAAAAAlABUAAAAAAAAAAAAmABUAAAAAAAAAAAAnABUAAAAAAAAAAAAoABUAAAAAAAAAAAApABUAAAAAAAAAAAAqABUAAAAAAAAAAAArABUAAAAAAAAAAAAsABUAAAAAAAAAAAAtABUAAAAAAAAAAAA=")
+
+[node name="Marker2D" type="Marker2D" parent="Screen" unique_id=1502207856]

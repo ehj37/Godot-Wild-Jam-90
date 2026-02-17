@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cph70f5lg4yw4"]
+
+[ext_resource type="Script" uid="uid://c60cjfyitrwvk" path="res://ui/fade_rect/fade_rect.gd" id="1_sq52n"]
+
+[node name="FadeRect" type="CanvasLayer" unique_id=913319610]
+script = ExtResource("1_sq52n")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=775608474]
+custom_minimum_size = Vector2(480, 272)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)

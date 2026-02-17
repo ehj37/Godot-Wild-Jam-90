@@ -29,6 +29,10 @@ func physics_update(delta: float) -> void:
 		_state_machine.transition_to("Run")
 		return
 
+	if Input.is_action_just_pressed("map"):
+		_state_machine.transition_to("Map")
+		return
+
 	_player.velocity.x = move_toward(_player.velocity.x, 0, delta * Player.MOVE_DECELERATION)
 
 

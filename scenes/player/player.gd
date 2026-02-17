@@ -13,6 +13,8 @@ const MOVE_LEFT: String = "move_left"
 const MOVE_RIGHT: String = "move_right"
 const BULLET_ABSORBING_STATES: Array[String] = ["Dash", "PostDash", "PrePlummet", "Plummet"]
 
+@export var spawn_falling: bool = true
+
 var jump_used: bool = false
 var double_jump_used: bool = false
 
@@ -113,6 +115,11 @@ func _physics_process(_delta: float) -> void:
 
 	_update_pressed_movement_inputs()
 	move_and_slide()
+
+
+func _ready() -> void:
+	if spawn_falling:
+		state_machine.initial_state = $StateMachine/BigFall
 
 
 func _update_pressed_movement_inputs() -> void:

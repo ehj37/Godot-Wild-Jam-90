@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://72268iahoivn"]
+
+[ext_resource type="Script" uid="uid://bqqutubhyixi1" path="res://scenes/big_fall_trigger_area/big_fall_trigger_area.gd" id="1_fv4c5"]
+
+[node name="BigFallTriggerArea" type="Area2D" unique_id=45400268]
+collision_layer = 0
+script = ExtResource("1_fv4c5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

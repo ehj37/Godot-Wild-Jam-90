@@ -25,8 +25,7 @@ func _ready() -> void:
 		if spawn_point == null:
 			spawn_point = Marker2D.new()
 			add_child(spawn_point)
-	else:
-		assert(spawn_point != null, "Must define spawn point for " + str(self.name))
+
 		panel_container.visible = false
 
 

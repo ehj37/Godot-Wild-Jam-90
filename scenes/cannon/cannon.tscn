@@ -12,6 +12,7 @@ _data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAAB0AAAAUklGRmwAAABXRUJQVlA4TF8
 size_override = Vector2(64, 64)
 
 [node name="Cannon" type="Node2D" unique_id=1331754863]
+z_index = -1
 texture_filter = 1
 script = ExtResource("1_4r05k")
 metadata/_aseprite_wizard_interface_config_ = {

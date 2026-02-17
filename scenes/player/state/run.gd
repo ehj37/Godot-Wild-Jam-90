@@ -56,6 +56,10 @@ func physics_update(delta: float) -> void:
 			_player.velocity.x, input_direction.x * Player.MAX_MOVE_SPEED, delta * move_acceleration
 		)
 
+	if Input.is_action_just_pressed("map"):
+		_state_machine.transition_to("Map")
+		return
+
 	if input_direction.is_zero_approx():
 		_state_machine.transition_to("Idle")
 

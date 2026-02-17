@@ -1,3 +1,5 @@
+class_name PlayerFallState
+
 extends PlayerState
 
 const GRAVITY: float = 900.0
