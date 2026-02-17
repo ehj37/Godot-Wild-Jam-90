@@ -16,7 +16,7 @@ func update(_delta: float) -> void:
 		_state_machine.transition_to("LadderDown")
 		return
 
-	if Input.is_action_just_pressed("dash") && _player.can_dash:
+	if _can_dash():
 		_state_machine.transition_to("Dash")
 		return
 
@@ -28,7 +28,7 @@ func enter(_data: Dictionary = {}) -> void:
 	_snap_to_ladder_center()
 	_player.animation_player.play("ladder_up")
 
-	_player.recharge_dash_and_jump()
+	_player.recharge_dash_and_jumps()
 
 
 func _snap_to_ladder_center() -> void:

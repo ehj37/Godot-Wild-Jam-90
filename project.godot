@@ -22,6 +22,7 @@ TimeScaleManager="*uid://dnkw1n08hd21l"
 ScreenManager="*uid://cqqcry8vtupf8"
 BulletTimeManager="*uid://dpl3nymg58yio"
 LevelManager="*uid://bhc3hau5atiu7"
+AbilityManager="*uid://xch16tjsq3xq"
 
 [debug]
 
@@ -88,6 +89,7 @@ dash={
 [layer_names]
 
 2d_physics/layer_1="Terrain"
+2d_physics/layer_5="AbilityChip"
 2d_physics/layer_6="Ladder"
 2d_physics/layer_7="Player"
 2d_physics/layer_8="Breakable"

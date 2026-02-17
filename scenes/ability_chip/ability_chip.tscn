@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ds4bs0p6riqyq"]
+
+[ext_resource type="Script" uid="uid://dm5pu8oxib01h" path="res://scenes/ability_chip/ability_chip.gd" id="1_6crvu"]
+[ext_resource type="PackedScene" uid="uid://bhpdpkln5wcu2" path="res://scenes/concentric_squares/concentric_squares.tscn" id="2_vpdc0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6crvu"]
+size = Vector2(2, 2)
+
+[node name="AbilityChip" type="StaticBody2D" unique_id=1667433427]
+rotation = 0.7853982
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("1_6crvu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=720081113]
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 3.0
+offset_bottom = 3.0
+color = Color(0, 1, 1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=242553171]
+shape = SubResource("RectangleShape2D_6crvu")
+
+[node name="ConcentricSquares" parent="." unique_id=1452434999 instance=ExtResource("2_vpdc0")]
+color = Color(0, 1, 1, 1)

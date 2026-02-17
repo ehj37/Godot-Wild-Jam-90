@@ -9,7 +9,7 @@ var _started_on_floor: bool
 
 func update(_delta: float) -> void:
 	if _started_on_floor && !_player.is_on_floor():
-		_player.num_jumps = 1
+		_player.jump_used = true
 
 	if _can_transition_to_ladder_up():
 		_state_machine.transition_to("LadderUp")
@@ -19,7 +19,7 @@ func update(_delta: float) -> void:
 		_state_machine.transition_to("LadderDown")
 		return
 
-	if Input.is_action_just_pressed("plummet"):
+	if _can_plummet():
 		_state_machine.transition_to("PrePlummet")
 		return
 
@@ -30,7 +30,11 @@ func enter(_data: Dictionary = {}) -> void:
 	_player.can_dash = false
 	_player.animation_player.play("dash_right")
 
-	_started_on_floor = _player.is_on_floor()
+	if _player.is_on_floor():
+		_player.recharge_jumps()
+		_started_on_floor = true
+	else:
+		_started_on_floor = false
 
 	var input_direction: Vector2 = _player.get_input_direction()
 	if !input_direction.is_zero_approx():

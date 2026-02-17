@@ -31,8 +31,9 @@ func physics_update(delta: float) -> void:
 	elif input_direction.x < 0:
 		_player.orientation = Player.Orientation.LEFT
 
-	if Input.is_action_just_pressed("jump") && _player.num_jumps > 0:
+	if _can_jump():
 		_apply_jump()
+		return
 
 	if _player.is_on_floor():
 		if _player.get_input_direction().is_zero_approx():
@@ -41,7 +42,7 @@ func physics_update(delta: float) -> void:
 			_state_machine.transition_to("Run")
 		return
 
-	if Input.is_action_just_pressed("dash") && _player.can_dash:
+	if _can_dash():
 		_state_machine.transition_to("Dash")
 		return
 
@@ -53,7 +54,7 @@ func physics_update(delta: float) -> void:
 		_state_machine.transition_to("LadderDown")
 		return
 
-	if Input.is_action_just_pressed("plummet"):
+	if _can_plummet():
 		_state_machine.transition_to("PrePlummet")
 
 	var bottom_ray_cast_colliding: bool = _player.mantle_ray_cast_side_bottom.is_colliding()
@@ -78,7 +79,14 @@ func enter(data: Dictionary = {}) -> void:
 
 
 func _apply_jump() -> void:
-	_player.num_jumps -= 1
+	# Trust that jump_used and double_jump_used are properly managed outside of
+	# this state.
+	if !_player.jump_used:
+		_player.jump_used = true
+	elif AbilityManager.double_jump_unlocked && !_player.double_jump_used:
+		_player.double_jump_used = true
+	else:
+		assert(false, "Something has gone horribly wrong, can't jump but trying to.")
 
 	var input_direction: Vector2 = _player.get_input_direction()
 	if !input_direction.is_zero_approx():

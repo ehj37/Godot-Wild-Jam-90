@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://racm4p3cyptw"]
+
+[ext_resource type="Script" uid="uid://ccr0e3o8vqqpi" path="res://scenes/concentric_squares/expanding_square/expanding_square.gd" id="1_whpw1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_whpw1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 1)
+
+[node name="ExpandingSquare" type="PanelContainer" unique_id=172087512]
+offset_left = -1.0
+offset_top = -1.0
+offset_right = 1.0
+offset_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_whpw1")
+script = ExtResource("1_whpw1")

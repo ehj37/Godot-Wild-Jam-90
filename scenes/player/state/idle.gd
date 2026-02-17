@@ -4,7 +4,7 @@ const IDLE_COLOR: Color = Color.RED
 
 
 func physics_update(delta: float) -> void:
-	if Input.is_action_just_pressed("dash") && _player.can_dash:
+	if _can_dash():
 		_state_machine.transition_to("Dash")
 		return
 
@@ -17,11 +17,11 @@ func physics_update(delta: float) -> void:
 		return
 
 	if !_player.is_on_floor():
-		_player.num_jumps = 1
+		_player.jump_used = true
 		_state_machine.transition_to("Airborne")
 		return
 
-	if Input.is_action_just_pressed("jump"):
+	if _can_jump():
 		_state_machine.transition_to("Airborne", {"jump": true})
 		return
 
@@ -34,4 +34,4 @@ func physics_update(delta: float) -> void:
 
 func enter(_data: Dictionary = {}) -> void:
 	_player.animation_player.play("idle_right")
-	_player.recharge_dash_and_jump()
+	_player.recharge_dash_and_jumps()

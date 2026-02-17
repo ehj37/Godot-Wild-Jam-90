@@ -11,6 +11,24 @@ func _ready() -> void:
 	_player = owner
 
 
+func _can_jump() -> bool:
+	if !Input.is_action_just_pressed("jump"):
+		return false
+
+	if !_player.jump_used:
+		return true
+
+	return AbilityManager.double_jump_unlocked && !_player.double_jump_used
+
+
+func _can_dash() -> bool:
+	return AbilityManager.dash_unlocked && Input.is_action_just_pressed("dash") && _player.can_dash
+
+
+func _can_plummet() -> bool:
+	return AbilityManager.plummet_unlocked && Input.is_action_just_pressed("plummet")
+
+
 func _can_transition_to_ladder_up() -> bool:
 	return (
 		Input.is_action_pressed("climb_up")
@@ -28,5 +46,5 @@ func _ladder_jump_transition() -> void:
 		_state_machine.transition_to("Airborne", {"jump": true})
 		return
 
-	_player.num_jumps = 1
+	_player.jump_used = true
 	_state_machine.transition_to("Airborne")

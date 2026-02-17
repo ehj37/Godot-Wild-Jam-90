@@ -9,12 +9,13 @@ const MOVE_ACCELERATION: float = 500.0
 const MOVE_DECELERATION: float = 700.0
 const MAX_MOVE_SPEED: float = 90.0
 const INITIAL_JUMP_SPEED: float = -225.0
-const MAX_NUM_JUMPS: int = 2
 const MOVE_LEFT: String = "move_left"
 const MOVE_RIGHT: String = "move_right"
 const BULLET_ABSORBING_STATES: Array[String] = ["Dash", "PostDash", "PrePlummet", "Plummet"]
 
-var num_jumps: int = 2
+var jump_used: bool = false
+var double_jump_used: bool = false
+
 var can_dash: bool = true
 var orientation: Player.Orientation = Orientation.RIGHT:
 	set(value):
@@ -74,7 +75,7 @@ func on_bullet_connect(bullet_type: Bullet.Type) -> void:
 		Bullet.Type.STRENGTH:
 			pass  # TODO
 		Bullet.Type.RECHARGE_JUMP:
-			num_jumps = MAX_NUM_JUMPS
+			recharge_jumps()
 
 	bullet_absorb_aureole.flash(bullet_type)
 
@@ -93,9 +94,14 @@ func get_input_direction() -> Vector2:
 	return Vector2.ZERO
 
 
-func recharge_dash_and_jump() -> void:
+func recharge_jumps() -> void:
+	jump_used = false
+	double_jump_used = false
+
+
+func recharge_dash_and_jumps() -> void:
+	recharge_jumps()
 	can_dash = true
-	num_jumps = MAX_NUM_JUMPS
 
 
 func _physics_process(_delta: float) -> void:
@@ -120,3 +126,7 @@ func _update_pressed_movement_inputs() -> void:
 
 func _on_state_machine_state_entered(state_name: String) -> void:
 	state_machine_debug_label.text = state_name
+
+
+func _on_ability_chip_detection_area_body_entered(ability_chip: AbilityChip) -> void:
+	state_machine.transition_to("AbilityGet", {"ability_chip": ability_chip})

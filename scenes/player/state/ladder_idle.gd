@@ -14,7 +14,7 @@ func update(_delta: float) -> void:
 		_ladder_jump_transition()
 		return
 
-	if Input.is_action_just_pressed("dash") && _player.can_dash:
+	if _can_dash():
 		_state_machine.transition_to("Dash")
 		return
 

@@ -8,12 +8,13 @@
 [ext_resource type="PackedScene" uid="uid://fjmenbnanih6" path="res://scenes/ladder/ladder.tscn" id="6_7gny6"]
 [ext_resource type="PackedScene" uid="uid://c4jepvn8yish7" path="res://scenes/breakable_platforms/breakable_platform.tscn" id="7_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://brgwj8thj21yb" path="res://scenes/cannon/cannon.tscn" id="8_15mv3"]
+[ext_resource type="PackedScene" uid="uid://ds4bs0p6riqyq" path="res://scenes/ability_chip/ability_chip.tscn" id="9_e3sih"]
 
 [node name="Level1" type="Node2D" unique_id=666063091]
 script = ExtResource("1_15mv3")
 
 [node name="Player" parent="." unique_id=926355718 instance=ExtResource("2_e3sih")]
-position = Vector2(257, 748)
+position = Vector2(184, 120)
 
 [node name="Camera" parent="." unique_id=1830973701 instance=ExtResource("3_2y5yt")]
 position = Vector2(240, 136)
@@ -77,3 +78,7 @@ bullet_type_pattern = Array[int]([0, 2, 3])
 
 [node name="Marker2D" type="Marker2D" parent="Screen3" unique_id=812081805]
 position = Vector2(292, 263)
+
+[node name="AbilityChip" parent="." unique_id=1667433427 instance=ExtResource("9_e3sih")]
+position = Vector2(240, 40)
+ability = 2

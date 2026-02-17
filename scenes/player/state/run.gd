@@ -9,7 +9,7 @@ var _in_coyote_time: bool = false
 
 
 func physics_update(delta: float) -> void:
-	if Input.is_action_just_pressed("dash") && _player.can_dash:
+	if _can_dash():
 		_state_machine.transition_to("Dash")
 		return
 
@@ -27,7 +27,7 @@ func physics_update(delta: float) -> void:
 			_in_coyote_time = true
 
 		if coyote_timer.is_stopped():
-			_player.num_jumps = 1
+			_player.jump_used = true
 			_state_machine.transition_to("Airborne")
 			return
 	else:
@@ -35,7 +35,7 @@ func physics_update(delta: float) -> void:
 			coyote_timer.stop()
 			_in_coyote_time = false
 
-	if Input.is_action_just_pressed("jump"):
+	if _can_jump():
 		_state_machine.transition_to("Airborne", {"jump": true})
 		return
 
@@ -63,4 +63,4 @@ func physics_update(delta: float) -> void:
 func enter(_data: Dictionary = {}) -> void:
 	_player.animation_player.play("run_right")
 	_in_coyote_time = false
-	_player.recharge_dash_and_jump()
+	_player.recharge_dash_and_jumps()
