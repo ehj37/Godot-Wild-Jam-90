@@ -9,6 +9,7 @@ var _ability_chip: AbilityChip
 func enter(data: Dictionary = {}) -> void:
 	_ability_chip = data.get("ability_chip")
 	_player.z_index = 1000
+	SignalBus.snap_and_zoom.emit(_player.global_position + Vector2(0, -10), 8)
 	_player.velocity = Vector2.ZERO
 	_player.animation_player.play("ability_get")
 	var height_tween: Tween = get_tree().create_tween()
@@ -23,5 +24,6 @@ func _on_celebration_timer_timeout() -> void:
 
 func exit() -> void:
 	_player.z_index = 0
+	SignalBus.snap_camera_to.emit(ScreenManager.current_screen, true)
 	_ability_chip.grant_ability()
 	_ability_chip.kill()

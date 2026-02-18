@@ -5,7 +5,8 @@ extends Node
 signal bullet_time_entered
 signal bullet_time_exited
 # CAMERA
-signal snap_camera_to(screen: Screen)
+signal snap_camera_to(screen: Screen, instant: bool)
+signal snap_and_zoom(snap_position: Vector2, zoom_multiplier: int)
 # MAP
 signal map_opened
 signal map_closed

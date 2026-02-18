@@ -12,7 +12,7 @@ func _ready() -> void:
 func _on_screen_entered(entered_screen: Screen) -> void:
 	_overlapping_screens.append(entered_screen)
 	current_screen = entered_screen
-	SignalBus.snap_camera_to.emit(entered_screen)
+	SignalBus.snap_camera_to.emit(entered_screen, false)
 
 
 func _on_screen_exited(exited_screen: Screen) -> void:
@@ -24,6 +24,6 @@ func _on_screen_exited(exited_screen: Screen) -> void:
 	var new_current_screen: Screen = _overlapping_screens.back()
 
 	if current_screen == exited_screen:
-		SignalBus.snap_camera_to.emit(new_current_screen)
+		SignalBus.snap_camera_to.emit(new_current_screen, false)
 
 	current_screen = _overlapping_screens.back()

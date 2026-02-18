@@ -8,18 +8,22 @@ const MAX_FALL_SPEED: float = 500.0
 # to the fall animation
 const FALL_ANIMATION_SPEED_THRESHOLD: float = 75.0
 const AIRBORNE_MOVE_ACCELERATION: float = 850.0
+const AIRBORNE_MOVE_DECELERATION: float = 250.0
 const INITIAL_JUMP_SPEED: float = -225.0
 const MIN_DIRECTIONAL_JUMP_SPEED_X: float = 0.75 * Player.MAX_MOVE_SPEED
 
 
 func physics_update(delta: float) -> void:
 	var input_direction: Vector2 = _player.get_input_direction()
-	# Only change x component of velocity if there's player input.
 	if !input_direction.is_zero_approx():
 		_player.velocity.x = move_toward(
 			_player.velocity.x,
 			input_direction.x * Player.MAX_MOVE_SPEED,
 			delta * AIRBORNE_MOVE_ACCELERATION
+		)
+	else:
+		_player.velocity.x = move_toward(
+			_player.velocity.x, 0.0, delta * AIRBORNE_MOVE_DECELERATION
 		)
 
 	_player.velocity.y = move_toward(_player.velocity.y, MAX_FALL_SPEED, Player.GRAVITY * delta)
