@@ -1,0 +1,38 @@
+[gd_scene format=4 uid="uid://dmbxpld5ridic"]
+
+[ext_resource type="Script" uid="uid://yf32knnhqpp4" path="res://scenes/tutorials/plummet_graffiti/plummet_graffiti.gd" id="1_qay44"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_qay44"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAABIAAAAUklGRkAAAABXRUJQVlA4TDQAAAAvH8AHEA8w7UM/7fMf8GAQSVKc5reFtJN2UlADiYOI/k+A/6OxkQ2VbC7Pchnlj7PIRhTv")
+size_override = Vector2(32, 32)
+
+[node name="PlummetGraffiti" type="Sprite2D" unique_id=1641744362]
+z_index = -4095
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_qay44")
+offset = Vector2(0, -20)
+script = ExtResource("1_qay44")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {
+"source": "res://scenes/tutorials/plummet_graffiti/plummet_tutorial_visual.aseprite"
+}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/tutorials/plummet_tutorial/plummet_tutorial_visual.aseprite",
+"source_uid": 1191153068386340967
+}
+metadata/_aseprite_wizard_source_file_hash_ = "9cdf61e061b5b1f48b6ad35263098c80"

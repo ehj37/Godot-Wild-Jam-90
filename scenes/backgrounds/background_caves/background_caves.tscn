@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://ccrq6b521aeme"]
+
+[sub_resource type="Curve" id="Curve_4w8pr"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.25373137, 0.5274365), 0.0, 0.0, 0, 0, Vector2(0.8171642, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_bmm0c"]
+curve = SubResource("Curve_4w8pr")
+
+[sub_resource type="Gradient" id="Gradient_lf25a"]
+colors = PackedColorArray(0.28235295, 0.50980395, 0.5254902, 1, 0.7176471, 0.8352941, 0.83137256, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_6lcti"]
+gradient = SubResource("Gradient_lf25a")
+
+[sub_resource type="Curve" id="Curve_lf25a"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_6lcti"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_d6so7"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_4w8pr"]
+curve_x = SubResource("Curve_lf25a")
+curve_y = SubResource("Curve_6lcti")
+curve_z = SubResource("Curve_d6so7")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_lf25a"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(240, 136, 1)
+directional_velocity_min = 0.9999839
+directional_velocity_max = 4.999984
+directional_velocity_curve = SubResource("CurveXYZTexture_4w8pr")
+gravity = Vector3(0, 0, 0)
+color = Color(0.7176471, 0.8352941, 0.83137256, 1)
+color_ramp = SubResource("GradientTexture1D_6lcti")
+alpha_curve = SubResource("CurveTexture_bmm0c")
+
+[sub_resource type="Curve" id="Curve_bmm0c"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.49626863, 0.26531374), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_mc5n0"]
+curve = SubResource("Curve_bmm0c")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_6lcti"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(240, 136, 1)
+angle_min = 1.0728835e-05
+angle_max = 45.00001
+angular_velocity_min = -45.000015
+angular_velocity_max = 44.999985
+gravity = Vector3(0, 0, 0)
+scale_max = 2.0
+color = Color(1, 0.89411765, 0, 1)
+alpha_curve = SubResource("CurveTexture_mc5n0")
+
+[node name="BackgroundCaves" type="ColorRect" unique_id=988037712]
+z_index = -4096
+texture_filter = 1
+offset_left = -240.0
+offset_top = -136.0
+offset_right = 240.0
+offset_bottom = 136.0
+color = Color(0.04324477, 0.05554661, 0.055546716, 1)
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/backgrounds/background_caves/background.aseprite",
+"source_uid": 5435993483402110075
+}
+metadata/_aseprite_wizard_source_file_hash_ = "cd8cf88ac434cb9c28a87f3e2c327b7c"
+
+[node name="CometParticles" type="GPUParticles2D" parent="." unique_id=1614277648]
+position = Vector2(240, 136)
+amount = 40
+lifetime = 4.0
+preprocess = 1.0
+randomness = 0.5
+trail_enabled = true
+trail_lifetime = 1.0
+process_material = SubResource("ParticleProcessMaterial_lf25a")
+
+[node name="FireflyParticles" type="GPUParticles2D" parent="." unique_id=1330983713]
+position = Vector2(240, 136)
+amount = 10
+lifetime = 5.0
+preprocess = 5.0
+process_material = SubResource("ParticleProcessMaterial_6lcti")

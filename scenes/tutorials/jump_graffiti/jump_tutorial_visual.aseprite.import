@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bvkgfqytq5r3u"
+path="res://.godot/imported/jump_tutorial_visual.aseprite-b18041600caf1835391381d9bc34942f.res"
+
+[deps]
+
+source_file="res://scenes/tutorials/jump_graffiti/jump_tutorial_visual.aseprite"
+dest_files=["res://.godot/imported/jump_tutorial_visual.aseprite-b18041600caf1835391381d9bc34942f.res"]
+
+[params]
+

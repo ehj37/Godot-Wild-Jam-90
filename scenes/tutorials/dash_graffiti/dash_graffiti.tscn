@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://byfuvdlsbtrwt"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_qj5x7"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAABiAAAAUklGRloAAABXRUJQVlA4TE0AAAAvH8AHEA8w7UM/7fMf8HAT27ZTLUKdFNwnAQlIeg5okYHMW8HPwUFE/yfA/9eOo6V8hLyugIJKnwyVKAyVPk1DWiLPLdISaYqdp/nJKwA=")
+size_override = Vector2(32, 32)
+
+[node name="DashGraffiti" type="Sprite2D" unique_id=1268804207]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_qj5x7")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/tutorials/dash_graffiti/dash_visual.aseprite",
+"source_uid": 3551607636543000346
+}
+metadata/_aseprite_wizard_source_file_hash_ = "816b40b116c369f7dd64dd3ffca2ea96"

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cu6mdnxfda64g"
+path="res://.godot/imported/move_tutorial_visual.aseprite-cd3e1c50031412ee23048950ae580ff7.res"
+
+[deps]
+
+source_file="res://scenes/tutorials/move_graffiti/move_tutorial_visual.aseprite"
+dest_files=["res://.godot/imported/move_tutorial_visual.aseprite-cd3e1c50031412ee23048950ae580ff7.res"]
+
+[params]
+

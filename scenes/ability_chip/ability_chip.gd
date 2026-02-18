@@ -2,6 +2,8 @@ class_name AbilityChip
 
 extends Node2D
 
+signal killed
+
 enum Ability { DOUBLE_JUMP, DASH, PLUMMET }
 
 @export var ability: Ability
@@ -24,6 +26,7 @@ func grant_ability() -> void:
 
 
 func kill() -> void:
+	killed.emit()
 	collision_shape.disabled = true
 	color_rect.visible = false
 

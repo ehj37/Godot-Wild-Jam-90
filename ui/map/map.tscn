@@ -6,6 +6,10 @@
 _data = PackedByteArray("AAADAAUAAAABAAAAgAAAAIAAAAA6AQAAUklGRjIBAABXRUJQVlA4TCYBAAAvf8AfABcgEEj8GWJ8HrFgck0/2gDEgon6hAPom//oDg1wG7CNJAmOVIbAUP1sPw4Jl+FIUJv3cr7dMKL/CtS2cRIw3B7pK0x2Va3i2uzq1UVk787G2sidmXR3OqdNTpJmAAaGDQQiAl7ri11Nkqt7A0Bn7/xilInOWS05B90kB1xV6Ph8NFVdoC5KVerdOkyVPV9dnJ+rjvNz03H+FL37/nV3/1ynqnE+7v/vekP/9+fv1uGqQtf1p+i56Lk+f7fe0KUv0//9fNz/369fFzr0blcV18/1/CnXr4vnq7upaug4P1e9+2a5vr75zchVhY5ZLTlHmej0Wl/sapJc3RsAOnvnF4PuTue0yUnSDMDAsIFARKCqVnFtdvXqIrJ3Z2Nt5M5MU20=")
 size_override = Vector2(128, 128)
 
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_2ibml"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAABsAAAAUklGRmQAAABXRUJQVlA4TFgAAAAvH8AHEB8gEEjSH3YfIQHhf7VVJhBI0h56h/kPYG8ZMIpst43PEkNDMCSd7PQ8VGKS3gMgov8TEH44g2x8mnQHLuTUysat053Y7mRDNm7oDgfTtJNBNn8L")
+size_override = Vector2(32, 32)
+
 [node name="Map" type="CanvasLayer" unique_id=29763147]
 script = ExtResource("1_sxf4j")
 
@@ -17,7 +21,7 @@ offset_right = 480.0
 offset_bottom = 272.0
 color = Color(0, 0, 0, 0.6)
 
-[node name="Sprite2D" type="Sprite2D" parent="Container" unique_id=983633154]
+[node name="SpriteMap" type="Sprite2D" parent="Container" unique_id=983633154]
 texture_filter = 1
 position = Vector2(240, 88)
 texture = SubResource("PortableCompressedTexture2D_sxf4j")
@@ -45,3 +49,30 @@ metadata/_aseprite_wizard_config_ = {
 "source_uid": 7835472893013635479
 }
 metadata/_aseprite_wizard_source_file_hash_ = "a7201a1cf6c0d6e30158c10b33abb7bd"
+
+[node name="SpriteEscape" type="Sprite2D" parent="Container" unique_id=506582654]
+texture_filter = 1
+position = Vector2(313, 27)
+texture = SubResource("PortableCompressedTexture2D_2ibml")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://ui/map/escape_visual.aseprite",
+"source_uid": 2268140963223131255
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4998cdce467a005d6a39c6dbd923540a"

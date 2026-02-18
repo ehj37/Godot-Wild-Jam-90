@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://jxc8ghyfdxfe"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_lw0li"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAABcAAAAUklGRlQAAABXRUJQVlA4TEcAAAAvP8APEA8w7UM/7fMf8GAa23aUk9WmjihapDRKwe4toBKPi+i/wrRtmOz2FAAAAC+gB2AJkwBHAAD71wDAKoJNHd9jTN7/gAA=")
+size_override = Vector2(64, 64)
+
+[node name="MoveGraffiti" type="Sprite2D" unique_id=249609711]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_lw0li")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/tutorials/move_graffiti/move_tutorial_visual.aseprite",
+"source_uid": 6241348630382891500
+}
+metadata/_aseprite_wizard_source_file_hash_ = "92b2c4d5d662907d9c3d4cdd230f45ed"

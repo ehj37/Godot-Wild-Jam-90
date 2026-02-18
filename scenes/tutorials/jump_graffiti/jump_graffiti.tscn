@@ -1,0 +1,31 @@
+[gd_scene format=4 uid="uid://6npg4sn8q0nv"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_xges5"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAABeAAAAUklGRlYAAABXRUJQVlA4TEkAAAAvH8AHEA8w7UM/7fMf8GAUSbaT+Z+c0fQlYIUbpycEMSihvoTngBwVRPR/AvjUj33ddrnRuUjE5Ubd0HCpy9JwFGAy4AMQ/vAYAA==")
+size_override = Vector2(32, 32)
+
+[node name="JumpGraffiti" type="Sprite2D" unique_id=263023342]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_xges5")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/tutorials/jump_graffiti/jump_tutorial_visual.aseprite",
+"source_uid": 3881404286893264608
+}
+metadata/_aseprite_wizard_source_file_hash_ = "4413538fb7928b541a2f4d2efe8fec87"

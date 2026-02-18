@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bquopupyrqnxi"
+path="res://.godot/imported/dash_visual.aseprite-1705e7d2985de7c9553fbd1365df9122.res"
+
+[deps]
+
+source_file="res://scenes/tutorials/dash_graffiti/dash_visual.aseprite"
+dest_files=["res://.godot/imported/dash_visual.aseprite-1705e7d2985de7c9553fbd1365df9122.res"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cacm7wjfg017i"
+path="res://.godot/imported/map_tutorial_visual.aseprite-8f1d2c0e10f4b7876661da6c535884f1.res"
+
+[deps]
+
+source_file="res://scenes/tutorials/map_graffiti/map_tutorial_visual.aseprite"
+dest_files=["res://.godot/imported/map_tutorial_visual.aseprite-8f1d2c0e10f4b7876661da6c535884f1.res"]
+
+[params]
+

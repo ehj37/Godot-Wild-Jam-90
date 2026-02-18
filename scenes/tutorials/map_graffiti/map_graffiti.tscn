@@ -1,0 +1,32 @@
+[gd_scene format=4 uid="uid://b4gv7b635h4ba"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_81y57"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAAByAAAAUklGRmoAAABXRUJQVlA4TF4AAAAvH8AHEB8gECD8L2ikR0HaBsyu/amdACEBYbrDBmjzHwC9V25gEABAEuxYwSSLXOOUzj8skoYBEf2fABDzuZXBWra0MghMlMv3tT91J0ghQchEEBlCJoLIELJ1cgM5")
+size_override = Vector2(32, 32)
+
+[node name="MapGraffiti" type="Sprite2D" unique_id=980342128]
+z_index = -4095
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_81y57")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/tutorials/map_graffiti/map_tutorial_visual.aseprite",
+"source_uid": 4777757041865627704
+}
+metadata/_aseprite_wizard_source_file_hash_ = "21cd9e4ec682a36bba04fd5030752c73"

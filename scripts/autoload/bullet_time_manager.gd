@@ -1,6 +1,6 @@
 extends Node
 
-const BULLET_TIME_SLOW_FACTOR: float = 0.2
+const BULLET_TIME_SLOW_FACTOR: float = 0.1
 
 var in_bullet_time: bool = false
 

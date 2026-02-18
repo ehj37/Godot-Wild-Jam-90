@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cjpiavlw3j6hj"
+path="res://.godot/imported/background.aseprite-ba2a890f9d8d81b2abe0308550d19a5d.res"
+
+[deps]
+
+source_file="res://scenes/backgrounds/background_caves/background.aseprite"
+dest_files=["res://.godot/imported/background.aseprite-ba2a890f9d8d81b2abe0308550d19a5d.res"]
+
+[params]
+
