@@ -37,14 +37,16 @@ func enter(_data: Dictionary = {}) -> void:
 	_end_position = corner_position + end_position_offset
 
 	_player.global_position = start_position
-
-	get_tree().create_timer(MANTLE_DURATION).timeout.connect(_on_mantle_timer_timeout)
+	_player.animation_player.play("mantle_right")
 
 
 func exit() -> void:
 	_player.set_collision_mask_value(1, true)
 
 
-func _on_mantle_timer_timeout() -> void:
+func _on_animation_player_animation_finished(anim_name: String) -> void:
+	if anim_name != "mantle_right":
+		return
+
 	_player.global_position = _end_position
 	_state_machine.transition_to("Idle")
