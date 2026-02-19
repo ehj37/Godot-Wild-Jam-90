@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://6fbvh1n3yxb1"
+path="res://.godot/imported/Jump land.ogg-62fe4ff09cdd3e49b18a74d31e920db0.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/sound_effects/Jump land.ogg"
+dest_files=["res://.godot/imported/Jump land.ogg-62fe4ff09cdd3e49b18a74d31e920db0.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

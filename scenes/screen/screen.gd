@@ -19,6 +19,10 @@ extends Node2D
 @onready var panel_container: PanelContainer = $PanelContainer
 
 
+func center() -> Vector2:
+	return global_position + Vector2(240, 136)
+
+
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		set_meta("_edit_lock_", true)

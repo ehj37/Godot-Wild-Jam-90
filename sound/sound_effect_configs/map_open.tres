@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundEffectConfig" format=3 uid="uid://dppakl8oipsd0"]
+
+[ext_resource type="AudioStream" uid="uid://c2p7ohey717q7" path="res://sound/sound_effects/Map open.ogg" id="1_hncdc"]
+[ext_resource type="Script" uid="uid://b4ne2jrms2thi" path="res://sound/sound_effect_config.gd" id="1_pdiw6"]
+
+[resource]
+script = ExtResource("1_pdiw6")
+type = 6
+audio_stream = ExtResource("1_hncdc")
+metadata/_custom_type_script = "uid://b4ne2jrms2thi"

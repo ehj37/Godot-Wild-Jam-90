@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundEffectConfig" format=3 uid="uid://db5ihptsekaxy"]
+
+[ext_resource type="AudioStream" uid="uid://6fbvh1n3yxb1" path="res://sound/sound_effects/Jump land.ogg" id="1_1go8w"]
+[ext_resource type="Script" uid="uid://b4ne2jrms2thi" path="res://sound/sound_effect_config.gd" id="1_mo40t"]
+
+[resource]
+script = ExtResource("1_mo40t")
+type = 7
+audio_stream = ExtResource("1_1go8w")
+metadata/_custom_type_script = "uid://b4ne2jrms2thi"

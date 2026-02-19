@@ -1,7 +1,6 @@
 extends Camera2D
 
 const SCREEN_TRANSITION_DURATION: float = 0.75
-const SCREEN_OFFSET: Vector2 = Vector2(240, 136)
 
 @export var initial_screen: Screen
 
@@ -9,14 +8,14 @@ const SCREEN_OFFSET: Vector2 = Vector2(240, 136)
 func _ready() -> void:
 	SignalBus.snap_camera_to.connect(_snap_camera_to)
 	SignalBus.snap_and_zoom.connect(_snap_and_zoom)
-	global_position = initial_screen.global_position + SCREEN_OFFSET
+	global_position = initial_screen.center()
 
 
 func _snap_camera_to(screen: Screen, instant: bool) -> void:
 	# Rest zoom—may have been changed from _snap_and_zoom
 	zoom = Vector2.ONE
 
-	var target_global_position: Vector2 = screen.global_position + SCREEN_OFFSET
+	var target_global_position: Vector2 = screen.center()
 	if global_position == target_global_position:
 		return
 

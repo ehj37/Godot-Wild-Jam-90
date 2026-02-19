@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundEffectConfig" format=3 uid="uid://b5n6i3wepvdu"]
+
+[ext_resource type="Script" uid="uid://b4ne2jrms2thi" path="res://sound/sound_effect_config.gd" id="1_0jftq"]
+[ext_resource type="AudioStream" uid="uid://bsa1561r2vtoc" path="res://sound/sound_effects/Platform break.ogg" id="1_10ig8"]
+
+[resource]
+script = ExtResource("1_0jftq")
+type = 4
+audio_stream = ExtResource("1_10ig8")
+metadata/_custom_type_script = "uid://b4ne2jrms2thi"

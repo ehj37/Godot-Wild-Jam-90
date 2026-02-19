@@ -25,6 +25,7 @@ FadeRect="*uid://cph70f5lg4yw4"
 LevelManager="*uid://bhc3hau5atiu7"
 AbilityManager="*uid://xch16tjsq3xq"
 Map="*uid://bndv74ixujng3"
+SoundEffectManager="*uid://de3p3blpplcwn"
 
 [debug]
 

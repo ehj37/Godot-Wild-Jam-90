@@ -68,3 +68,7 @@ func enter(_data: Dictionary = {}) -> void:
 	_player.animation_player.play("run_right")
 	_in_coyote_time = false
 	_player.recharge_dash_and_jumps()
+
+
+func play_step_sound() -> void:
+	SoundEffectManager.play_effect(SoundEffectConfig.Type.STEP)

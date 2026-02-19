@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://de3p3blpplcwn"]
+
+[ext_resource type="Script" uid="uid://bm6afxwfnmck7" path="res://scenes/autoload/sound_effect_manager/sound_effect_manager.gd" id="1_hlycp"]
+[ext_resource type="Script" uid="uid://b4ne2jrms2thi" path="res://sound/sound_effect_config.gd" id="2_iwcr0"]
+[ext_resource type="Resource" uid="uid://btl21i1s8p8xw" path="res://sound/sound_effect_configs/jump.tres" id="3_yxo0u"]
+[ext_resource type="Resource" uid="uid://6f6k36ikt8x3" path="res://sound/sound_effect_configs/dash.tres" id="4_ov7oo"]
+[ext_resource type="Resource" uid="uid://bwefj17kx01vp" path="res://sound/sound_effect_configs/land.tres" id="5_ov7oo"]
+[ext_resource type="Resource" uid="uid://bgcav5wodoftv" path="res://sound/sound_effect_configs/step.tres" id="6_dr1uk"]
+[ext_resource type="Resource" uid="uid://b5n6i3wepvdu" path="res://sound/sound_effect_configs/platform_break.tres" id="7_dr1uk"]
+[ext_resource type="Resource" uid="uid://cv5tvayty3c5k" path="res://sound/sound_effect_configs/cannon_fire.tres" id="8_8xfbu"]
+[ext_resource type="Resource" uid="uid://dppakl8oipsd0" path="res://sound/sound_effect_configs/map_open.tres" id="9_k03hr"]
+[ext_resource type="Resource" uid="uid://db5ihptsekaxy" path="res://sound/sound_effect_configs/jump_land.tres" id="10_kc35x"]
+[ext_resource type="Resource" uid="uid://cc06xhtwv6jco" path="res://sound/sound_effect_configs/player_hurt.tres" id="11_kc35x"]
+
+[node name="SoundEffectManager" type="Node2D" unique_id=984462685]
+script = ExtResource("1_hlycp")
+sound_effect_configs = Array[ExtResource("2_iwcr0")]([ExtResource("3_yxo0u"), ExtResource("4_ov7oo"), ExtResource("5_ov7oo"), ExtResource("6_dr1uk"), ExtResource("7_dr1uk"), ExtResource("8_8xfbu"), ExtResource("9_k03hr"), ExtResource("10_kc35x"), ExtResource("11_kc35x")])

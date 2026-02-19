@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundEffectConfig" format=3 uid="uid://cv5tvayty3c5k"]
+
+[ext_resource type="Script" uid="uid://b4ne2jrms2thi" path="res://sound/sound_effect_config.gd" id="1_gssrt"]
+[ext_resource type="AudioStream" uid="uid://1vqi8yvs67rb" path="res://sound/sound_effects/Cannon fire.ogg" id="1_km8nw"]
+
+[resource]
+script = ExtResource("1_gssrt")
+type = 5
+audio_stream = ExtResource("1_km8nw")
+metadata/_custom_type_script = "uid://b4ne2jrms2thi"

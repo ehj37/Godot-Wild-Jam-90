@@ -137,14 +137,18 @@ spawn_point = NodePath("Marker2D")
 screen_above = NodePath("../ScreenHazardIntro")
 screen_below = NodePath("../ScreenBigFall")
 
-[node name="Cannon" parent="ScreenCannonIntro" unique_id=1230095467 instance=ExtResource("8_15mv3")]
+[node name="Cannon" parent="ScreenCannonIntro" unique_id=1230095467 node_paths=PackedStringArray("screen") instance=ExtResource("8_15mv3")]
 position = Vector2(64, 112)
+screen = NodePath("..")
 bullet_type_pattern = Array[int]([3])
+spawn_direction = null
 time_between_bullets = 0.9
 
-[node name="Cannon2" parent="ScreenCannonIntro" unique_id=1331754863 instance=ExtResource("8_15mv3")]
+[node name="Cannon2" parent="ScreenCannonIntro" unique_id=1331754863 node_paths=PackedStringArray("screen") instance=ExtResource("8_15mv3")]
 position = Vector2(64, 176)
+screen = NodePath("..")
 bullet_type_pattern = Array[int]([3])
+spawn_direction = null
 time_between_bullets = 1.2
 
 [node name="Terrain" parent="ScreenCannonIntro" unique_id=1227948897 instance=ExtResource("5_go7sj")]

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundEffectConfig" format=3 uid="uid://bgcav5wodoftv"]
+
+[ext_resource type="AudioStream" uid="uid://wrl8pcscvk2b" path="res://sound/sound_effects/Step.ogg" id="1_6spa8"]
+[ext_resource type="Script" uid="uid://b4ne2jrms2thi" path="res://sound/sound_effect_config.gd" id="1_584tg"]
+
+[resource]
+script = ExtResource("1_584tg")
+type = 2
+audio_stream = ExtResource("1_6spa8")
+metadata/_custom_type_script = "uid://b4ne2jrms2thi"

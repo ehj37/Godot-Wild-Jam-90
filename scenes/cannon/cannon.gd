@@ -6,6 +6,7 @@ enum SpawnDirection { UP, RIGHT, DOWN, LEFT }
 
 const LIGHT_UP_COLOR: Color = Color.YELLOW
 
+@export var screen: Screen
 @export var bullet_type_pattern: Array[Bullet.Type]
 @export var spawn_direction: SpawnDirection = SpawnDirection.RIGHT
 @export var time_between_bullets: float = 0.3
@@ -42,3 +43,4 @@ func _on_bullet_spawn_timer_timeout() -> void:
 			bullet.spawn_direction = Bullet.SpawnDirection.LEFT
 	bullet.global_position = global_position
 	LevelManager.current_level.add_child(bullet)
+	SoundEffectManager.play_effect(SoundEffectConfig.Type.CANNON_FIRE, screen)

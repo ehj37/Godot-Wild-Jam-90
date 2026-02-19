@@ -43,6 +43,8 @@ func physics_update(delta: float) -> void:
 		return
 
 	if _player.is_on_floor():
+		SoundEffectManager.play_effect(SoundEffectConfig.Type.JUMP_LAND)
+
 		if _player.get_input_direction().is_zero_approx():
 			_state_machine.transition_to("Idle")
 		else:
@@ -86,6 +88,8 @@ func enter(data: Dictionary = {}) -> void:
 
 
 func _apply_jump() -> void:
+	SoundEffectManager.play_effect(SoundEffectConfig.Type.JUMP)
+
 	# Trust that jump_used and double_jump_used are properly managed outside of
 	# this state.
 	if !_player.jump_used:

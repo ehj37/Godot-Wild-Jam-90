@@ -14,8 +14,10 @@ func physics_update(_delta: float) -> void:
 func enter(_data: Dictionary = {}) -> void:
 	_player.velocity = Vector2.ZERO
 	_player.animation_player.play("map_right")
+	SoundEffectManager.play_effect(SoundEffectConfig.Type.MAP_OPEN)
 	SignalBus.map_opened.emit()
 
 
 func exit() -> void:
+	SoundEffectManager.play_effect(SoundEffectConfig.Type.MAP_OPEN)
 	SignalBus.map_closed.emit()

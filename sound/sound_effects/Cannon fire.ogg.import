@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://1vqi8yvs67rb"
+path="res://.godot/imported/Cannon fire.ogg-75e3ceb04fb45ee2369f42fb6c0a6b8d.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/sound_effects/Cannon fire.ogg"
+dest_files=["res://.godot/imported/Cannon fire.ogg-75e3ceb04fb45ee2369f42fb6c0a6b8d.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
