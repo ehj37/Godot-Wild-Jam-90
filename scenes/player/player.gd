@@ -137,3 +137,7 @@ func _on_state_machine_state_entered(state_name: String) -> void:
 
 func _on_ability_chip_detection_area_body_entered(ability_chip: AbilityChip) -> void:
 	state_machine.transition_to("AbilityGet", {"ability_chip": ability_chip})
+
+
+func _on_hazard_detection_area_body_entered(_hazard: Node2D) -> void:
+	state_machine.transition_to("Hurt")

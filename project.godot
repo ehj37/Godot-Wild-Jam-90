@@ -96,6 +96,7 @@ map={
 [layer_names]
 
 2d_physics/layer_1="Terrain"
+2d_physics/layer_2="Hazard"
 2d_physics/layer_5="AbilityChip"
 2d_physics/layer_6="Ladder"
 2d_physics/layer_7="Player"

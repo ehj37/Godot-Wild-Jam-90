@@ -11,6 +11,7 @@ const AIRBORNE_MOVE_ACCELERATION: float = 850.0
 const AIRBORNE_MOVE_DECELERATION: float = 250.0
 const INITIAL_JUMP_SPEED: float = -225.0
 const MIN_DIRECTIONAL_JUMP_SPEED_X: float = 0.75 * Player.MAX_MOVE_SPEED
+const MANTLE_VELOCITY_Y_THRESHOLD: float = -40.0
 
 
 func physics_update(delta: float) -> void:
@@ -75,7 +76,7 @@ func physics_update(delta: float) -> void:
 				input_towards_corner = input_direction.x < 0
 
 		if input_towards_corner:
-			if !Input.is_action_pressed("jump") || _player.velocity.y > 0:
+			if !Input.is_action_pressed("jump") || _player.velocity.y > MANTLE_VELOCITY_Y_THRESHOLD:
 				_state_machine.transition_to("Mantle")
 
 

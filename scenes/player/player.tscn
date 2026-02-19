@@ -293,6 +293,10 @@ _data = {
 &"run_right": SubResource("Animation_fcs02")
 }
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ydkj"]
+radius = 3.0
+height = 20.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fm80t"]
 size = Vector2(6, 20)
 
@@ -424,7 +428,7 @@ libraries/ = SubResource("AnimationLibrary_5gtgg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2139175605]
 position = Vector2(0, -10)
-shape = SubResource("RectangleShape2D_fm80t")
+shape = SubResource("CapsuleShape2D_8ydkj")
 
 [node name="AbilityChipDetectionArea" type="Area2D" parent="." unique_id=724095716]
 collision_layer = 0
@@ -448,7 +452,7 @@ collision_mask = 32
 hit_from_inside = true
 
 [node name="MantleRayCastSideTop" type="RayCast2D" parent="." unique_id=1532119676]
-position = Vector2(0, -14)
+position = Vector2(0, -16)
 target_position = Vector2(10, 0)
 
 [node name="MantleRayCastSideBottom" type="RayCast2D" parent="." unique_id=1659044785]
@@ -456,10 +460,19 @@ position = Vector2(0, -10)
 target_position = Vector2(10, 0)
 
 [node name="MantleRayCastDown" type="RayCast2D" parent="." unique_id=630781514]
-position = Vector2(10, -14)
-target_position = Vector2(0, 4)
+position = Vector2(10, -16)
+target_position = Vector2(0, 6)
+
+[node name="HazardDetectionArea" type="Area2D" parent="." unique_id=1646556691]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HazardDetectionArea" unique_id=52628340]
+position = Vector2(0, -10)
+shape = SubResource("RectangleShape2D_fm80t")
 
 [connection signal="state_entered" from="StateMachine" to="." method="_on_state_machine_state_entered"]
 [connection signal="timeout" from="StateMachine/Run/CoyoteTimer" to="StateMachine/Run" method="_on_coyote_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Mantle" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="AbilityChipDetectionArea" to="." method="_on_ability_chip_detection_area_body_entered"]
+[connection signal="body_entered" from="HazardDetectionArea" to="." method="_on_hazard_detection_area_body_entered"]

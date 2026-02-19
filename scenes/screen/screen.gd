@@ -22,9 +22,6 @@ extends Node2D
 func _ready() -> void:
 	if Engine.is_editor_hint():
 		set_meta("_edit_lock_", true)
-		if spawn_point == null:
-			spawn_point = Marker2D.new()
-			add_child(spawn_point)
 
 		panel_container.visible = false
 

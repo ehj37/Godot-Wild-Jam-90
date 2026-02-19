@@ -5,6 +5,14 @@ extends Timer
 var _normal_wait_time: float = wait_time
 
 
+func update_wait_time(new_wait_time: float) -> void:
+	_normal_wait_time = new_wait_time
+	if BulletTimeManager.in_bullet_time:
+		wait_time = _normal_wait_time / BulletTimeManager.BULLET_TIME_SLOW_FACTOR
+	else:
+		wait_time = _normal_wait_time
+
+
 func _ready() -> void:
 	SignalBus.bullet_time_entered.connect(_on_bullet_time_entered)
 	SignalBus.bullet_time_exited.connect(_on_bullet_time_exited)

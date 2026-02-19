@@ -8,17 +8,13 @@ const LIGHT_UP_COLOR: Color = Color.YELLOW
 
 @export var bullet_type_pattern: Array[Bullet.Type]
 @export var spawn_direction: SpawnDirection = SpawnDirection.RIGHT
+@export var time_between_bullets: float = 0.3
 
 var _bullet_queue: Array[Bullet.Type]
 
 @onready var sprite_lights: Sprite2D = $SpriteLights
 @onready var bullet_packed_scene: PackedScene = preload("./bullet/bullet.tscn")
-@onready var timer: BulletTimeTimer = $BulletSpawnTimer
-@onready var timer_label: Label = $TimerLabel
-
-
-func _process(_delta: float) -> void:
-	timer_label.text = str(timer.time_left)
+@onready var bullet_spawn_timer: BulletTimeTimer = $BulletSpawnTimer
 
 
 func _ready() -> void:
@@ -26,6 +22,7 @@ func _ready() -> void:
 		bullet_type_pattern.size() > 0,
 		"Cannon at " + str(global_position) + " does not specify bullet type pattern."
 	)
+	bullet_spawn_timer.update_wait_time(time_between_bullets)
 
 
 func _on_bullet_spawn_timer_timeout() -> void:

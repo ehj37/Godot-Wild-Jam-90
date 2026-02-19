@@ -100,8 +100,4 @@ autostart = true
 script = ExtResource("2_xgg2g")
 metadata/_custom_type_script = "uid://dbx8g1pa3ktfw"
 
-[node name="TimerLabel" type="Label" parent="." unique_id=510686913]
-offset_right = 40.0
-offset_bottom = 23.0
-
 [connection signal="timeout" from="BulletSpawnTimer" to="." method="_on_bullet_spawn_timer_timeout"]
