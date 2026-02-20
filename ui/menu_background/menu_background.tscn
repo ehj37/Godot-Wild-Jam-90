@@ -1,0 +1,33 @@
+[gd_scene format=4 uid="uid://i8lbimd4vudv"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_dqxjq"]
+_data = PackedByteArray("AAADAAUAAAABAAAA4AEAABABAABCBAAAUklGRjoEAABXRUJQVlA4TC0EAAAv38FDADdAFmDyzyTyYHKZQhpK2kiC0PLVsR6eO/96Dh+ZgEWHJVZPGV6f+Y//eyGkxjjZQgbajSRXkqR7SBCNSwGKp8HNSbBoBeIjVWj9ZSAj2cX5iSV7sYjovwS3jSRJcmBcSE9lQVF7VMYXYLdIZkb2Yg4GCkO8IaklfEJJvS9TEUghjSw4HIyTEkRBqmjJ8iSBn2BxVknOusjSGG83PqGNnLwdCtQbkhwMIIEob5ygMoQQSQmE5LoPI2ffRwxgIa1wowa8IgUqjoKEgkqvkycNIsEqxMIhNIWYFadzIhR0IIbyChZmcFKgNiCkAgIBHkT1T4td5Q8t698GDirFikojRInUKgjsOOUvoDagVZmltyhNKVsHVD7JBUxoZ8iTJjielPe6JRUsJ8yR5Y2VpmoDgjWo7MZiPmsYSadpxIEW3ApMr8oAvAqOLbyKsKvzfIvhc47fc/v+Ls7zXEa355zY3nPsBse/f55T/J7rPr7ffb+3+LUNnrt/uYo/wdvc2gbP3Q6Meb/CUrz23uJm7FUZpFeFX21wDLcLw0ZH8bUUhyVrD7Px1dpabEittcfCOcdRfLX/WrMat/b1b7nYmsveX7++Wrtv8GOt/f31d7/8PJjd2NK2H/8/17bRjvDj+Vz67sOQns/nPwvqsVfliTa38mA5rdcc4m7sRcIwQbl7brehdyy3hR57Eu4vwoLuwcjvrAo450qvyiC8Cn4Xfs1wDLcGw0Yzeq0qsL3nuvO87TzP3fs7l/mNP7/a4LkbboX93eZ37ga8CrBrGzyXwa38xobtPC/odu72e8450XMKvSo2eE45z/YBFrwKfuzld7H/8jt3w+022LUNvgVuhQO9za1t8NxtJ379dJzrfsES4FXwO5cZnrvtxn5tf+Pzuu31DedYeDWE4dit4aTa9ZgALBlhRBOSFSGsfPevJmV0Lru+IR4/aUmLsRv1xcPmue7SfWtKT/HDaPy42gPLBq/qlPSqCEO6VmUl1r3fEHsVYOe7f7VloxeT8nqucxnPq7XmL55d68VkfD0mAGsxHeh9rZ1z4FbYYEuvyiC8CnFE47xf92NjdTP2qnBs6VUZcLuA39iuHMdut8GufX6/+37N8LbtXezvOec3lHPKeT7HIryKsKsNvuU8z2UHWsk0WpEBuzUsshd7ybsf+ShBSaZiRaURokRqFQRmp6GATRrIzMosvUVpStk6oPJJLmBCO0OeNMHxpLzXLalgOWGOLG+sNDVpQCDqd1+2DzRQGYZAKYGQXPeh5wNPzvuKgAInGvCKFKg4CjI4lJucPGkQCVYhFg6hKcSsOJ0ToaADMZRXsDCDkwK1ASEVEAiwEmWW1z4YKAzxhqSW8Akl9b76p0UKaWTB4WCclCAKUkVLTp7EzAkWZ5XkrIssjfF24xPayMnboUC9IcnO4DcGAA==")
+size_override = Vector2(480, 272)
+
+[node name="MenuBackground" type="Sprite2D" unique_id=2109413884]
+z_index = -4096
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_dqxjq")
+offset = Vector2(240, 136)
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://ui/menu_background/menu_background.aseprite",
+"source_uid": 2102067226742475041
+}
+metadata/_aseprite_wizard_source_file_hash_ = "8055d1b4141f32bb0164997ce75a52b0"

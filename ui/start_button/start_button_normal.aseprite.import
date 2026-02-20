@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://dpmh080py43ts"
+path="res://.godot/imported/start_button_normal.aseprite-e81526ed25ec54a35be8a0f0432b9ec5.res"
+
+[deps]
+
+source_file="res://ui/start_button/start_button_normal.aseprite"
+dest_files=["res://.godot/imported/start_button_normal.aseprite-e81526ed25ec54a35be8a0f0432b9ec5.res"]
+
+[params]
+

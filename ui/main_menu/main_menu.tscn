@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://cn0l6rjng1ypo"]
+
+[ext_resource type="Script" uid="uid://c7obnmlbqq1l3" path="res://ui/main_menu/main_menu.gd" id="1_uhj5c"]
+[ext_resource type="PackedScene" uid="uid://i8lbimd4vudv" path="res://ui/menu_background/menu_background.tscn" id="2_mu8pm"]
+[ext_resource type="PackedScene" uid="uid://b7ue32ljhitmp" path="res://ui/start_button/start_button.tscn" id="2_omy8q"]
+[ext_resource type="PackedScene" uid="uid://dy7muptei0bp1" path="res://ui/settings_button/settings_button.tscn" id="3_i5wg5"]
+[ext_resource type="PackedScene" uid="uid://b7ryofpbaiair" path="res://ui/quit_button/quit_button.tscn" id="4_3c04x"]
+[ext_resource type="PackedScene" uid="uid://dc766bx7ks5jw" path="res://ui/main_vol_slider/main_vol_slider.tscn" id="5_6mijq"]
+[ext_resource type="PackedScene" uid="uid://cijlildwjx176" path="res://ui/sfx_vol_slider/sfx_vol_slider.tscn" id="6_w2r0d"]
+[ext_resource type="PackedScene" uid="uid://cu7hnn0sm01qd" path="res://ui/music_vol_slider/music_vol_slider.tscn" id="7_4e78x"]
+[ext_resource type="PackedScene" uid="uid://dipsxnsqtrpw7" path="res://ui/back_button/back_button.tscn" id="8_w2r0d"]
+
+[node name="MainMenu" type="Node2D" unique_id=1045805404]
+process_mode = 3
+script = ExtResource("1_uhj5c")
+
+[node name="Label" type="Label" parent="." unique_id=2133212138]
+offset_right = 480.0
+offset_bottom = 100.0
+text = "Godot 90 Jam Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=559988606]
+texture_filter = 1
+offset_right = 480.0
+offset_bottom = 272.0
+
+[node name="MainButtons" type="VBoxContainer" parent="CenterContainer" unique_id=1434455497]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="StartButton" parent="CenterContainer/MainButtons" unique_id=695855543 instance=ExtResource("2_omy8q")]
+layout_mode = 2
+
+[node name="SettingsButton" parent="CenterContainer/MainButtons" unique_id=826119625 instance=ExtResource("3_i5wg5")]
+layout_mode = 2
+
+[node name="QuitButton" parent="CenterContainer/MainButtons" unique_id=1557726799 instance=ExtResource("4_3c04x")]
+layout_mode = 2
+
+[node name="SettingsMenu" type="VBoxContainer" parent="CenterContainer" unique_id=75483046]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MainVolSlider" parent="CenterContainer/SettingsMenu" unique_id=1779690778 instance=ExtResource("5_6mijq")]
+layout_mode = 2
+
+[node name="SfxVolSlider" parent="CenterContainer/SettingsMenu" unique_id=143069081 instance=ExtResource("6_w2r0d")]
+layout_mode = 2
+
+[node name="MusicVolSlider" parent="CenterContainer/SettingsMenu" unique_id=1803186540 instance=ExtResource("7_4e78x")]
+layout_mode = 2
+
+[node name="BackButton" parent="CenterContainer/SettingsMenu" unique_id=1871275897 instance=ExtResource("8_w2r0d")]
+layout_mode = 2
+
+[node name="MenuBackground" parent="." unique_id=2109413884 instance=ExtResource("2_mu8pm")]
+
+[connection signal="pressed" from="CenterContainer/MainButtons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/MainVolSlider" to="." method="_on_main_vol_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/SfxVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
+[connection signal="pressed" from="CenterContainer/SettingsMenu/BackButton" to="." method="_on_back_button_pressed"]

@@ -25,7 +25,7 @@ size = Vector2(66, 50)
 script = ExtResource("1_15mv3")
 
 [node name="Player" parent="." unique_id=926355718 instance=ExtResource("2_e3sih")]
-position = Vector2(472, 512)
+position = Vector2(24, 1056)
 spawn_falling = false
 
 [node name="Camera" parent="." unique_id=1830973701 node_paths=PackedStringArray("initial_screen") instance=ExtResource("3_2y5yt")]

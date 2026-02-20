@@ -1,0 +1,39 @@
+[gd_scene format=4 uid="uid://cijlildwjx176"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_j2qc0"]
+_data = PackedByteArray("AAADAAUAAAABAAAAPgAAAAUAAABgAAAAUklGRlgAAABXRUJQVlA4TEsAAAAvPQABEA8wTWM0d/Mf8GATAGCSGfLSwN1utwJkcQjDuxhUIAO/04EQEf0nmKSptmNu7diX7g4lagsVX5KA2s0Wlon5P/FZ76+a6wQA")
+size_override = Vector2(62, 5)
+
+[node name="SfxVolSlider" type="HSlider" unique_id=143069081]
+offset_right = 100.0
+offset_bottom = 16.0
+max_value = 1.0
+step = 0.001
+value = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1739484721]
+texture_filter = 1
+position = Vector2(31, -3)
+texture = SubResource("PortableCompressedTexture2D_j2qc0")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://ui/sfx_vol_slider/sound_effects_label.aseprite",
+"source_uid": 7029170202285125903
+}
+metadata/_aseprite_wizard_source_file_hash_ = "dca359ae64a1c37cef0531f475184611"

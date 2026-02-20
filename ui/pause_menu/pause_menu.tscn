@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://coymmpgpbobq7"]
+
+[ext_resource type="Script" uid="uid://xe5eh1od1i4v" path="res://ui/pause_menu/pause_menu.gd" id="1_mnjdh"]
+[ext_resource type="PackedScene" uid="uid://i8lbimd4vudv" path="res://ui/menu_background/menu_background.tscn" id="2_jbgdu"]
+[ext_resource type="PackedScene" uid="uid://7wy3rdpafb2w" path="res://ui/resume_button/resume_button.tscn" id="3_3qrb2"]
+[ext_resource type="PackedScene" uid="uid://dy7muptei0bp1" path="res://ui/settings_button/settings_button.tscn" id="4_b05md"]
+[ext_resource type="PackedScene" uid="uid://b7ryofpbaiair" path="res://ui/quit_button/quit_button.tscn" id="5_f2x4c"]
+[ext_resource type="PackedScene" uid="uid://dc766bx7ks5jw" path="res://ui/main_vol_slider/main_vol_slider.tscn" id="6_lhp7q"]
+[ext_resource type="PackedScene" uid="uid://cijlildwjx176" path="res://ui/sfx_vol_slider/sfx_vol_slider.tscn" id="7_j11rl"]
+[ext_resource type="PackedScene" uid="uid://cu7hnn0sm01qd" path="res://ui/music_vol_slider/music_vol_slider.tscn" id="8_pu65w"]
+[ext_resource type="PackedScene" uid="uid://dipsxnsqtrpw7" path="res://ui/back_button/back_button.tscn" id="9_nkwjh"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=283730868]
+process_mode = 3
+script = ExtResource("1_mnjdh")
+
+[node name="MenuBackground" parent="." unique_id=2109413884 instance=ExtResource("2_jbgdu")]
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=913716229]
+offset_right = 480.0
+offset_bottom = 272.0
+
+[node name="MainButtons" type="VBoxContainer" parent="CenterContainer" unique_id=1970573330]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="ResumeButton" parent="CenterContainer/MainButtons" unique_id=1136874065 instance=ExtResource("3_3qrb2")]
+layout_mode = 2
+
+[node name="SettingsButton" parent="CenterContainer/MainButtons" unique_id=826119625 instance=ExtResource("4_b05md")]
+layout_mode = 2
+
+[node name="QuitButton" parent="CenterContainer/MainButtons" unique_id=1557726799 instance=ExtResource("5_f2x4c")]
+layout_mode = 2
+
+[node name="SettingsMenu" type="VBoxContainer" parent="CenterContainer" unique_id=1450517530]
+visible = false
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MainVolSlider" parent="CenterContainer/SettingsMenu" unique_id=1779690778 instance=ExtResource("6_lhp7q")]
+layout_mode = 2
+
+[node name="SfxVolSlider" parent="CenterContainer/SettingsMenu" unique_id=143069081 instance=ExtResource("7_j11rl")]
+layout_mode = 2
+
+[node name="MusicVolSlider" parent="CenterContainer/SettingsMenu" unique_id=1803186540 instance=ExtResource("8_pu65w")]
+layout_mode = 2
+
+[node name="BackButton" parent="CenterContainer/SettingsMenu" unique_id=1871275897 instance=ExtResource("9_nkwjh")]
+layout_mode = 2
+
+[connection signal="pressed" from="CenterContainer/MainButtons/ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/SettingsButton" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="CenterContainer/MainButtons/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/MainVolSlider" to="." method="_on_main_vol_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/SfxVolSlider" to="." method="_on_sfx_vol_slider_value_changed"]
+[connection signal="value_changed" from="CenterContainer/SettingsMenu/MusicVolSlider" to="." method="_on_music_vol_slider_value_changed"]
+[connection signal="pressed" from="CenterContainer/SettingsMenu/BackButton" to="." method="_on_back_button_pressed"]

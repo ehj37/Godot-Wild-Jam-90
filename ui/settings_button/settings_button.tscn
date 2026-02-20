@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dy7muptei0bp1"]
+
+[ext_resource type="Texture2D" uid="uid://b4yug1ijun0ax" path="res://ui/settings_button/settings_button_normal.png" id="1_q4ewy"]
+[ext_resource type="Texture2D" uid="uid://cw44h82v0lm86" path="res://ui/settings_button/settings_button_hover.png" id="2_5yewm"]
+
+[node name="SettingsButton" type="TextureButton" unique_id=826119625]
+texture_normal = ExtResource("1_q4ewy")
+texture_hover = ExtResource("2_5yewm")
+
+[node name="SpriteNormal" type="Sprite2D" parent="." unique_id=248497336]
+visible = false
+texture_filter = 1
+texture = ExtResource("1_q4ewy")
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": false,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://ui/settings_button/settings_button_normal.aseprite",
+"source_uid": 8836759556357330349
+}
+metadata/_aseprite_wizard_source_file_hash_ = "6d09b43f8b752383a3b68a38d516b2a1"
+
+[node name="SpriteHover" type="Sprite2D" parent="." unique_id=673051504]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_5yewm")
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": false,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://ui/settings_button/settings_button_hover.aseprite",
+"source_uid": 1581460334364346327
+}
+metadata/_aseprite_wizard_source_file_hash_ = "1708683ef9b8460b266ab6ecc7385856"

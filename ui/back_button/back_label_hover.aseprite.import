@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cu4uir6atye85"
+path="res://.godot/imported/back_label_hover.aseprite-05cf51c3625e33ae62d94e66731a8828.res"
+
+[deps]
+
+source_file="res://ui/back_button/back_label_hover.aseprite"
+dest_files=["res://.godot/imported/back_label_hover.aseprite-05cf51c3625e33ae62d94e66731a8828.res"]
+
+[params]
+

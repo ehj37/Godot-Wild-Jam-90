@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://y8g24i1idbra"
+path="res://.godot/imported/start_button_hover.aseprite-ab63735276627b6d139d937c7b5cb04c.res"
+
+[deps]
+
+source_file="res://ui/start_button/start_button_hover.aseprite"
+dest_files=["res://.godot/imported/start_button_hover.aseprite-ab63735276627b6d139d937c7b5cb04c.res"]
+
+[params]
+

@@ -37,6 +37,7 @@ func play_effect(
 
 	var audio_player: AudioStreamPlayer2D = AudioStreamPlayer2D.new()
 	audio_player.max_distance = AUDIO_STREAM_PLAYER_MAX_DISTANCE
+	audio_player.bus = "SFX"
 	add_child(audio_player)
 	audio_player.global_position = screen.center()
 	var audio_stream: AudioStreamOggVorbis = config.audio_stream

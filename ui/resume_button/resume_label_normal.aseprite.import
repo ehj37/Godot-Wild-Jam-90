@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://pq01hed5k7u6"
+path="res://.godot/imported/resume_label_normal.aseprite-36e916849de88557a9f00fc46459f1ea.res"
+
+[deps]
+
+source_file="res://ui/resume_button/resume_label_normal.aseprite"
+dest_files=["res://.godot/imported/resume_label_normal.aseprite-36e916849de88557a9f00fc46459f1ea.res"]
+
+[params]
+

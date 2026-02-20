@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://7wy3rdpafb2w"]
+
+[ext_resource type="Texture2D" uid="uid://c378jvcuygeks" path="res://ui/resume_button/resume_label_normal.png" id="1_w7x1e"]
+[ext_resource type="Texture2D" uid="uid://b18nif5e2rih8" path="res://ui/resume_button/resume_label_hover.png" id="2_qof13"]
+
+[node name="ResumeButton" type="TextureButton" unique_id=1136874065]
+texture_normal = ExtResource("1_w7x1e")
+texture_hover = ExtResource("2_qof13")
+
+[node name="SpriteNormal" type="Sprite2D" parent="." unique_id=748441396]
+visible = false
+texture_filter = 1
+texture = ExtResource("1_w7x1e")
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {},
+"slice_section": true
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": false,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://ui/resume_button/resume_label_normal.aseprite",
+"source_uid": 1087427428115626839
+}
+metadata/_aseprite_wizard_source_file_hash_ = "01984a3322718a7fbd005e0b85465edc"
+
+[node name="SpriteHover" type="Sprite2D" parent="." unique_id=106085046]
+visible = false
+texture_filter = 1
+texture = ExtResource("2_qof13")
+metadata/_aseprite_wizard_interface_config_ = {
+"output_section": true,
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": false,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://ui/resume_button/resume_label_hover.aseprite",
+"source_uid": 7690183655275964690
+}
+metadata/_aseprite_wizard_source_file_hash_ = "9acc13252c95576f1f3f0d381a80eb3b"
