@@ -212,7 +212,6 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ugbui"]
 length = 0.1
-loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -260,31 +259,31 @@ tracks/0/keys = {
 [sub_resource type="Animation" id="Animation_fcs02"]
 length = 0.4
 loop_mode = 1
-tracks/0/type = "value"
+tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/path = NodePath("StateMachine/Run")
 tracks/0/interp = 1
-tracks/0/loop_wrap = false
+tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [14, 15, 16, 17]
-}
-tracks/1/type = "method"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("StateMachine/Run")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
 "times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
 "method": &"play_step_sound"
 }]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [14, 15, 16, 17]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_5gtgg"]
@@ -344,6 +343,9 @@ metadata/_custom_type_script = "uid://co3jswbhja34f"
 script = ExtResource("6_ugbui")
 metadata/_custom_type_script = "uid://co3jswbhja34f"
 
+[node name="DashGhostTimer" type="Timer" parent="StateMachine/Dash" unique_id=364356840]
+wait_time = 0.02
+
 [node name="PostDash" type="Node" parent="StateMachine" unique_id=1733779874]
 script = ExtResource("7_fcs02")
 metadata/_custom_type_script = "uid://co3jswbhja34f"
@@ -355,6 +357,9 @@ metadata/_custom_type_script = "uid://co3jswbhja34f"
 [node name="Plummet" type="Node" parent="StateMachine" unique_id=991528911]
 script = ExtResource("6_75vfm")
 metadata/_custom_type_script = "uid://co3jswbhja34f"
+
+[node name="PlummetGhostTimer" type="Timer" parent="StateMachine/Plummet" unique_id=78906046]
+wait_time = 0.05
 
 [node name="PostPlummet" type="Node" parent="StateMachine" unique_id=707052914]
 script = ExtResource("8_fm80t")
@@ -435,7 +440,7 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://scenes/player/player.aseprite",
 "source_uid": 6418518113907183416
 }
-metadata/_aseprite_wizard_source_file_hash_ = "f6ba2321ed1c16ca5a4ccde4cf099ca7"
+metadata/_aseprite_wizard_source_file_hash_ = "15963fa3f8c1c4ffdb422b1782def2dd"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=714728241]
 libraries/ = SubResource("AnimationLibrary_5gtgg")
@@ -487,6 +492,8 @@ shape = SubResource("RectangleShape2D_fm80t")
 
 [connection signal="state_entered" from="StateMachine" to="." method="_on_state_machine_state_entered"]
 [connection signal="timeout" from="StateMachine/Run/CoyoteTimer" to="StateMachine/Run" method="_on_coyote_timer_timeout"]
+[connection signal="timeout" from="StateMachine/Dash/DashGhostTimer" to="StateMachine/Dash" method="_on_dash_ghost_timer_timeout"]
+[connection signal="timeout" from="StateMachine/Plummet/PlummetGhostTimer" to="StateMachine/Plummet" method="_on_plummet_ghost_timer_timeout"]
 [connection signal="animation_finished" from="AnimationPlayer" to="StateMachine/Mantle" method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="AbilityChipDetectionArea" to="." method="_on_ability_chip_detection_area_body_entered"]
 [connection signal="body_entered" from="HazardDetectionArea" to="." method="_on_hazard_detection_area_body_entered"]

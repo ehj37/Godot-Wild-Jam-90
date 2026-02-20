@@ -6,6 +6,10 @@ const DASH_DURATION: float = 0.1
 var _dash_direction: Vector2
 var _started_on_floor: bool
 
+@onready
+var player_ghost_packed_scene: PackedScene = preload("res://scenes/player/ghost/player_ghost.tscn")
+@onready var dash_ghost_timer: Timer = $DashGhostTimer
+
 
 func update(_delta: float) -> void:
 	if _started_on_floor && !_player.is_on_floor():
@@ -53,6 +57,15 @@ func enter(_data: Dictionary = {}) -> void:
 	get_tree().create_timer(DASH_DURATION).timeout.connect(_on_dash_timer_timeout)
 
 	SoundEffectManager.play_effect(SoundEffectConfig.Type.DASH)
+	dash_ghost_timer.start()
+	_add_dash_ghost()
+
+
+func exit() -> void:
+	dash_ghost_timer.stop()
+	# Double up so it's bolder at the start
+	_add_dash_ghost()
+	_add_dash_ghost()
 
 
 func _on_dash_timer_timeout() -> void:
@@ -61,3 +74,15 @@ func _on_dash_timer_timeout() -> void:
 
 	_player.velocity = Vector2.ZERO
 	_state_machine.transition_to("PostDash")
+
+
+func _add_dash_ghost() -> void:
+	var player_ghost: PlayerGhost = player_ghost_packed_scene.instantiate()
+	player_ghost.ghost_variant = PlayerGhost.GhostVariant.DASH
+	player_ghost.global_position = _player.global_position
+	player_ghost.flip_h = _player.sprite.flip_h
+	ScreenManager.add_child(player_ghost)
+
+
+func _on_dash_ghost_timer_timeout() -> void:
+	_add_dash_ghost()
