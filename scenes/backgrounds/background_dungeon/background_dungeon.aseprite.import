@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cwv2b4f3xd4uc"
+path="res://.godot/imported/background_dungeon.aseprite-0eca345b5fce41aba1ca72e1b449d39f.res"
+
+[deps]
+
+source_file="res://scenes/backgrounds/background_dungeon/background_dungeon.aseprite"
+dest_files=["res://.godot/imported/background_dungeon.aseprite-0eca345b5fce41aba1ca72e1b449d39f.res"]
+
+[params]
+

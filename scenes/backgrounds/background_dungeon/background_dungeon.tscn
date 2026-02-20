@@ -1,0 +1,33 @@
+[gd_scene format=4 uid="uid://c0d6cew5abpd1"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_mdbco"]
+_data = PackedByteArray("AAADAAUAAAABAAAA4AEAABABAABUAAAAUklGRkwAAABXRUJQVlA4TEAAAAAv38FDAA9wB603RB2ibv7jAUYiSaE32ahCBeQXwP28voj+q23bhoGnmvJGWbF9o8icl7wnI3P4X8P/GlnW8L8m")
+size_override = Vector2(480, 272)
+
+[node name="BackgroundDungeon" type="Sprite2D" unique_id=1723200763]
+z_index = -4096
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_mdbco")
+offset = Vector2(240, 136)
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/backgrounds/background_dungeon/background_dungeon.aseprite",
+"source_uid": 6361990537061025254
+}
+metadata/_aseprite_wizard_source_file_hash_ = "2f2439b87ff47341d20d1dc5dd736335"
