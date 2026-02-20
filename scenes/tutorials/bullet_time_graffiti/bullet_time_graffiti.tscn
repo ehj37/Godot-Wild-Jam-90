@@ -1,0 +1,36 @@
+[gd_scene format=4 uid="uid://b5823a3t6y5eh"]
+
+[ext_resource type="Script" uid="uid://rj88wjraixj1" path="res://scenes/tutorials/flashing_graffiti.gd" id="1_y7ta3"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_y7ta3"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAAB6AAAAUklGRnIAAABXRUJQVlA4TGYAAAAvH8AHEBcgEEjyh11hDSFBwv+/ZgUCSf6wKzz/Af8K2Na220Rkytyr9hSkEfwXovLxFJTsKYm4QET/J4B+eO4xFcyhVo7oFA5sOGF7YBS2B0YxEDViM/LCaIwJo5Y0CtFHPDCKrwI=")
+size_override = Vector2(32, 32)
+
+[node name="BulletTimeGraffiti" type="Sprite2D" unique_id=68762608]
+z_index = -4095
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_y7ta3")
+script = ExtResource("1_y7ta3")
+visible_on_start = true
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/tutorials/bullet_time_graffiti/bullet_time_tutorial_visual.aseprite",
+"source_uid": 103151918053811160
+}
+metadata/_aseprite_wizard_source_file_hash_ = "e2d61e407efe8749427598f35c08ab14"

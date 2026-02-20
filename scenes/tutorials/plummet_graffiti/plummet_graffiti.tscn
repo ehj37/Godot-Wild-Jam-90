@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://dmbxpld5ridic"]
 
-[ext_resource type="Script" uid="uid://yf32knnhqpp4" path="res://scenes/tutorials/plummet_graffiti/plummet_graffiti.gd" id="1_qay44"]
+[ext_resource type="Script" uid="uid://rj88wjraixj1" path="res://scenes/tutorials/flashing_graffiti.gd" id="1_heocj"]
 
 [sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_qay44"]
 _data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAABIAAAAUklGRkAAAABXRUJQVlA4TDQAAAAvH8AHEA8w7UM/7fMf8GAQSVKc5reFtJN2UlADiYOI/k+A/6OxkQ2VbC7Pchnlj7PIRhTv")
@@ -11,7 +11,7 @@ z_index = -4095
 texture_filter = 1
 texture = SubResource("PortableCompressedTexture2D_qay44")
 offset = Vector2(0, -20)
-script = ExtResource("1_qay44")
+script = ExtResource("1_heocj")
 metadata/_aseprite_wizard_interface_config_ = {
 "pending_changes": {
 "source": "res://scenes/tutorials/plummet_graffiti/plummet_tutorial_visual.aseprite"

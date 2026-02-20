@@ -23,9 +23,10 @@ func _ready() -> void:
 		_audio_players_by_type[config.type] = []
 
 
-func play_effect(
-	type: SoundEffectConfig.Type, screen: Screen = ScreenManager.current_screen
-) -> void:
+func play_effect(type: SoundEffectConfig.Type, screen: Screen = null) -> void:
+	if screen == null:
+		screen = ScreenManager.current_screen
+
 	var config: SoundEffectConfig = _sound_effect_configs.get(type)
 	assert(config != null, "Sound effect must be defined in AudioManager")
 

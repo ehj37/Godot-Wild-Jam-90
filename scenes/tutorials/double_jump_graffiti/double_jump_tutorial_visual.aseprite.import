@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://3b2xegtec66f"
+path="res://.godot/imported/double_jump_tutorial_visual.aseprite-b09ca705ae4b40705d73b69580de21df.res"
+
+[deps]
+
+source_file="res://scenes/tutorials/double_jump_graffiti/double_jump_tutorial_visual.aseprite"
+dest_files=["res://.godot/imported/double_jump_tutorial_visual.aseprite-b09ca705ae4b40705d73b69580de21df.res"]
+
+[params]
+
