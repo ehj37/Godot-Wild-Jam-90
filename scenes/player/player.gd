@@ -78,6 +78,8 @@ func on_bullet_connect(bullet_type: Bullet.Type) -> void:
 			pass  # TODO
 		Bullet.Type.RECHARGE_JUMP:
 			recharge_jumps()
+		Bullet.Type.RECHARGE_DASH_AND_JUMP:
+			recharge_dash_and_jumps()
 
 	bullet_absorb_aureole.flash(bullet_type)
 
