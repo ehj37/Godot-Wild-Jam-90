@@ -22,7 +22,7 @@ position = Vector2(240, 136)
 initial_screen = NodePath("../ScreenBigLand")
 
 [node name="Player" parent="." unique_id=926355718 instance=ExtResource("3_b4j7a")]
-position = Vector2(352, 1240)
+position = Vector2(232, 160)
 
 [node name="ScreenBigLand" parent="." unique_id=974160926 node_paths=PackedStringArray("screen_below") instance=ExtResource("4_wo48x")]
 screen_below = NodePath("../ScreenJumpBulletIntro")

@@ -28,7 +28,7 @@ size = Vector2(66, 50)
 script = ExtResource("1_15mv3")
 
 [node name="Player" parent="." unique_id=926355718 instance=ExtResource("2_e3sih")]
-position = Vector2(453, 1931)
+position = Vector2(244, 217)
 spawn_falling = false
 
 [node name="Camera" parent="." unique_id=1830973701 node_paths=PackedStringArray("initial_screen") instance=ExtResource("3_2y5yt")]
@@ -82,7 +82,6 @@ z_index = -4095
 position = Vector2(232, 267)
 
 [node name="JumpGraffiti" parent="ScreenIntro" unique_id=263023342 instance=ExtResource("15_6dial")]
-z_index = -4095
 position = Vector2(127, 232)
 
 [node name="DashGraffiti" parent="ScreenIntro" unique_id=1268804207 instance=ExtResource("16_7nomh")]
@@ -91,13 +90,6 @@ position = Vector2(240, 109)
 
 [node name="PlummetGraffiti" parent="ScreenIntro" unique_id=1641744362 instance=ExtResource("14_7nomh")]
 position = Vector2(240, 40)
-
-[node name="Label" type="Label" parent="ScreenIntro" unique_id=1720086608]
-offset_left = 122.0
-offset_top = 239.0
-offset_right = 379.0
-offset_bottom = 262.0
-text = "Make breakable platform wider"
 
 [node name="BreakableTile" parent="ScreenIntro" unique_id=1493320154 instance=ExtResource("15_so66j")]
 position = Vector2(228, 268)

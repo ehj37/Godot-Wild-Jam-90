@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://dehj40mm6885o"]
+
+[ext_resource type="Script" uid="uid://bbx4pmbyyp28y" path="res://ui/map/progress_pip/progress_pip.gd" id="1_ign7i"]
+
+[node name="ProgressPip" type="ColorRect" unique_id=112414823]
+custom_minimum_size = Vector2(2, 0)
+color = Color(0.9764706, 0.85882354, 0.42745098, 1)
+script = ExtResource("1_ign7i")

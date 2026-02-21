@@ -10,6 +10,8 @@ func _ready() -> void:
 
 
 func _on_screen_entered(entered_screen: Screen) -> void:
+	Map.update_progress(entered_screen, LevelManager.current_level)
+
 	_overlapping_screens.append(entered_screen)
 	current_screen = entered_screen
 	SignalBus.snap_camera_to.emit(entered_screen, false)
