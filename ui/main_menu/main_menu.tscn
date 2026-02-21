@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cn0l6rjng1ypo"]
+[gd_scene format=4 uid="uid://cn0l6rjng1ypo"]
 
 [ext_resource type="Script" uid="uid://c7obnmlbqq1l3" path="res://ui/main_menu/main_menu.gd" id="1_uhj5c"]
 [ext_resource type="PackedScene" uid="uid://i8lbimd4vudv" path="res://ui/menu_background/menu_background.tscn" id="2_mu8pm"]
@@ -10,16 +10,40 @@
 [ext_resource type="PackedScene" uid="uid://cu7hnn0sm01qd" path="res://ui/music_vol_slider/music_vol_slider.tscn" id="7_4e78x"]
 [ext_resource type="PackedScene" uid="uid://dipsxnsqtrpw7" path="res://ui/back_button/back_button.tscn" id="8_w2r0d"]
 
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_w2r0d"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAADMAAAAUklGRsQAAABXRUJQVlA4TLgAAAAvP8APEA8wdnM4ZvMf8IAa27brZs8oPXjBFTvgSegqOtvXuYlfjov5BXxoGEuIpRgaKiDxiP5PAAe3t+ljG3s/3f4/NuPuhkl/2py00Sxe1r/jl4WVPgKUCtIBDwUoSauiXx2F4WGAsNpHCc+XnxiO9Rs84e/xA+huvAhFG55g8bLwIjygH5bgeOmHEkhhCBVPTyC9ghCkwrAQVhyvpFJYejFA9EPZ3fRTWG1D1VL5smDv3qaPbRxc")
+size_override = Vector2(64, 64)
+
 [node name="MainMenu" type="Node2D" unique_id=1045805404]
 process_mode = 3
 script = ExtResource("1_uhj5c")
 
-[node name="Label" type="Label" parent="." unique_id=2133212138]
-offset_right = 480.0
-offset_bottom = 100.0
-text = "Godot 90 Jam Game"
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1511397381]
+texture_filter = 1
+position = Vector2(232, 56)
+texture = SubResource("PortableCompressedTexture2D_w2r0d")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://ui/main_menu/logo.aseprite",
+"source_uid": 5428777784173342380
+}
+metadata/_aseprite_wizard_source_file_hash_ = "af726806fb6e760cbeb7ee4bed56d4e3"
 
 [node name="CenterContainer" type="CenterContainer" parent="." unique_id=559988606]
 texture_filter = 1
