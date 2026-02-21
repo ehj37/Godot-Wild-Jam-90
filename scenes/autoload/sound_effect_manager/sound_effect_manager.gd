@@ -1,6 +1,6 @@
 extends Node2D
 
-const AUDIO_STREAM_PLAYER_MAX_DISTANCE: float = 200.0
+const AUDIO_STREAM_PLAYER_MAX_DISTANCE: float = 150.0
 
 @export var sound_effect_configs: Array[SoundEffectConfig]
 

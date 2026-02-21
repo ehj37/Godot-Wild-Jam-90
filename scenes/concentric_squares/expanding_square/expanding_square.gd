@@ -4,8 +4,8 @@ extends PanelContainer
 
 signal finished
 
-const EXPAND_DURATION: float = 4.0
-const MAX_SIZE: float = 100
+@export var max_size: float = 100.0
+@export var expand_duration: float = 4.0
 
 var color: Color
 
@@ -20,9 +20,9 @@ func _ready() -> void:
 	var panel_tween: Tween = get_tree().create_tween()
 	panel_tween.set_parallel()
 
-	panel_tween.tween_property(self, "size", Vector2(MAX_SIZE, MAX_SIZE), EXPAND_DURATION)
-	var final_position: Vector2 = Vector2(-MAX_SIZE / 2, -MAX_SIZE / 2)
-	panel_tween.tween_property(self, "position", final_position, EXPAND_DURATION)
-	panel_tween.tween_property(self, "modulate:a", 0.0, EXPAND_DURATION)
+	panel_tween.tween_property(self, "size", Vector2(max_size, max_size), expand_duration)
+	var final_position: Vector2 = Vector2(-max_size / 2, -max_size / 2)
+	panel_tween.tween_property(self, "position", final_position, expand_duration)
+	panel_tween.tween_property(self, "modulate:a", 0.0, expand_duration)
 
 	panel_tween.finished.connect(func() -> void: finished.emit())

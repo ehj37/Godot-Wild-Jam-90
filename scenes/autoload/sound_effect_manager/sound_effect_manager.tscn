@@ -12,7 +12,8 @@
 [ext_resource type="Resource" uid="uid://db5ihptsekaxy" path="res://sound/sound_effect_configs/jump_land.tres" id="10_kc35x"]
 [ext_resource type="Resource" uid="uid://cc06xhtwv6jco" path="res://sound/sound_effect_configs/player_hurt.tres" id="11_kc35x"]
 [ext_resource type="Resource" uid="uid://ci4s0vlom5aor" path="res://sound/sound_effect_configs/big_fall.tres" id="12_uss4a"]
+[ext_resource type="Resource" uid="uid://dkottlbue4ahj" path="res://sound/sound_effect_configs/game_end.tres" id="13_tebp0"]
 
 [node name="SoundEffectManager" type="Node2D" unique_id=984462685]
 script = ExtResource("1_hlycp")
-sound_effect_configs = Array[ExtResource("2_iwcr0")]([ExtResource("3_yxo0u"), ExtResource("4_ov7oo"), ExtResource("5_ov7oo"), ExtResource("6_dr1uk"), ExtResource("7_dr1uk"), ExtResource("8_8xfbu"), ExtResource("9_k03hr"), ExtResource("10_kc35x"), ExtResource("11_kc35x"), ExtResource("12_uss4a")])
+sound_effect_configs = Array[ExtResource("2_iwcr0")]([ExtResource("3_yxo0u"), ExtResource("4_ov7oo"), ExtResource("5_ov7oo"), ExtResource("6_dr1uk"), ExtResource("7_dr1uk"), ExtResource("8_8xfbu"), ExtResource("9_k03hr"), ExtResource("10_kc35x"), ExtResource("11_kc35x"), ExtResource("12_uss4a"), ExtResource("13_tebp0")])

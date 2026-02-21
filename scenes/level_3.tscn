@@ -1,0 +1,77 @@
+[gd_scene format=4 uid="uid://b7lqnjkqkuvb"]
+
+[ext_resource type="Script" uid="uid://b1jqt4fmu6s6u" path="res://scripts/level.gd" id="1_70nk6"]
+[ext_resource type="PackedScene" uid="uid://ch05hmffks1r0" path="res://scenes/camera/camera.tscn" id="2_uwxec"]
+[ext_resource type="PackedScene" uid="uid://haj0s8e6d10f" path="res://scenes/player/player.tscn" id="3_1pn4d"]
+[ext_resource type="PackedScene" uid="uid://vom35pfu5i07" path="res://scenes/screen/screen.tscn" id="4_1pn4d"]
+[ext_resource type="PackedScene" uid="uid://bsqtco2q1qevg" path="res://scenes/terrain/terrain.tscn" id="5_ah8om"]
+[ext_resource type="PackedScene" uid="uid://ccs43pp4tf5m0" path="res://scenes/game_end_trigger/game_end_trigger.tscn" id="6_p6vls"]
+
+[node name="Level3" type="Node2D" unique_id=1218620386]
+script = ExtResource("1_70nk6")
+metadata/_custom_type_script = "uid://b1jqt4fmu6s6u"
+
+[node name="Camera" parent="." unique_id=1830973701 node_paths=PackedStringArray("initial_screen") instance=ExtResource("2_uwxec")]
+position = Vector2(240, 136)
+initial_screen = NodePath("../Screen")
+
+[node name="Player" parent="." unique_id=926355718 instance=ExtResource("3_1pn4d")]
+position = Vector2(194, 2089)
+
+[node name="Screen" parent="." unique_id=974160926 node_paths=PackedStringArray("screen_below") instance=ExtResource("4_1pn4d")]
+screen_below = NodePath("../Screen2")
+
+[node name="Terrain" parent="Screen" unique_id=1450694777 instance=ExtResource("5_ah8om")]
+tile_map_data = PackedByteArray("AAAcAAQAAAAHAAUAAAAcAAUAAAAHAAYAAAAdAAQAAAAIAAUAAAAdAAUAAAAIAAYAAAAeAAQAAAAJAAUAAAAeAAUAAAAJAAYAAAAfAAQAAAAKAAUAAAAfAAUAAAAKAAYAAAA=")
+
+[node name="Screen2" parent="." unique_id=72395521 node_paths=PackedStringArray("screen_above", "screen_below") instance=ExtResource("4_1pn4d")]
+position = Vector2(0, 272)
+screen_above = NodePath("../Screen")
+screen_below = NodePath("../Screen3")
+
+[node name="Terrain" parent="Screen2" unique_id=1616228026 instance=ExtResource("5_ah8om")]
+
+[node name="Screen3" parent="." unique_id=1109290855 node_paths=PackedStringArray("screen_above", "screen_below") instance=ExtResource("4_1pn4d")]
+position = Vector2(0, 544)
+screen_above = NodePath("../Screen2")
+screen_below = NodePath("../Screen4")
+
+[node name="Terrain" parent="Screen3" unique_id=1085708723 instance=ExtResource("5_ah8om")]
+
+[node name="Screen4" parent="." unique_id=755334564 node_paths=PackedStringArray("screen_above", "screen_below") instance=ExtResource("4_1pn4d")]
+position = Vector2(0, 816)
+screen_above = NodePath("../Screen3")
+screen_below = NodePath("../Screen5")
+
+[node name="Terrain" parent="Screen4" unique_id=472016486 instance=ExtResource("5_ah8om")]
+
+[node name="Screen5" parent="." unique_id=1806738088 node_paths=PackedStringArray("screen_above", "screen_below") instance=ExtResource("4_1pn4d")]
+position = Vector2(0, 1088)
+screen_above = NodePath("../Screen4")
+screen_below = NodePath("../Screen6")
+
+[node name="Terrain" parent="Screen5" unique_id=550606235 instance=ExtResource("5_ah8om")]
+
+[node name="Screen6" parent="." unique_id=732442595 node_paths=PackedStringArray("screen_above", "screen_below") instance=ExtResource("4_1pn4d")]
+position = Vector2(0, 1360)
+screen_above = NodePath("../Screen5")
+screen_below = NodePath("../Screen7")
+
+[node name="Terrain" parent="Screen6" unique_id=1435065917 instance=ExtResource("5_ah8om")]
+
+[node name="Screen7" parent="." unique_id=1291726108 node_paths=PackedStringArray("screen_above", "screen_below") instance=ExtResource("4_1pn4d")]
+position = Vector2(0, 1632)
+screen_above = NodePath("../Screen6")
+screen_below = NodePath("../Screen8")
+
+[node name="Terrain" parent="Screen7" unique_id=1543449203 instance=ExtResource("5_ah8om")]
+
+[node name="Screen8" parent="." unique_id=1740512814 node_paths=PackedStringArray("screen_above") instance=ExtResource("4_1pn4d")]
+position = Vector2(0, 1904)
+screen_above = NodePath("../Screen7")
+
+[node name="GameEndTrigger" parent="Screen8" unique_id=234826084 instance=ExtResource("6_p6vls")]
+position = Vector2(240, 136)
+
+[node name="Terrain" parent="Screen8" unique_id=1697166428 instance=ExtResource("5_ah8om")]
+tile_map_data = PackedByteArray("AAAAAAgAAAAHAAcAAAABAAgAAAAIAAcAAAACAAgAAAAJAAcAAAADAAgAAAAKAAcAAAAXABoAAAAAAAAAAAAYABoAAAAAAAAAAAAZABkAAAAAAAAAAAAaABkAAAAAAAAAAAAbABgAAAAAAAAAAAAcABgAAAAAAAAAAAAdABcAAAAAAAAAAAAeABcAAAAAAAAAAAAfABYAAAAAAAAAAAAgABYAAAAAAAAAAAAhABUAAAAAAAAAAAAiABUAAAAAAAAAAAAjABQAAAAAAAAAAAAkABQAAAAAAAAAAAA=")

@@ -1,0 +1,32 @@
+[gd_scene format=4 uid="uid://cq5j3a412i87i"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_guqdd"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAACmAAAAUklGRp4AAABXRUJQVlA4TJIAAAAvP8APEA8w7UM/7fMf8HBTW3vbfCouWwXQGZiAFGKuAAIhUHIyBYYbAI2ZquQyeY7o/wTgDApmulFTctjq6/OJtY01MQmqCSRcG3B1NUWeASgwYMnhAAIPWXvAgKaGA6jmHhAKKDmU1AFU+q56TxtKgxyi1gP8ZmCNRtK2NmSX2gWAIjO5vsl3YUy4SVBTTUwnEw==")
+size_override = Vector2(64, 64)
+
+[node name="DashAbsorbGraffiti" type="Sprite2D" unique_id=1717582599]
+z_index = -4095
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_guqdd")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/tutorials/dash_absorb_graffiti/dash_absorb_tutorial_visual.aseprite",
+"source_uid": 2376461260017514559
+}
+metadata/_aseprite_wizard_source_file_hash_ = "c9adc606b6393da1114170810c5d6103"

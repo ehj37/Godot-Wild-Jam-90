@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundEffectConfig" format=3 uid="uid://dkottlbue4ahj"]
+
+[ext_resource type="AudioStream" uid="uid://cr4e4tmss4rek" path="res://sound/sound_effects/Game end.ogg" id="1_4g01d"]
+[ext_resource type="Script" uid="uid://b4ne2jrms2thi" path="res://sound/sound_effect_config.gd" id="1_38ar6"]
+
+[resource]
+script = ExtResource("1_38ar6")
+type = 10
+audio_stream = ExtResource("1_4g01d")
+metadata/_custom_type_script = "uid://b4ne2jrms2thi"

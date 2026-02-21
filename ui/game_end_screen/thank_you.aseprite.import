@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://bevarwebrrlmw"
+path="res://.godot/imported/thank_you.aseprite-e0e48ed481c344dcf17f665c3f0ebb93.res"
+
+[deps]
+
+source_file="res://ui/game_end_screen/thank_you.aseprite"
+dest_files=["res://.godot/imported/thank_you.aseprite-e0e48ed481c344dcf17f665c3f0ebb93.res"]
+
+[params]
+

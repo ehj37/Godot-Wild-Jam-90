@@ -5,6 +5,7 @@ _data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAABeAAAAUklGRlYAAABXRUJQVlA4TEk
 size_override = Vector2(32, 32)
 
 [node name="JumpGraffiti" type="Sprite2D" unique_id=263023342]
+z_index = -4095
 texture_filter = 1
 texture = SubResource("PortableCompressedTexture2D_xges5")
 metadata/_aseprite_wizard_interface_config_ = {

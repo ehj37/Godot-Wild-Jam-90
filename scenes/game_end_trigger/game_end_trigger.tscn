@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ccs43pp4tf5m0"]
+
+[ext_resource type="PackedScene" uid="uid://bhpdpkln5wcu2" path="res://scenes/concentric_squares/concentric_squares.tscn" id="1_i8hv0"]
+[ext_resource type="Script" uid="uid://sj4k745j0rei" path="res://scenes/game_end_trigger/game_end_trigger.gd" id="1_ypx1j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ypx1j"]
+size = Vector2(50, 50)
+
+[node name="GameEndTrigger" type="Area2D" unique_id=1870651725]
+process_mode = 3
+rotation = 0.7853982
+collision_layer = 0
+collision_mask = 64
+script = ExtResource("1_ypx1j")
+
+[node name="ConcentricSquares" parent="." unique_id=1452434999 instance=ExtResource("1_i8hv0")]
+max_square_size = 3000.0
+square_expand_duration = 20.0
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1954498895]
+offset_left = -25.0
+offset_top = -25.0
+offset_right = 25.0
+offset_bottom = 25.0
+color = Color(1, 1, 0, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=313038619]
+shape = SubResource("RectangleShape2D_ypx1j")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

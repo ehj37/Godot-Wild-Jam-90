@@ -1,0 +1,164 @@
+[gd_scene format=4 uid="uid://b188r0n84c2y4"]
+
+[ext_resource type="Script" uid="uid://cawolxp0u8nc1" path="res://ui/game_end_screen/game_end_screen.gd" id="1_73q5m"]
+
+[sub_resource type="Animation" id="Animation_73q5m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteFin:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpriteThankYou:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ijdv8"]
+resource_name = "game_end"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SpriteFin:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SpriteThankYou:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(7.9816, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_717hx"]
+_data = {
+&"RESET": SubResource("Animation_73q5m"),
+&"game_end": SubResource("Animation_ijdv8")
+}
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_73q5m"]
+_data = PackedByteArray("AAADAAUAAAABAAAAEQAAAAUAAAA8AAAAUklGRjQAAABXRUJQVlA4TCcAAAAvEAABEA8w7UM/7fMf8FDURgo0SOOFgVsIgjGAnoj+xw/qmKPOrQAA")
+size_override = Vector2(17, 5)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_ijdv8"]
+_data = PackedByteArray("AAADAAUAAAABAAAALAAAAAUAAABOAAAAUklGRkYAAABXRUJQVlA4TDkAAAAvKwABEA8w7UM/7fMf8FAT2Wo081tUQJmzjosMAuIJEciIlbOMooj+R23RBsSDKd78XSEeWCFeeBEA")
+size_override = Vector2(44, 5)
+
+[node name="GameEndScreen" type="CanvasLayer" unique_id=350408049]
+script = ExtResource("1_73q5m")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=356729107]
+offset_right = 480.0
+offset_bottom = 272.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1342145534]
+libraries/ = SubResource("AnimationLibrary_717hx")
+
+[node name="SpriteFin" type="Sprite2D" parent="." unique_id=1887203764]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+position = Vector2(150, 98)
+texture = SubResource("PortableCompressedTexture2D_73q5m")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://ui/game_end_screen/fin.aseprite",
+"source_uid": 4836392544113137575
+}
+metadata/_aseprite_wizard_source_file_hash_ = "3b967eb25f67a7d24e45ba400f751f34"
+
+[node name="SpriteThankYou" type="Sprite2D" parent="." unique_id=1600580213]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+position = Vector2(164, 105)
+texture = SubResource("PortableCompressedTexture2D_ijdv8")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://ui/game_end_screen/thank_you.aseprite",
+"source_uid": 2710559511338624402
+}
+metadata/_aseprite_wizard_source_file_hash_ = "5b8162ae9252457bc3fb5807c8af0e52"

@@ -13,3 +13,4 @@ signal map_closed
 # MISC.
 signal screen_entered(entered_screen: Screen)
 signal screen_exited(exited_screen: Screen)
+signal end_game
