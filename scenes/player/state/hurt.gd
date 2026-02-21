@@ -13,6 +13,6 @@ func update(_delta: float) -> void:
 
 func enter(_data: Dictionary = {}) -> void:
 	_player.velocity = Vector2.ZERO
-	SoundEffectManager.play_effect(SoundEffectConfig.Type.PLAYER_HURT)
+	SoundEffectManager.play_effect_for_screen(SoundEffectConfig.Type.PLAYER_HURT)
 	TimeScaleManager.freeze_unfreeze_short()
 	_player.animation_player.play("hurt")

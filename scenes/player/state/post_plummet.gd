@@ -5,7 +5,7 @@ const POST_PLUMMET_DURATION: float = 0.25
 
 func enter(_data: Dictionary = {}) -> void:
 	_player.animation_player.play("post_plummet")
-	SoundEffectManager.play_effect(SoundEffectConfig.Type.LAND)
+	SoundEffectManager.play_effect_for_screen(SoundEffectConfig.Type.LAND)
 	get_tree().create_timer(POST_PLUMMET_DURATION).timeout.connect(_on_post_plummet_timer_timeout)
 
 

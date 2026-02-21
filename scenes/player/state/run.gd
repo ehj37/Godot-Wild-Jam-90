@@ -71,4 +71,4 @@ func enter(_data: Dictionary = {}) -> void:
 
 
 func play_step_sound() -> void:
-	SoundEffectManager.play_effect(SoundEffectConfig.Type.STEP)
+	SoundEffectManager.play_effect_for_screen(SoundEffectConfig.Type.STEP)

@@ -1,0 +1,61 @@
+[gd_scene format=4 uid="uid://doguqsfsnt2gx"]
+
+[ext_resource type="Script" uid="uid://uas5omyv5qet" path="res://scenes/terrain/breakable_tile/breakable_tile.gd" id="1_8ix2i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nmvo1"]
+size = Vector2(8, 8)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_gpgk4"]
+_data = PackedByteArray("AAADAAUAAAABAAAAgAAAAIAAAABGAwAAUklGRj4DAABXRUJQVlA4TDEDAAAvf8AfEO/AJgCANLi7tCE7jZjrRQ22kSQ1QsOeh8yGDIkUfPWSTQCASebucu1fChrTiQZ87vMfgIHz/1VfAVy0aAyKBAAS9l+cXjcNjf6UN95RMEnKzJN37q65GGP2zkOrgxAc1DtFkoSSQyFJUVByLHobQYIAsGnjFLNFciHgNj3w/98Zi9xKY4joP0TJtoI25wCBF7BIM8A3bJhfmCWc2+12s91GZrPZ1jJ8ERoa/qYVyX140xDGklLBhLUrbTnFXCBiSkhNiY0rfkWmNBGbEh+q/kACwErXdQDQrwJiJOp7rnbMfm0BSB/vmu5Ila5bsyKIoTdFd9RRnUlMifO4r6WgZ3a7nVTIKDpsAEk7UdoQuCt6ZbfTUu3olU8mb1jpe4lyk/VGouGdDVmXCMmO5pnpEluKA9bCBOqcmN8hegAbSeUr0xtoBhCTGTdK9LZ9D/XmgekHaRiGJmEFNDpCClIwOjVDjylZcZjEo1+A7LuBQKjWxD8RSyyQDSddYc2RKCIAtF/NTfgNpESfVHNQE9sLym9FP5rVeX+/LbfVwCyLM8q73TcyTmd5d0d5s7u8rRqWySHLfeHe74tuCGQ9gORYR6RTCAgqyo8TJoKocG/0JQCQeJNa5dbmKwDY7YCpQ+cChh+E9Ipq7TXsVjtBANiRcQDCRNZUnuaLCoMdk00BsHgGyRJLmlbBeVErVHUBhMc6p0E6Atk3fin4FJ3QVhH/StHeU88fH60L9Jpzt3lVEQ33DhEyCTaRUPcOAptC273j3e+9oxL73rES/d6xsizfZe5MfPa9w5M3KlrvHUEkWO8dgcRi8/vKz6U552Ge85CzFhfmNc/qnOg8fEG+Mr+X/B1bA3dcxstFj5vJHhmG0eQgMFj1VAx6/brGc+bzonV9+JxjYYr75HqtTBcjs4rf8DRN0cKZ1vdMNuwJ7/W94TpZIb8zvR/BWXiaBLR9p+UZvoZdp+tFKEZ52JDJ/6H2Y+ZMcfegZsbRL3Mrw1GVN/ztO9Zwzjq8i/tzNzTXqdLUcM9FxlDk7C8snzl0D5rGIRB5kJ8jnbux9j0txM79MJL7hCEegSfcK8L733oKAA==")
+size_override = Vector2(128, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ix2i"]
+size = Vector2(8, 3)
+
+[node name="BreakableTile" type="StaticBody2D" unique_id=1493320154]
+collision_layer = 128
+collision_mask = 0
+script = ExtResource("1_8ix2i")
+variant = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1839913705]
+shape = SubResource("RectangleShape2D_nmvo1")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=227684849]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_gpgk4")
+region_enabled = true
+region_rect = Rect2(48, 72, 8, 8)
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://scenes/terrain/terrain.aseprite",
+"source_uid": 5419685268759828345
+}
+metadata/_aseprite_wizard_source_file_hash_ = "ba6a618ed2b66fa9381baa21a3ab150b"
+
+[node name="PlayerDetectArea" type="Area2D" parent="." unique_id=1851969229]
+collision_layer = 0
+collision_mask = 64
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetectArea" unique_id=194497389]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_8ix2i")
+
+[connection signal="body_entered" from="PlayerDetectArea" to="." method="_on_player_detect_area_body_entered"]

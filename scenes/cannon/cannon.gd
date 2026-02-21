@@ -43,4 +43,4 @@ func _on_bullet_spawn_timer_timeout() -> void:
 			bullet.spawn_direction = Bullet.SpawnDirection.LEFT
 	bullet.global_position = global_position
 	LevelManager.current_level.add_child(bullet)
-	SoundEffectManager.play_effect(SoundEffectConfig.Type.CANNON_FIRE, screen)
+	SoundEffectManager.play_effect_for_screen(SoundEffectConfig.Type.CANNON_FIRE, screen)

@@ -56,7 +56,7 @@ func enter(_data: Dictionary = {}) -> void:
 	_player.velocity = _dash_direction * DASH_SPEED
 	get_tree().create_timer(DASH_DURATION).timeout.connect(_on_dash_timer_timeout)
 
-	SoundEffectManager.play_effect(SoundEffectConfig.Type.DASH)
+	SoundEffectManager.play_effect_for_screen(SoundEffectConfig.Type.DASH)
 	dash_ghost_timer.start()
 	_add_dash_ghost()
 

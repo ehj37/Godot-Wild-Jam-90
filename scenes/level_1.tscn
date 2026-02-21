@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://vom35pfu5i07" path="res://scenes/screen/screen.tscn" id="4_2os1m"]
 [ext_resource type="PackedScene" uid="uid://bsqtco2q1qevg" path="res://scenes/terrain/terrain.tscn" id="5_go7sj"]
 [ext_resource type="PackedScene" uid="uid://fjmenbnanih6" path="res://scenes/ladder/ladder.tscn" id="6_7gny6"]
-[ext_resource type="PackedScene" uid="uid://c4jepvn8yish7" path="res://scenes/breakable_platforms/breakable_platform.tscn" id="7_pa8r4"]
 [ext_resource type="PackedScene" uid="uid://brgwj8thj21yb" path="res://scenes/cannon/cannon.tscn" id="8_15mv3"]
 [ext_resource type="PackedScene" uid="uid://b7kakumuj10d8" path="res://scenes/backgrounds/background_castle/background_castle.tscn" id="9_2os1m"]
 [ext_resource type="PackedScene" uid="uid://ds4bs0p6riqyq" path="res://scenes/ability_chip/ability_chip.tscn" id="9_e3sih"]
@@ -16,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dmbxpld5ridic" path="res://scenes/tutorials/plummet_graffiti/plummet_graffiti.tscn" id="14_7nomh"]
 [ext_resource type="PackedScene" uid="uid://csrrbvnjhw5as" path="res://scenes/hazard/hazard.tscn" id="15_1s4pk"]
 [ext_resource type="PackedScene" uid="uid://6npg4sn8q0nv" path="res://scenes/tutorials/jump_graffiti/jump_graffiti.tscn" id="15_6dial"]
+[ext_resource type="PackedScene" uid="uid://doguqsfsnt2gx" path="res://scenes/terrain/breakable_tile/breakable_tile.tscn" id="15_so66j"]
 [ext_resource type="PackedScene" uid="uid://c0d6cew5abpd1" path="res://scenes/backgrounds/background_dungeon/background_dungeon.tscn" id="15_x2xxo"]
 [ext_resource type="PackedScene" uid="uid://byfuvdlsbtrwt" path="res://scenes/tutorials/dash_graffiti/dash_graffiti.tscn" id="16_7nomh"]
 [ext_resource type="PackedScene" uid="uid://br1j7jgrys6xc" path="res://scenes/tutorials/double_jump_graffiti/double_jump_graffiti.tscn" id="19_2cbcq"]
@@ -28,7 +28,7 @@ size = Vector2(66, 50)
 script = ExtResource("1_15mv3")
 
 [node name="Player" parent="." unique_id=926355718 instance=ExtResource("2_e3sih")]
-position = Vector2(301, 127)
+position = Vector2(453, 1931)
 spawn_falling = false
 
 [node name="Camera" parent="." unique_id=1830973701 node_paths=PackedStringArray("initial_screen") instance=ExtResource("3_2y5yt")]
@@ -69,9 +69,6 @@ tile_map_data = PackedByteArray("AAAAACEAAAAIAAEAAAABACEAAAAIAAEAAAACACEAAAAIAAE
 position = Vector2(0, 272)
 tile_map_data = PackedByteArray("AAACAP//AAAAAAIAAAACAP7/AAAAAAIAAAACAP3/AAAAAAIAAAACAPz/AAAAAAIAAAACAPv/AAACAAEAAAAbAP//AAAAAAIAAAAbAP7/AAAAAAIAAAAbAP3/AAAAAAIAAAAbAPz/AAAAAAIAAAAbAPv/AAAAAAIAAAAXAP//AAAAAAIAAAAXAP7/AAAAAAIAAAAXAP3/AAAAAAIAAAAXAPz/AAAAAAIAAAAXAPv/AAAAAAIAAAAXAPr/AAAAAAIAAAAXAPn/AAACAAEAAAAGAP3/AAAAAAIAAAAGAPz/AAAAAAIAAAAGAPv/AAAAAAIAAAAGAPr/AAAAAAIAAAAGAPn/AAAAAAIAAAAGAPj/AAAAAAIAAAAGAPf/AAAAAAIAAAAGAPb/AAAAAAIAAAAGAPX/AAADAAEAAAARAO//AAAAAAIAAAARAPD/AAAAAAIAAAARAPH/AAAAAAIAAAARAPL/AAAAAAIAAAARAPP/AAAAAAIAAAASAP//AAAAAAEAAAARAPT/AAABAAIAAAARAPX/AAADAAMAAAALAP//AAABAAEAAAAMAO//AAAEAAMAAAAGAP7/AAADAAMAAAAbAPr/AAADAAEAAAA=")
 
-[node name="BreakablePlatform" parent="ScreenIntro" unique_id=621922022 instance=ExtResource("7_pa8r4")]
-position = Vector2(240, 268)
-
 [node name="Marker2D" type="Marker2D" parent="ScreenIntro" unique_id=1769437200]
 position = Vector2(240, 254)
 
@@ -102,6 +99,22 @@ offset_right = 379.0
 offset_bottom = 262.0
 text = "Make breakable platform wider"
 
+[node name="BreakableTile" parent="ScreenIntro" unique_id=1493320154 instance=ExtResource("15_so66j")]
+position = Vector2(228, 268)
+variant = 0
+
+[node name="BreakableTile2" parent="ScreenIntro" unique_id=661571603 instance=ExtResource("15_so66j")]
+position = Vector2(236, 268)
+variant = 0
+
+[node name="BreakableTile3" parent="ScreenIntro" unique_id=1473947021 instance=ExtResource("15_so66j")]
+position = Vector2(244, 268)
+variant = 0
+
+[node name="BreakableTile4" parent="ScreenIntro" unique_id=1872312737 instance=ExtResource("15_so66j")]
+position = Vector2(252, 268)
+variant = 0
+
 [node name="ScreenClamberIntro" parent="." unique_id=719241498 node_paths=PackedStringArray("screen_above", "screen_below") instance=ExtResource("4_2os1m")]
 position = Vector2(0, 272)
 screen_above = NodePath("../ScreenIntro")
@@ -113,12 +126,19 @@ tile_map_data = PackedByteArray("AAA7AAAAAAACAAoAAAA7AAEAAAACAAoAAAA7AAIAAAACAAo
 [node name="Ladder" parent="ScreenClamberIntro" unique_id=2082239727 instance=ExtResource("6_7gny6")]
 position = Vector2(0, -272)
 
-[node name="BreakablePlatform" parent="ScreenClamberIntro" unique_id=664979538 instance=ExtResource("7_pa8r4")]
-position = Vector2(456, 267)
+[node name="BackgroundDungeon" parent="ScreenClamberIntro" unique_id=1723200763 instance=ExtResource("15_x2xxo")]
 
-[node name="Background" type="Node2D" parent="ScreenClamberIntro" unique_id=411892989]
+[node name="BreakableTile" parent="ScreenClamberIntro" unique_id=117954022 instance=ExtResource("15_so66j")]
+position = Vector2(444, 268)
 
-[node name="BackgroundDungeon" parent="ScreenClamberIntro/Background" unique_id=1723200763 instance=ExtResource("15_x2xxo")]
+[node name="BreakableTile2" parent="ScreenClamberIntro" unique_id=830866848 instance=ExtResource("15_so66j")]
+position = Vector2(452, 268)
+
+[node name="BreakableTile3" parent="ScreenClamberIntro" unique_id=661946574 instance=ExtResource("15_so66j")]
+position = Vector2(460, 268)
+
+[node name="BreakableTile4" parent="ScreenClamberIntro" unique_id=472444112 instance=ExtResource("15_so66j")]
+position = Vector2(468, 268)
 
 [node name="ScreenHazardIntro" parent="." unique_id=974160926 node_paths=PackedStringArray("spawn_point", "screen_above", "screen_below") instance=ExtResource("4_2os1m")]
 position = Vector2(0, 544)
@@ -137,8 +157,17 @@ tile_map_data = PackedByteArray("AAA2ABEAAAACAAIAAAA1ABEAAAACAAIAAAA0ABEAAAACAAI
 [node name="Marker2D" type="Marker2D" parent="ScreenHazardIntro" unique_id=812081805]
 position = Vector2(455, 96)
 
-[node name="BreakablePlatform" parent="ScreenHazardIntro" unique_id=1117672757 instance=ExtResource("7_pa8r4")]
-position = Vector2(24, 268)
+[node name="BreakableTile" parent="ScreenHazardIntro" unique_id=1558368645 instance=ExtResource("15_so66j")]
+position = Vector2(12, 268)
+
+[node name="BreakableTile2" parent="ScreenHazardIntro" unique_id=11570193 instance=ExtResource("15_so66j")]
+position = Vector2(20, 268)
+
+[node name="BreakableTile3" parent="ScreenHazardIntro" unique_id=1705472870 instance=ExtResource("15_so66j")]
+position = Vector2(28, 268)
+
+[node name="BreakableTile4" parent="ScreenHazardIntro" unique_id=663048239 instance=ExtResource("15_so66j")]
+position = Vector2(36, 268)
 
 [node name="ScreenCannonIntro" parent="." unique_id=487970280 node_paths=PackedStringArray("spawn_point", "screen_above", "screen_below") instance=ExtResource("4_2os1m")]
 position = Vector2(0, 816)
@@ -152,14 +181,12 @@ screen_below = NodePath("../ScreenCannonMadness")
 position = Vector2(64, 112)
 screen = NodePath("..")
 bullet_type_pattern = Array[int]([3])
-spawn_direction = null
 time_between_bullets = 0.9
 
 [node name="Cannon2" parent="ScreenCannonIntro" unique_id=1331754863 node_paths=PackedStringArray("screen") instance=ExtResource("8_15mv3")]
 position = Vector2(64, 176)
 screen = NodePath("..")
 bullet_type_pattern = Array[int]([3])
-spawn_direction = null
 time_between_bullets = 1.2
 
 [node name="Terrain" parent="ScreenCannonIntro" unique_id=1227948897 instance=ExtResource("5_go7sj")]
@@ -173,6 +200,12 @@ tile_map_data = PackedByteArray("AAAJABAAAAAAAAIAAAAJAA8AAAAAAAIAAAAJAA4AAAAAAAI
 
 [node name="Marker2D" type="Marker2D" parent="ScreenCannonIntro" unique_id=1371732672]
 position = Vector2(120, 264)
+
+[node name="BreakableTile" parent="ScreenCannonIntro" unique_id=2068504774 instance=ExtResource("15_so66j")]
+position = Vector2(460, 268)
+
+[node name="BreakableTile2" parent="ScreenCannonIntro" unique_id=528359154 instance=ExtResource("15_so66j")]
+position = Vector2(468, 268)
 
 [node name="ScreenCannonMadness" parent="." unique_id=817467738 node_paths=PackedStringArray("spawn_point", "screen_above", "screen_below") instance=ExtResource("4_2os1m")]
 position = Vector2(0, 1088)
@@ -245,8 +278,17 @@ screen = NodePath("..")
 bullet_type_pattern = Array[int]([3])
 time_between_bullets = 1.0
 
-[node name="BreakablePlatform" parent="ScreenCannonMadness" unique_id=1226399459 instance=ExtResource("7_pa8r4")]
-position = Vector2(24, 268)
+[node name="BreakableTile" parent="ScreenCannonMadness" unique_id=1113973704 instance=ExtResource("15_so66j")]
+position = Vector2(12, 268)
+
+[node name="BreakableTile2" parent="ScreenCannonMadness" unique_id=199910021 instance=ExtResource("15_so66j")]
+position = Vector2(20, 268)
+
+[node name="BreakableTile3" parent="ScreenCannonMadness" unique_id=2064959416 instance=ExtResource("15_so66j")]
+position = Vector2(28, 268)
+
+[node name="BreakableTile4" parent="ScreenCannonMadness" unique_id=832983306 instance=ExtResource("15_so66j")]
+position = Vector2(36, 268)
 
 [node name="ScreenDoubleJumpIntro" parent="." unique_id=1323078200 node_paths=PackedStringArray("spawn_point", "screen_above", "screen_below") instance=ExtResource("4_2os1m")]
 position = Vector2(0, 1360)
@@ -271,6 +313,15 @@ position = Vector2(72, 264)
 [node name="DoubleJumpGraffiti" parent="ScreenDoubleJumpIntro" unique_id=584625171 instance=ExtResource("19_2cbcq")]
 position = Vector2(166, 51)
 
+[node name="BreakableTile" parent="ScreenDoubleJumpIntro" unique_id=1870532340 instance=ExtResource("15_so66j")]
+position = Vector2(348, 268)
+
+[node name="BreakableTile2" parent="ScreenDoubleJumpIntro" unique_id=1861166757 instance=ExtResource("15_so66j")]
+position = Vector2(356, 268)
+
+[node name="BreakableTile3" parent="ScreenDoubleJumpIntro" unique_id=516750234 instance=ExtResource("15_so66j")]
+position = Vector2(364, 268)
+
 [node name="ScreenDoubleJumpFun" parent="." unique_id=470102351 node_paths=PackedStringArray("spawn_point", "screen_above", "screen_below") instance=ExtResource("4_2os1m")]
 position = Vector2(0, 1632)
 spawn_point = NodePath("Marker2D")
@@ -288,8 +339,17 @@ tile_map_data = PackedByteArray("AAAnAAYAAAAGAAEAAAAmAAYAAAAGAAEAAAAlAAYAAAAGAAE
 [node name="Marker2D" type="Marker2D" parent="ScreenDoubleJumpFun" unique_id=323258106]
 position = Vector2(347, 24)
 
-[node name="BreakablePlatform" parent="ScreenDoubleJumpFun" unique_id=1569273800 instance=ExtResource("7_pa8r4")]
-position = Vector2(456, 268)
+[node name="BreakableTile" parent="ScreenDoubleJumpFun" unique_id=2456880 instance=ExtResource("15_so66j")]
+position = Vector2(444, 268)
+
+[node name="BreakableTile2" parent="ScreenDoubleJumpFun" unique_id=877661039 instance=ExtResource("15_so66j")]
+position = Vector2(452, 268)
+
+[node name="BreakableTile3" parent="ScreenDoubleJumpFun" unique_id=439461468 instance=ExtResource("15_so66j")]
+position = Vector2(460, 268)
+
+[node name="BreakableTile4" parent="ScreenDoubleJumpFun" unique_id=355094925 instance=ExtResource("15_so66j")]
+position = Vector2(468, 268)
 
 [node name="ScreenBulletTimeIntro" parent="." unique_id=2004061148 node_paths=PackedStringArray("spawn_point", "screen_above", "screen_below") instance=ExtResource("4_2os1m")]
 position = Vector2(0, 1904)
@@ -303,7 +363,7 @@ position = Vector2(420, 29)
 [node name="BackgroundDungeon" parent="ScreenBulletTimeIntro" unique_id=1625283664 instance=ExtResource("15_x2xxo")]
 
 [node name="Terrain" parent="ScreenBulletTimeIntro" unique_id=2051329883 instance=ExtResource("5_go7sj")]
-tile_map_data = PackedByteArray("AAA7AAAAAAAGAAkAAAA7AAEAAAAGAAkAAAA7AAIAAAAGAAkAAAA7AAMAAAAGAAkAAAA7AAQAAAAGAAkAAAA7AAUAAAAGAAkAAAA7AAYAAAAGAAkAAAA7AAcAAAAGAAkAAAA7AAgAAAAGAAkAAAA7AAkAAAAGAAkAAAA7AAoAAAAGAAkAAAA7AAsAAAAGAAkAAAA7AAwAAAAGAAkAAAA7AA0AAAAGAAkAAAA7AA4AAAAGAAkAAAA7AA8AAAAGAAkAAAA7ABAAAAAGAAkAAAA7ABEAAAAGAAkAAAA7ABIAAAAGAAkAAAA7ABMAAAAGAAkAAAA7ABQAAAAGAAkAAAA7ABUAAAAGAAkAAAA7ABYAAAAGAAkAAAA7ABcAAAAGAAkAAAA7ABgAAAAGAAkAAAA7ABkAAAAGAAkAAAA7ABoAAAAGAAkAAAA7ABsAAAAGAAkAAAA7ABwAAAAGAAkAAAA7AB0AAAAGAAkAAAA7AB4AAAAGAAkAAAAAACEAAAAGAAkAAAAGACEAAAAGAAkAAAAHACEAAAAGAAkAAAAIACEAAAAGAAkAAAAJACEAAAAGAAkAAAAKACEAAAAGAAkAAAALACEAAAAGAAkAAAAMACEAAAAGAAkAAAANACEAAAAGAAkAAAAOACEAAAAGAAkAAAAPACEAAAAGAAkAAAAQACEAAAAGAAkAAAARACEAAAAGAAkAAAASACEAAAAGAAkAAAATACEAAAAGAAkAAAAUACEAAAAGAAkAAAAVACEAAAAGAAkAAAAWACEAAAAGAAkAAAAXACEAAAAGAAkAAAAYACEAAAAGAAkAAAAZACEAAAAGAAkAAAAaACEAAAAGAAkAAAAbACEAAAAGAAkAAAAcACEAAAAGAAkAAAAdACEAAAAGAAkAAAAeACEAAAAGAAkAAAAfACEAAAAGAAkAAAAgACEAAAAGAAkAAAAhACEAAAAGAAkAAAAiACEAAAAGAAkAAAAjACEAAAAGAAkAAAAkACEAAAAGAAkAAAAlACEAAAAGAAkAAAAmACEAAAAGAAkAAAAnACEAAAAGAAkAAAAoACEAAAAGAAkAAAApACEAAAAGAAkAAAAqACEAAAAGAAkAAAArACEAAAAGAAkAAAAsACEAAAAGAAkAAAAtACEAAAAGAAkAAAAuACEAAAAGAAkAAAAvACEAAAAGAAkAAAAwACEAAAAGAAkA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")
+tile_map_data = PackedByteArray("AAA7AAAAAAAGAAkAAAA7AAEAAAAGAAkAAAA7AAIAAAAGAAkAAAA7AAMAAAAGAAkAAAA7AAQAAAAGAAkAAAA7AAUAAAAGAAkAAAA7AAYAAAAGAAkAAAA7AAcAAAAGAAkAAAA7AAgAAAAGAAkAAAA7AAkAAAAGAAkAAAA7AAoAAAAGAAkAAAA7AAsAAAAGAAkAAAA7AAwAAAAGAAkAAAA7AA0AAAAGAAkAAAA7AA4AAAAGAAkAAAA7AA8AAAAGAAkAAAA7ABAAAAAGAAkAAAA7ABEAAAAGAAkAAAA7ABIAAAAGAAkAAAA7ABMAAAAGAAkAAAA7ABQAAAAGAAkAAAA7ABUAAAAGAAkAAAA7ABYAAAAGAAkAAAA7ABcAAAAGAAkAAAA7ABgAAAAGAAkAAAA7ABkAAAAGAAkAAAA7ABoAAAAGAAkAAAA7ABsAAAAGAAkAAAA7ABwAAAAGAAkAAAA7AB0AAAAGAAkAAAA7AB4AAAAGAAkAAAAAACEAAAAGAAkAAAAGACEAAAAGAAkAAAAHACEAAAAGAAkAAAAIACEAAAAGAAkAAAAJACEAAAAGAAkAAAAKACEAAAAGAAkAAAALACEAAAAGAAkAAAAMACEAAAAGAAkAAAANACEAAAAGAAkAAAAOACEAAAAGAAkAAAAPACEAAAAGAAkAAAAQACEAAAAGAAkAAAARACEAAAAGAAkAAAASACEAAAAGAAkAAAATACEAAAAGAAkAAAAUACEAAAAGAAkAAAAVACEAAAAGAAkAAAAWACEAAAAGAAkAAAAXACEAAAAGAAkAAAAYACEAAAAGAAkAAAAZACEAAAAGAAkAAAAaACEAAAAGAAkAAAAbACEAAAAGAAkAAAAcACEAAAAGAAkAAAAdACEAAAAGAAkAAAAeACEAAAAGAAkAAAAfACEAAAAGAAkAAAAgACEAAAAGAAkAAAAhACEAAAAGAAkAAAAiACEAAAAGAAkAAAAjACEAAAAGAAkAAAAkACEAAAAGAAkAAAAlACEAAAAGAAkAAAAmACEAAAAGAAkAAAAnACEAAAAGAAkAAAAoACEAAAAGAAkAAAApACEAAAAGAAkAAAAqACEAAAAGAAkAAAArACEAAAAGAAkAAAAsACEAAAAGAAkAAAAtACEAAAAGAAkAAAAuACEAAAAGAAkAAAAvACEAAAAGAAkAAAAwACEAAAAGAAkA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")
 
 [node name="Hazard" parent="ScreenBulletTimeIntro" unique_id=1166649509 instance=ExtResource("15_1s4pk")]
 tile_map_data = PackedByteArray("AAAaAAAAAAABAAMAAAAaAAEAAAABAAQAAAAbAAAAAAACAAMAAAAbAAEAAAABAAUAACAcAAAAAAACAAMAAAAcAAEAAAACAAUAACAdAAAAAAACAAMAAAAdAAEAAAADAAUAACAeAAAAAAACAAMAAAAeAAEAAAAEAAUAACAfAAAAAAACAAMAAAAfAAEAAAABAAcAAAAgAAAAAAACAAMAAAAgAAEAAAACAAcAAAAhAAAAAAACAAMAAAAhAAEAAAADAAcAAAAiAAAAAAACAAMAAAAiAAEAAAAEAAcAAAAjAAAAAAACAAMAAAAjAAEAAAAFAAcAAAAkAAAAAAACAAMAAAAkAAEAAAABAAcAAAAlAAAAAAADAAMAAAAlAAEAAAADAAQAAAAmAAAAAAAEAAMAAAAAAAQAAAACAAEAABAAAAUAAAACAAIAAAAAAAYAAAACAAMAAAAAAAcAAAACAAcAAAABAAQAAAACAAMAACABAAUAAAACAAIAAAABAAYAAAACAAMAAAABAAcAAAADAAcAAAACAAQAAAABAAIAAFACAAUAAAACAAIAAAACAAYAAAACAAMAAAACAAcAAAAEAAcAAAADAAQAAAABAAIAAEADAAUAAAACAAIAAAADAAYAAAACAAMAAAADAAcAAAAFAAcAAAAEAAQAAAACAAMAADAEAAUAAAACAAIAAAAEAAYAAAACAAMAAAAEAAcAAAABAAcAAAAFAAQAAAACAAEAAAAFAAUAAAACAAIAAAAFAAYAAAACAAMAAAAFAAcAAAACAAcAAAAGAAQAAAABAAIAAEAGAAUAAAACAAIAAAAGAAYAAAACAAMAAAAGAAcAAAADAAcAAAAHAAQAAAACAAMAADAHAAUAAAACAAIAAAAHAAYAAAACAAMAAAAHAAcAAAAEAAcAAAAIAAQAAAACAAEAAAAIAAUAAAACAAIAAAAIAAYAAAACAAMAAAAIAAcAAAABAAUAACAJAAQAAAADAAEAAAAJAAUAAAADAAIAAAAJAAYAAAADAAMAAAAJAAcAAAADAAQAAAAJAAMAAAADAAAAAAAKAAQAAAAEAAEAAAAKAAUAAAAEAAIAAAAKAAYAAAAEAAMAAAAIAAMAAAACAAAAAAAFAAMAAAACAAAAAAAAAAMAAAACAAAAABABAAMAAAACAAQAACAEAAMAAAACAAQAADAHAAMAAAACAAQAADAGAAMAAAAAAAIAAEACAAMAAAAAAAIAAFADAAMAAAAAAAIAAEA=")
@@ -316,55 +376,52 @@ position = Vector2(440, 48)
 
 [node name="Cannon" parent="ScreenBulletTimeIntro" unique_id=1469093707 node_paths=PackedStringArray("screen") instance=ExtResource("8_15mv3")]
 position = Vector2(96, 24)
-screen = NodePath("../../ScreenCannonMadness")
+screen = NodePath("..")
 bullet_type_pattern = Array[int]([3])
 spawn_direction = 2
 time_between_bullets = 0.25
 
 [node name="Cannon2" parent="ScreenBulletTimeIntro" unique_id=1672191416 node_paths=PackedStringArray("screen") instance=ExtResource("8_15mv3")]
 position = Vector2(152, 24)
-screen = NodePath("../../ScreenCannonMadness")
+screen = NodePath("..")
 bullet_type_pattern = Array[int]([3])
 spawn_direction = 2
 
 [node name="Cannon3" parent="ScreenBulletTimeIntro" unique_id=153599146 node_paths=PackedStringArray("screen") instance=ExtResource("8_15mv3")]
 position = Vector2(208, 24)
-screen = NodePath("../../ScreenCannonMadness")
+screen = NodePath("..")
 bullet_type_pattern = Array[int]([3])
 spawn_direction = 2
 time_between_bullets = 0.35
 
 [node name="Cannon4" parent="ScreenBulletTimeIntro" unique_id=307749521 node_paths=PackedStringArray("screen") instance=ExtResource("8_15mv3")]
 position = Vector2(264, 72)
-screen = NodePath("../../ScreenCannonMadness")
+screen = NodePath("..")
 bullet_type_pattern = Array[int]([3])
 time_between_bullets = 0.35
 
 [node name="Cannon5" parent="ScreenBulletTimeIntro" unique_id=2036399374 node_paths=PackedStringArray("screen") instance=ExtResource("8_15mv3")]
 position = Vector2(264, 120)
-screen = NodePath("../../ScreenCannonMadness")
+screen = NodePath("..")
 bullet_type_pattern = Array[int]([3])
 
 [node name="Cannon6" parent="ScreenBulletTimeIntro" unique_id=1609264247 node_paths=PackedStringArray("screen") instance=ExtResource("8_15mv3")]
 position = Vector2(264, 168)
-screen = NodePath("../../ScreenCannonMadness")
+screen = NodePath("..")
 bullet_type_pattern = Array[int]([3])
 time_between_bullets = 0.25
 
 [node name="Cannon7" parent="ScreenBulletTimeIntro" unique_id=493407929 node_paths=PackedStringArray("screen") instance=ExtResource("8_15mv3")]
 position = Vector2(72, 248)
-screen = NodePath("../../ScreenCannonMadness")
+screen = NodePath("..")
 bullet_type_pattern = Array[int]([3])
 time_between_bullets = 0.5
 
 [node name="Cannon8" parent="ScreenBulletTimeIntro" unique_id=1784034359 node_paths=PackedStringArray("screen") instance=ExtResource("8_15mv3")]
 position = Vector2(72, 120)
-screen = NodePath("../../ScreenCannonMadness")
+screen = NodePath("..")
 bullet_type_pattern = Array[int]([3])
 time_between_bullets = 0.5
-
-[node name="BreakablePlatform" parent="ScreenBulletTimeIntro" unique_id=1887382451 instance=ExtResource("7_pa8r4")]
-position = Vector2(24, 268)
 
 [node name="ScreenBigFall" parent="." unique_id=763712234 node_paths=PackedStringArray("screen_above", "screen_below") instance=ExtResource("4_2os1m")]
 position = Vector2(0, 2176)
@@ -383,6 +440,18 @@ shape = SubResource("RectangleShape2D_2os1m")
 position = Vector2(5, -3)
 
 [node name="BackgroundDungeon" parent="ScreenBigFall" unique_id=600418223 instance=ExtResource("15_x2xxo")]
+
+[node name="BreakableTile" parent="ScreenBigFall" unique_id=1319240632 instance=ExtResource("15_so66j")]
+position = Vector2(12, -4)
+
+[node name="BreakableTile2" parent="ScreenBigFall" unique_id=1130707965 instance=ExtResource("15_so66j")]
+position = Vector2(20, -4)
+
+[node name="BreakableTile3" parent="ScreenBigFall" unique_id=1887992543 instance=ExtResource("15_so66j")]
+position = Vector2(28, -4)
+
+[node name="BreakableTile4" parent="ScreenBigFall" unique_id=381742481 instance=ExtResource("15_so66j")]
+position = Vector2(36, -4)
 
 [node name="ScreenBigFallPassthrough1" parent="." unique_id=1248843735 node_paths=PackedStringArray("screen_above", "screen_below") instance=ExtResource("4_2os1m")]
 position = Vector2(0, 2448)

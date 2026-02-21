@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SoundEffectConfig" format=3 uid="uid://ci4s0vlom5aor"]
+
+[ext_resource type="AudioStream" uid="uid://cenvn0qd5l01q" path="res://sound/sound_effects/Big fall.ogg" id="1_6xy85"]
+[ext_resource type="Script" uid="uid://b4ne2jrms2thi" path="res://sound/sound_effect_config.gd" id="1_ov6ca"]
+
+[resource]
+script = ExtResource("1_ov6ca")
+type = 9
+audio_stream = ExtResource("1_6xy85")
+metadata/_custom_type_script = "uid://b4ne2jrms2thi"

@@ -14,7 +14,7 @@ func physics_update(_delta: float) -> void:
 func enter(_data: Dictionary = {}) -> void:
 	_player.velocity = Vector2.ZERO
 	_player.animation_player.play("big_land")
-	SoundEffectManager.play_effect(SoundEffectConfig.Type.LAND)
+	SoundEffectManager.play_effect_for_screen(SoundEffectConfig.Type.LAND)
 	get_tree().create_timer(TIME_UNTIL_MOVEMENT_ALLOWED).timeout.connect(
 		func() -> void: _movement_allowed = true
 	)
