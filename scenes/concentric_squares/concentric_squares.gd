@@ -2,6 +2,7 @@ class_name ConcentricSquares
 
 extends Node2D
 
+signal square_added
 signal stopped
 
 @export var color: Color = Color.WHITE
@@ -30,4 +31,5 @@ func _emit_square() -> void:
 	new_square.max_size = max_square_size
 	new_square.expand_duration = square_expand_duration
 	add_child(new_square)
+	square_added.emit()
 	new_square.finished.connect(func() -> void: new_square.queue_free())

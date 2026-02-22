@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="SoundEffectConfig" format=3 uid="uid://du4ke7csl1p4f"]
+
+[ext_resource type="AudioStream" uid="uid://bttji5e30h0jr" path="res://sound/sound_effects/Game end square pulse.ogg" id="1_1gxnh"]
+[ext_resource type="Script" uid="uid://b4ne2jrms2thi" path="res://sound/sound_effect_config.gd" id="1_rhm5t"]
+
+[resource]
+script = ExtResource("1_rhm5t")
+type = 12
+limit = 3
+audio_stream = ExtResource("1_1gxnh")
+metadata/_custom_type_script = "uid://b4ne2jrms2thi"
