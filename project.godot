@@ -32,7 +32,7 @@ AbilityManager="*uid://xch16tjsq3xq"
 SoundEffectManager="*uid://de3p3blpplcwn"
 PauseMenu="*uid://coymmpgpbobq7"
 GameEndScreen="*uid://b188r0n84c2y4"
-MusicManager="*uid://cifvlvmioiagn"
+MusicManager="*uid://bvl28dpdqcq6k"
 
 [debug]
 
@@ -123,4 +123,5 @@ pause={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+renderer/rendering_method="mobile"
 2d/snap/snap_2d_transforms_to_pixel=true

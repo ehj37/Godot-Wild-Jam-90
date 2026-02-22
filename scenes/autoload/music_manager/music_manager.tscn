@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bvl28dpdqcq6k"]
+
+[ext_resource type="Script" uid="uid://cifvlvmioiagn" path="res://scenes/autoload/music_manager/music_manager.gd" id="1_sbt2f"]
+[ext_resource type="AudioStream" uid="uid://bph5wuds6juop" path="res://sound/music/Godot Wild 90 Jam.ogg" id="2_il5cj"]
+
+[node name="MusicManager" type="Node" unique_id=2056076299]
+script = ExtResource("1_sbt2f")
+audio_stream = ExtResource("2_il5cj")
