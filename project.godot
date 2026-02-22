@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot Wild Jam 90"
-run/main_scene="uid://b7lqnjkqkuvb"
+run/main_scene="uid://cn0l6rjng1ypo"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -32,6 +32,7 @@ AbilityManager="*uid://xch16tjsq3xq"
 SoundEffectManager="*uid://de3p3blpplcwn"
 PauseMenu="*uid://coymmpgpbobq7"
 GameEndScreen="*uid://b188r0n84c2y4"
+MusicManager="*uid://cifvlvmioiagn"
 
 [debug]
 

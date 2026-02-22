@@ -23,6 +23,7 @@ func _ready() -> void:
 		bullet_type_pattern.size() > 0,
 		"Cannon at " + str(global_position) + " does not specify bullet type pattern."
 	)
+	assert(screen != null, "Cannon at" + str(global_position) + "does not specify screen")
 	bullet_spawn_timer.update_wait_time(time_between_bullets)
 
 

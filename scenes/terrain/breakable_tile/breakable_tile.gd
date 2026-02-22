@@ -2,12 +2,13 @@
 
 extends StaticBody2D
 
-enum TileVariant { CASTLE, DUNGEON, CAVES }
+enum TileVariant { CASTLE, DUNGEON, CAVES, CORE }
 
 const TILE_VARIANT_TO_REGION_COORDS: Dictionary = {
 	TileVariant.CASTLE: Vector2(64, 8),
 	TileVariant.DUNGEON: Vector2(48, 72),
-	TileVariant.CAVES: Vector2(128, 128)
+	TileVariant.CAVES: Vector2(88, 16),
+	TileVariant.CORE: Vector2(112, 96)
 }
 
 @export var variant: TileVariant:

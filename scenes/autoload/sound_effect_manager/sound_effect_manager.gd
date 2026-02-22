@@ -44,6 +44,10 @@ func play_effect_for_screen(type: SoundEffectConfig.Type, screen: Screen = null)
 	if screen == null:
 		screen = ScreenManager.current_screen
 
+	if !is_instance_valid(screen):
+		push_warning("Sound effect played for freed screen")
+		return
+
 	var config: SoundEffectConfig = _sound_effect_configs.get(type)
 	assert(config != null, "Sound effect must be defined in AudioManager")
 
