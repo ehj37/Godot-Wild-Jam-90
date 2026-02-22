@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://p56p4c01uhs8"
+path="res://.godot/imported/Ability get.ogg-93e0ac56a0d36d477b392d447897bf77.oggvorbisstr"
+
+[deps]
+
+source_file="res://sound/sound_effects/Ability get.ogg"
+dest_files=["res://.godot/imported/Ability get.ogg-93e0ac56a0d36d477b392d447897bf77.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -12,6 +12,7 @@ func enter(data: Dictionary = {}) -> void:
 	SignalBus.snap_and_zoom.emit(_player.global_position + Vector2(0, -10), 8)
 	_player.velocity = Vector2.ZERO
 	_player.animation_player.play("ability_get")
+	SoundEffectManager.play_effect(SoundEffectConfig.Type.ABILITY_GET)
 	var height_tween: Tween = get_tree().create_tween()
 	var final_y: float = _player.global_position.y - CELEBRATION_RISE_HEIGHT
 	height_tween.tween_property(_player, "global_position:y", final_y, CELEBRATION_DURATION)

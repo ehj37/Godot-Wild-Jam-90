@@ -2,7 +2,7 @@ extends Node
 
 const POST_FADE_OUT_WAIT_TIME: float = 1.0
 const ORDERED_LEVEL_PATHS: Array[String] = [
-	"res://scenes/level_1.tscn", "res://scenes/level_2.tscn"
+	"res://scenes/level_1.tscn", "res://scenes/level_2.tscn", "res://scenes/level_3.tscn"
 ]
 
 var current_level: Level

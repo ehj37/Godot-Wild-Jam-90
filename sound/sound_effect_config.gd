@@ -13,7 +13,8 @@ enum Type {
 	JUMP_LAND,
 	PLAYER_HURT,
 	BIG_FALL,
-	GAME_END
+	GAME_END,
+	ABILITY_GET
 }
 @export var type: Type
 @export var limit: int = 1

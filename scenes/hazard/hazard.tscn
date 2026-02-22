@@ -9,7 +9,6 @@ texture = ExtResource("1_hh53t")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 0:0/0/material = SubResource("ShaderMaterial_7p0on")
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 1:1/0 = 0
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 1:1/0/physics_layer_1/polygon_0/points = PackedVector2Array(-2, -2, 4, -2, 4, 4, -2, 4)
@@ -117,4 +116,4 @@ metadata/_aseprite_wizard_config_ = {
 "source": "res://scenes/hazard/hazard.aseprite",
 "source_uid": 3816489666592904681
 }
-metadata/_aseprite_wizard_source_file_hash_ = "f6b9c8018dfccd39c23bb20e3868f782"
+metadata/_aseprite_wizard_source_file_hash_ = "c9454ae1311f511257cfa7a77ffb23d1"

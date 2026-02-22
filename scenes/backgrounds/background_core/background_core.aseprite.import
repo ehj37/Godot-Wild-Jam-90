@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cioridhe3emt5"
+path="res://.godot/imported/background_core.aseprite-e5ca45aaad4b7a9ff79243e3d4eb513f.res"
+
+[deps]
+
+source_file="res://scenes/backgrounds/background_core/background_core.aseprite"
+dest_files=["res://.godot/imported/background_core.aseprite-e5ca45aaad4b7a9ff79243e3d4eb513f.res"]
+
+[params]
+
